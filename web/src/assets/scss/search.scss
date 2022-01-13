@@ -1,0 +1,31 @@
+.search {
+  @apply flex-col mb-42 uppercase;
+  padding-top: 10vh;
+
+  &__menu {
+    @apply flex justify-center w-full px-4 mb-8;
+    // Media Queries
+    @apply md:max-w-xl md:mx-auto md:px-0;
+
+    input {
+      @apply w-full py-2 px-6;
+      @apply uppercase border border-gray-300 rounded-sm text-center;
+    }
+  }
+
+  &__results {
+    @apply flex-col px-2 mb-24 uppercase;
+    // Media Queries
+    @apply md:px-3 md:mb-44;
+
+    .results {
+      @apply grid grid-cols-2 gap-2;
+      // Media Queries
+      @apply md:grid-cols-3 lg:grid-cols-5 md:gap-3;
+
+      &__product {
+        @apply block relative;
+      }
+    }
+  }
+}

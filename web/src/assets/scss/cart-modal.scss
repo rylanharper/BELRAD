@@ -1,0 +1,21 @@
+.cart-modal {
+  @apply flex flex-col fixed top-0 right-0 bottom-0 w-full;
+  @apply bg-white;
+  z-index: 100;
+  // Media Queries
+  @apply md:w-6/12 lg:w-5/12 2xl:w-4/12;
+}
+
+.cart-backdrop {
+  @apply fixed inset-0 w-full h-full;
+  @apply bg-black bg-opacity-40;
+  z-index: 80;
+}
+
+// Backdrop fade
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .75s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

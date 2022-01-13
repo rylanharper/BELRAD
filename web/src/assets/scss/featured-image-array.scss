@@ -1,0 +1,41 @@
+.featured-array {
+  @apply block relative mb-4;
+  // Media Queries
+  @apply md:mb-8;
+
+  &__gallery {
+    @apply grid grid-cols-1;
+    // Media Queries
+    @apply md:m-auto md:grid-cols-2;
+  }
+
+  &__image {
+    @apply block relative;
+  }
+
+  .image-link {
+    a {
+      @apply absolute inset-0 overflow-hidden;
+      @apply md:transition md:duration-500 md:ease-in-out;
+
+      &:hover {
+        @apply md:bg-black/20;
+      }
+
+      .info {
+        @apply flex flex-col absolute px-5 bottom-6;
+        @apply text-white;
+        // Media Queries
+        @apply md:px-8 md:bottom-20;
+
+        h2 {
+          @apply block;
+        }
+
+        span {
+          @apply block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.newsletter {
+  @apply flex flex-col w-full;
+
+  span {
+    @apply mb-1;
+  }
+
+  p {
+    @apply mb-4;
+    @apply text-sm text-gray-500;
+  }
+
+  .klaviyo-form {
+    @apply flex justify-between items-center py-2 px-6 mb-4;
+    @apply uppercase border border-gray-400 rounded-md;
+  
+    input {
+      @apply flex-1 uppercase appearance-none bg-transparent;
+    }
+  }
+
+  // Link hover
+  a,
+  button {
+    @apply md:transition md:duration-300 md:ease;
+
+    &:hover {
+      @apply md:text-gray-400;
+    }
+  }
+}

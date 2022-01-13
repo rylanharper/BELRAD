@@ -1,0 +1,71 @@
+<template>
+  <Layout>
+    <section class="account">
+      <div class="account__wrapper">
+        <div class="account__content">
+          <h2>My Account</h2>
+          <p>Order History</p>
+          <div v-if="customer">
+            <account-orders :orders="orders" />
+            <account-details :customer="customer" />
+          </div>
+        </div>
+        <button @click="logout">Logout</button>
+      </div>
+    </section>
+  </Layout>
+</template>
+
+<script>
+// Graphql
+import { customerDetails } from '@/graphql/queries'
+
+// Components
+import AccountOrders from '@/components/account/account-orders.vue'
+import AccountDetails from '@/components/account/account-details.vue'
+
+export default {
+  name: 'Account',
+
+  metaInfo: {
+    title: 'Your Account'
+  },
+
+  components: {
+    AccountOrders,
+    AccountDetails
+  },
+
+  data() {
+    return {
+      customer: null,
+      index: 0,
+    }
+  },
+
+  computed: {
+    orders() {
+      return this.customer.orders.edges.map(({ node }) => node)
+    }
+  },
+
+  async mounted() {
+    const variables = { accessToken: this.$store.getters.accessToken }
+    const { customer } = await this.$graphql.request(customerDetails, variables)
+
+    this.customer = customer
+  },
+
+  methods: {
+    async logout() {
+      await this.$store.dispatch('logout')
+      this.$router.push('/account/login')
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+// Using BEM + Tailwind @apply
+@import '@/assets/scss/account.scss';
+</style>

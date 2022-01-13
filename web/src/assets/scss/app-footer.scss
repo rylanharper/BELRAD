@@ -1,0 +1,87 @@
+.footer {
+  @apply relative bottom-0 left-0 px-5 py-8;
+  @apply bg-light-200;
+  // Media Queries
+  @apply md:px-10 md:pt-10 md:pb-6;
+
+  &__nav {
+    .footer-desktop {
+      @apply hidden;
+      // Media Queries
+      @apply md:flex md:flex-row-reverse md:min-h-md md:pb-6 md:justify-between;
+
+      &__column {
+        @apply pt-6;
+        @apply flex flex-1;
+      }
+
+      &__column:nth-child(-n+2) {
+        @apply pl-12;
+        @apply border-l border-gray-300;
+      }
+
+      .newsletter-success {
+        @apply w-full text-center;
+      }
+
+      ul {
+        @apply block min-w-min;
+
+        li {
+          @apply pb-3;
+        }
+      }
+    }
+
+    .footer-mobile {
+      @apply flex flex-col justify-between;
+      // Media Queries
+      @apply md:hidden;
+
+      &__column {
+        @apply flex flex-1 mb-8;
+      }
+
+      &__column:nth-child(2) {
+        @apply mb-8;
+      }
+
+      .newsletter-success {
+        @apply w-full text-center;
+      }
+
+      ul {
+        @apply block w-1/2 pt-2;
+
+        li {
+          @apply pb-3;
+        }
+      }
+    }
+  }
+
+  &__brand {
+    @apply flex justify-between align-baseline;
+
+    .brand-copyright {
+      @apply mt-1 uppercase;
+      // Media Queries
+      @apply md:mt-2;
+    }
+
+    .brand-logo {
+      @apply w-24 mt-0.5;
+      // Media Queries
+      @apply md:w-32 md:mt-0;
+    }
+  }
+
+  // Link hover
+  a {
+    @apply md:transition md:duration-300 md:ease;
+
+    &:hover {
+      @apply md:text-gray-400;
+    }
+  }
+}

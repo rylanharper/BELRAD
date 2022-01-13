@@ -1,0 +1,32 @@
+// Global app styles
+// Imported into `main.js`
+html {
+  font-size: 12.4px;
+  @apply font-mono antialiased;
+
+  #app {
+    @apply flex flex-col;
+  }
+
+  #main {
+    @apply flex-grow;
+    min-height: 95vh;
+  }
+}
+
+*:focus {
+  outline: none !important;
+}
+
+::selection {
+  color: #181717;
+  background: #ffdf2c;
+}
+
+// Typography
+a,
+p,
+span,
+button {
+  @apply uppercase;
+}

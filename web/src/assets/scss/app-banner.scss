@@ -1,0 +1,17 @@
+.hero-banner {
+  @apply relative top-0 left-0 right-0 z-50 overflow-hidden py-1.5;
+  @apply text-sm;
+
+  &__link {
+    @apply flex relative items-center inset-0;
+    @apply transition duration-300 ease-in-out;
+    // Media Queries
+    @apply md:hover:text-gray-400;
+  }
+
+  h3 {
+    @apply block mx-6 whitespace-nowrap;
+    // Media Queries
+    @apply md:mx-24;
+  }
+}

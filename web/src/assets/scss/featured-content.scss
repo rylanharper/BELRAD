@@ -1,0 +1,31 @@
+.featured-content {
+  @apply block relative mb-4;
+  // Media Queries
+  @apply md:mb-8;
+
+  .image-link {
+    a {
+      @apply absolute inset-0 overflow-hidden;
+      @apply md:transition md:duration-500 md:ease-in-out;
+
+      &:hover {
+        @apply md:bg-black/20;
+      }
+
+      .info {
+        @apply flex flex-col absolute px-5 bottom-8;
+        @apply text-white;
+        // Media Queries
+        @apply md:px-10 md:bottom-20;
+
+        h2 {
+          @apply block;
+        }
+
+        span {
+          @apply block;
+        }
+      }
+    }
+  }
+}

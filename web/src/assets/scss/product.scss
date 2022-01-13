@@ -1,0 +1,11 @@
+.product {
+  @apply flex-col px-2 mb-24 uppercase;
+  // Media Queries
+  @apply md:px-3 md:mb-32;
+
+  &__wrapper {
+    @apply grid grid-cols-1;
+    // Media Queries
+    @apply md:grid-cols-2;
+  }
+}

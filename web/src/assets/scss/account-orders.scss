@@ -1,0 +1,24 @@
+.orders {
+  p {
+    @apply text-center pb-2;
+  }
+
+  &__grid {
+    ul {
+      @apply flex pb-1 mb-2;
+      @apply text-xs border-b border-black border-dashed;
+
+      li {
+        @apply flex-1;
+
+        a {
+          @apply transition duration-500 ease-in-out;
+
+          &:hover {
+            @apply text-blue-500;
+          }
+        }
+      }
+    }
+  }
+}

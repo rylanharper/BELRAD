@@ -1,0 +1,122 @@
+.product-content {
+  &__wrapper {
+    @apply flex flex-col relative top-6 px-3;
+    // Media Queries
+    @apply md:sticky md:mx-auto md:px-0 md:top-32 md:mb-24 md:w-11/12 lg:top-44 lg:mb-44 lg:w-10/12 2xl:w-6/12 2xl:top-56;
+  }
+
+  .product-details {
+    @apply flex flex-col mb-6;
+
+    &__title,
+    &__price,
+    &__price--max {
+      @apply text-2xl;
+    }
+
+    &__price--max {
+      @apply line-through text-gray-400;
+    }
+  }
+
+  .swatch-grid {
+    @apply flex flex-col relative mb-8;
+
+    &__title {
+      @apply mb-3;
+    }
+
+    &__swatches {
+      @apply flex ml-2;
+
+      span:first-child {
+        @apply cursor-pointer;
+      }
+
+      span {
+        @apply flex mr-4 relative;
+        @apply rounded-full;
+        height: 20px;
+        width: 20px;
+        @apply md:transition md:duration-500 md:ease-in-out;
+
+        &:hover {
+          @apply md:opacity-60;
+        }
+      }
+
+      .color-primary::before {
+        @apply absolute top-1/2 left-1/2;
+        @apply border border-black rounded-full;
+        content: "";
+        height: 28px;
+        width: 28px;
+        transform: translate(-50%,-50%);
+      }
+    }
+  }
+
+  .product-options {
+    @apply mb-6;
+
+    &__name {
+      @apply flex items-center mb-2;
+    }
+
+    &__status {
+      span {
+        @apply px-3 py-1 ml-3 mb-1;
+        @apply text-sm bg-lime-300 uppercase rounded-sm;
+      }
+    }
+
+    .oos-warning span {
+      @apply bg-warm-gray-200;
+    }
+
+    &__variants {
+      @apply flex justify-between flex-wrap;
+    }
+
+    // Radio inputs
+    input[type='radio'] {
+      @apply hidden;
+    }
+    
+    label {
+      @apply cursor-pointer;
+    }
+    
+    label span {
+      @apply inline-flex items-center px-2 py-1;
+      @apply border-b border-transparent;
+    }
+    
+    label span:hover,
+    input[type='radio']:checked + span {
+      @apply border-b border-black;
+    }
+    
+    .oos-option + span {
+      @apply text-cool-gray-400;
+    }
+  }
+
+  .product-actions {
+    @apply flex mt-2 mb-8;
+
+    button {
+      @apply flex justify-center items-center py-2.5 w-full;
+      @apply text-center bg-dark-800 text-white rounded-sm;
+    }
+
+    .oos-button {
+      @apply flex justify-center items-center py-2.5;
+      @apply text-center bg-gray-200 text-gray-600 cursor-not-allowed rounded-sm;
+    }
+  }
+
+  .product-description {
+    @apply text-sm;
+  }
+}

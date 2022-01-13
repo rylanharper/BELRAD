@@ -1,0 +1,23 @@
+.product-carousel {
+  @apply relative;
+}
+
+// Carousel dots
+.dots {
+  @apply flex absolute justify-center w-full z-10 bottom-6;
+
+  .dot {
+    @apply block rounded-full mx-1;
+    @apply bg-gray-400;
+    height: 4px;
+    width: 4px;
+
+    &:focus {
+      @apply outline-none;
+    }
+  }
+
+  .dot.active {
+    @apply bg-black;
+  }
+}

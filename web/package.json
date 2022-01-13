@@ -1,0 +1,34 @@
+{
+  "name": "belrad-web",
+  "private": true,
+  "scripts": {
+    "dev": "gridsome develop",
+    "build": "gridsome build",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/plugin-sitemap": "^0.4.0",
+    "@sanity/image-url": "^1.0.1",
+    "@shopify/theme-images": "^4.1.1",
+    "apollo-boost": "^0.4.9",
+    "graphql-request": "^3.7.0",
+    "gridsome": "^0.7.23",
+    "gridsome-plugin-flexsearch": "^2.0.2",
+    "gridsome-plugin-recommender": "^1.1.5",
+    "gridsome-source-sanity": "^1.1.0",
+    "gridsome-source-shopify": "^0.2.8",
+    "gsap": "^3.8.0",
+    "keen-slider": "^6.6.3",
+    "lazysizes": "^5.3.2",
+    "sanity-blocks-vue-component": "^0.1.0",
+    "vue-apollo": "^3.1.0",
+    "vue-marquee-text-component": "^1.2.0",
+    "vuex": "^3.6.2",
+    "vuex-persist": "^3.1.3"
+  },
+  "devDependencies": {
+    "gridsome-plugin-windicss": "^1.0.5",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^10.1.1"
+  }
+}

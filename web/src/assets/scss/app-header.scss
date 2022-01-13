@@ -1,0 +1,75 @@
+.header {
+  @apply sticky top-0 left-0 right-0 z-40;
+  @apply bg-white;
+
+  #logo {
+    @apply w-24 mt-0.5;
+    // Media Queries
+    @apply md:w-32 md:mt-0;
+  }
+
+  &__nav {
+    @apply flex relative items-center inset-0 px-5 py-3;
+    // Media Queries
+    @apply md:px-10 md:py-3.5;
+
+    .nav-desktop {
+      @apply hidden relative w-full;
+      // Media Queries
+      @apply md:flex;
+
+      &--left {
+        @apply flex relative flex-1 justify-start;
+        
+        a,
+        button {
+          @apply block;
+          @apply mr-6.5;
+        }
+      }
+
+      &--right {
+        @apply flex relative flex-1 justify-end;
+  
+        a,
+        button {
+          @apply block;
+          @apply ml-6.5;
+        }
+      }
+    }
+
+    .nav-mobile {
+      @apply flex relative w-full;
+      // Media Queries
+      @apply md:hidden;
+
+      &--left {
+        @apply flex relative flex-1 justify-start;
+
+        a {
+          @apply block;
+        }
+      }
+
+      &--right {
+        @apply flex relative flex-1 justify-end;
+
+        button {
+          @apply block;
+        }
+      }
+    }
+  }
+
+  // Link hover
+  a,
+  button {
+    @apply md:transition md:duration-300 md:ease;
+
+    &:hover {
+      @apply md:text-gray-400;
+    }
+  }
+}
+

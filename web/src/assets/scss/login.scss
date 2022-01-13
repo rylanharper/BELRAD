@@ -1,0 +1,71 @@
+.login {
+  @apply flex flex-col uppercase;
+
+  &__wrapper {
+    @apply w-full px-4;
+    // Media Queries
+    @apply md:max-w-xl md:mx-auto md:px-0;
+  }
+
+  &__content {
+    h2 {
+      @apply text-2xl text-center mb-8;
+      // Media Queries
+      @apply md:text-3xl;
+    }
+
+    p {
+      @apply block mb-3;
+      @apply text-center;
+    }
+
+    form {
+      @apply flex flex-col my-8;
+    }
+
+    input {
+      @apply w-full py-2 px-6 mb-4;
+      @apply uppercase border border-gray-300 rounded-sm;
+    }
+
+    button {
+      @apply w-full py-2;
+      @apply text-center text-white bg-dark-500 border border-dark-500 rounded-sm;
+      @apply md:transition md:duration-500 md:ease-in-out;
+
+      &:hover {
+        @apply md:bg-dark-100;
+      }
+
+      span {
+        @apply font-normal;
+      }
+    }
+  }
+
+  .account-links {
+    @apply flex justify-center;
+
+    a {
+      @apply mx-4 text-sm;
+      @apply md:transition md:duration-300 md:ease;
+
+      &:hover {
+        @apply md:text-gray-500;
+      }
+    }
+  }
+
+  .action-status {
+    @apply flex justify-center mt-16;
+
+    .error-message {
+      @apply flex items-center min-w-max py-1 px-4;
+      @apply text-sm text-center text-red-500;
+
+      span {
+        @apply mr-2;
+      }
+    }
+  }
+}

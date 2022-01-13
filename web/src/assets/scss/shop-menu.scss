@@ -1,0 +1,95 @@
+.shop-menu {
+  @apply fixed inset-0 w-full h-full pt-32 z-30;
+  @apply bg-white;
+  // Media queries
+  @apply md:px-10 md:py-0 md:h-min md:border-b md:border-light-600;
+
+  .menu-desktop {
+    @apply hidden;
+    // Media Queries
+    @apply md:flex md:justify-between md:inset-0 md:pt-32 md:pb-12;
+
+    &__links {
+      @apply flex;
+
+      .column {
+        @apply flex flex-col pr-24;
+
+        span {
+          @apply pb-8;
+          @apply text-sm text-dark-200;
+        }
+      }
+
+      li {
+        @apply pb-3
+      }
+    }
+
+    &__upsell {
+      @apply relative w-1/5;
+
+      .image-link {
+        a {
+          @apply absolute inset-0 overflow-hidden;
+          @apply md:transition md:duration-500 md:ease-in-out;
+
+          &:hover {
+            @apply md:bg-black/10;
+          }
+    
+          .info {
+            @apply flex flex-col absolute px-6 bottom-6;
+            @apply text-white;
+    
+            h2 {
+              @apply block;
+            }
+    
+            span {
+              @apply block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menu-mobile {
+    @apply flex flex-col h-full;
+    // Media Queries
+    @apply md:hidden;
+
+    &__links {
+      @apply flex flex-col h-full overflow-y-scroll pl-5;
+
+      li,
+      span {
+        @apply pb-3
+      }
+
+      .page-links {
+        @apply flex flex-col pt-8;
+
+        a {
+          @apply pb-3
+        }
+      }
+    }
+
+    &__close {
+      @apply mt-auto p-2 mx-5 mb-5;
+      @apply uppercase text-center bg-gray-100 rounded-sm;
+    }
+  }
+
+  // Link hover
+  a,
+  button {
+    @apply md:transition md:duration-300 md:ease;
+
+    &:hover {
+      @apply md:text-gray-400;
+    }
+  }
+}

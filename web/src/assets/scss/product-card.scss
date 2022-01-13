@@ -1,0 +1,48 @@
+.product-card {
+  @apply relative z-0 mb-3;
+
+  .card-tags {
+    @apply flex justify-center absolute right-0 z-10 p-2.5;
+    @apply pointer-events-none;
+
+    &--sold-out {
+      @apply px-2 py-1;
+      @apply text-sm bg-amber-200 rounded-sm;
+    }
+
+    &--sale-item {
+      @apply px-2 py-1;
+      @apply text-sm bg-blue-200 rounded-sm;
+    }
+  }
+
+  .card-details {
+    @apply flex flex-col w-full mb-2;
+    @apply transition duration-300 ease-in-out;
+
+    &__title,
+    &__price {
+      @apply block relative;
+      @apply text-center;
+    }
+
+    &__price-max {
+      @apply line-through text-gray-400;
+    }
+  }
+
+  .swatch-grid {
+    @apply hidden;
+    @apply transition duration-300 ease-in-out;
+    // Media Queries
+    @apply md:flex md:justify-center md:opacity-0;
+    @apply md:group-hover:opacity-100;
+
+    span {
+      @apply flex mx-2;
+      @apply rounded-full;
+      height: 10px;
+      width: 10px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.account {
+  &__wrapper {
+    @apply w-full px-4 mt-10;
+    // Media Queries
+    @apply sm:mt-14 sm:max-w-lg sm:mx-auto sm:px-0;
+  }
+
+  &__content {    
+    h2 {
+      @apply text-2xl text-center mb-1;
+      // Media Queries
+      @apply sm:text-3xl;
+    }
+  
+    p {
+      @apply text-sm text-center mb-3;
+    }
+  
+    > div {
+      @apply flex flex-col;
+    }
+  }
+
+  button {
+    @apply text-xs cursor-pointer;
+  }
+}

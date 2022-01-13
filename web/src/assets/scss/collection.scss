@@ -1,0 +1,31 @@
+.collection {
+  @apply flex-col px-2 mb-20 uppercase;
+  padding-top: 6vh;
+  // Media Queries
+  @apply md:px-3 md:mb-32;
+
+  &__nav {
+    @apply flex justify-between mb-6 px-3;
+    // Media Queries
+    @apply md:px-7;
+  }
+
+  .product-grid {
+    @apply grid grid-cols-2 gap-2;
+    // Media Queries
+    @apply md:grid-cols-3 lg:grid-cols-5 md:gap-3;
+
+    &__product {
+      @apply block relative;
+    }
+  }
+
+  // Link hover
+  a {
+    @apply md:transition md:duration-300 md:ease;
+
+    &:hover {
+      @apply md:text-gray-400;
+    }
+  }
+}

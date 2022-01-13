@@ -1,0 +1,29 @@
+.page {
+  @apply flex-col mb-42 uppercase;
+  padding-top: 14vh;
+
+  &__wrapper {
+    @apply px-5;
+    // Media Queries
+    @apply md:max-w-2xl md:mx-auto md:px-0;
+
+    h1 {
+      @apply block mb-16;
+      @apply text-2xl text-center;
+    }
+
+    .description {
+      @apply mb-10;
+    }
+
+    .contact {
+      @apply flex;
+      @apply text-sm text-gray-700;
+
+      span {
+        @apply ml-4;
+        @apply underline
+      }
+    }
+  }
+}
