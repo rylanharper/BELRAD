@@ -2,10 +2,6 @@
   @apply block relative w-full;
   @apply overflow-hidden bg-white;
 
-  picture {
-    @apply absolute inset-0 w-full h-full;
-  }
-
   img {
     @apply absolute inset-0 w-full h-full;
     @apply object-cover object-center;

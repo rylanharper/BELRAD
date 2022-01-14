@@ -2,32 +2,16 @@
   <figure
       class="responsive-image"
       :style="{ paddingTop: `${(maxHeight / maxWidth) * 100}%` }">
-    <picture>
-      <source
-        :data-srcset="getSizedImage(url, 1400)"
-        media="(min-width: 1200px)"
-      />
-      <source
-        :data-srcset="getSizedImage(url, 1200)"
-        media="(min-width: 800px)"
-      />
-      <source
-        :data-srcset="getSizedImage(url, 800)"
-        media="(min-width: 600px)"
-      />
       <img
         data-sizes="auto"
-        :data-src="getSizedImage(url, 600)"
+        :data-srcset="imageSrcset"
         :alt="alt"
         class="lazyload"
       />
-    </picture>
   </figure>
 </template>
 
 <script>
-import { getSizedImageUrl } from '@shopify/theme-images'
-
 export default {
   name: 'ResponsiveImage',
 
@@ -50,13 +34,21 @@ export default {
     }
   },
 
-  methods: {
-    getSizedImage(url, width, format) {
-      if (url.includes('cdn.shopify.com')) {
-        return getSizedImageUrl(url, `${width}x`)
-      }
-      // Format is used for Sanity hotspot images
-      return `${url}?w=${width}${format ? `&fm=${format}` : ''}`
+  computed: {
+    imageSrcset() {
+      const sizes = [320, 640, 1280, 2560, 3200]
+      const srcset = []
+
+      sizes.forEach((width) => {
+        const url = this.url
+        const transform = `?w=${width}&auto=format&fit=max`
+
+        srcset.push(
+          `${url}${transform} ${width}w`
+        )
+      })
+
+      return srcset.join(', ')
     }
   }
 }

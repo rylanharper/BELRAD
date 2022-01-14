@@ -9,7 +9,6 @@
   "dependencies": {
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@sanity/image-url": "^1.0.1",
-    "@shopify/theme-images": "^4.1.1",
     "apollo-boost": "^0.4.9",
     "graphql-request": "^3.7.0",
     "gridsome": "^0.7.23",
