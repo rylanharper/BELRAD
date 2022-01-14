@@ -1,11 +1,12 @@
 .collection {
   @apply flex-col px-2 mb-20 uppercase;
-  padding-top: 6vh;
+  padding-top: 4vh;
   // Media Queries
   @apply md:px-3 md:mb-32;
 
   &__nav {
-    @apply flex justify-between mb-6 px-3;
+    @apply flex justify-between mb-4 px-3;
+    @apply text-sm text-gray-600;
     // Media Queries
     @apply md:px-7;
   }
