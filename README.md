@@ -94,7 +94,7 @@ Templates using Tailwind can be overwhelming when starting off.. I find that usi
 <details>
 <summary><strong>How do the color swatches/related products work?</strong></summary>
 
-For the related products section, I am using the [Gridsome Recommender Plugin](https://github.com/mklueh/gridsome-plugin-recommender) by [Marian Klühspies](https://github.com/mklueh). Go ahead and read over that plugin's documentation. You will find the options within the `gridsome.config.js` file. I recommend setting the `field` to `productType` to get the best results within the plugin's options. If you need more or less relations, you can edit the `maxRelations` option.
+For the swatches/related products, I am using the [Gridsome Recommender Plugin](https://github.com/mklueh/gridsome-plugin-recommender) by [Marian Klühspies](https://github.com/mklueh). Go ahead and read over that plugin's documentation. You will find the options within the `gridsome.config.js` file. I recommend setting the `field` to `productType` to get the best results within the plugin's options. If you need more or less relations, you can edit the `maxRelations` option.
 </details>
 
 <details>
