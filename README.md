@@ -2,19 +2,17 @@
 
 > Headless ecommerce with Vue, Sanity, and Shopify!
 
-This starter template is based off of the [Extended Shopify Starter for Gridsome](https://github.com/thetre97/gridsome-starter-shopify) by [Travis Reynolds](https://github.com/thetre97). Thanks for the help!
-
 ## ✨ Features
 
-- Dynamic content powered by Sanity!
-- Synced products + collections via Shopify
+- Dynamic content powered by [Sanity.io](https://www.sanity.io/)
+- Synced products + collections via [Shopify](https://www.shopify.com/)
+- A simple newsletter component using [Klaviyo](https://www.klaviyo.com/)
 - Full account functionality + password reset
-- Persisted account/cart storage
-- Custom page transitions via gsap
+- Persisted account and cart storage
+- Buttery-smooth animations and page transitions using gsap
 - A simple Vue template structure for quick prototyping
-- BEM CSS naming system using Tailwind's `@apply` method
 
-## 🦄 Sanity Setup
+## 🏈 Sanity Setup
 
 1. First setup the Sanity studio:
 ```
@@ -25,7 +23,7 @@ npm install # or yarn
 sanity init
 
 # Select project to use: Create new project
-# Your project name: Whatever you like!
+# Your project name: Storefront (Or whatever you want)
 # Use the default dataset configuration? Y
 ```
 
@@ -34,7 +32,7 @@ sanity init
 sanity graphql-deploy
 ```
 
-3. Now you need to populate all the fields within the studio and create at least one page document type. I set up custom page scripts within the `web/scripts/pages` folder. You can add as many documents as you want... just make sure to follow a similar structure as the current `page.js` document type and then add them to `gridsome.server.js`.
+3. Now you need to populate all the fields within the studio and create at least one page document type. I set up custom page scripts within the `web/scripts/pages` folder. You can add as many documents/pages as you want, but make sure to follow a similar structure as the current `page.js` document type and then add them to `gridsome.server.js`.
 
 ## 🛒 Shopify Setup
 
@@ -50,15 +48,25 @@ else {
 }
 ```
 
-3. Next, go to `Settings > Notifications > Customer account password reset` and replace the `<a>` tag with:
+3. Next, go to `Settings → Notifications → Customer account password reset` and replace the `<a>` tag with:
 ```bash
 {% assign url_parts = customer.reset_password_url  | split: '/' %}
 <a href="https://your-site-domain.com/account/reset?id={{url_parts[5]}}&token={{url_parts[6]}}" class="button__text">Reset your password</a>
 ```
 
-4. There are a few "gotchas" in order for this project to work properly... First you must enable product metafields by going to `Settings > Metafields > Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. You aslo need to make sure products that have a variety of colors all have the same name and a `productType` that matches that name of that product. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc.
+4. There are a couple gotchas that need to happen in order for this project to work properly with Shopify:
 
-5. Lastly, make sure to populate your storefront with products and collections. Make sure that your collections and products have titles, descriptions, and an image(s). Within your Products, add in prices, tags, product-types, and metafields. If you recieve an error upon start up, this is likely the reason. 
+- Enable product metafields by going to `Settings → Metafields → Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. 
+
+- Each product that has a variety of colors (more than one) must have the same name and a `productType` that matches that name of that product. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc.
+
+- Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` is easily display the corresponding color
+
+- Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields - title, descriptions, images, prices, tags, etc.
+
+## 📫 Klaviyo
+
+Create a Klaviyo account and select the option to connect to your Shopify store. Once this is done, navigate to `List & Segments → Newsletter → Settings` within your admin Dashboard and place the List ID code in the `Newsletter Settings` within the footer settings of your Sanity studio.
 
 ## ⚡️ Installation
 
@@ -86,13 +94,13 @@ Templates using Tailwind can be overwhelming when starting off.. I find that usi
 <details>
 <summary><strong>How do the color swatches/related products work?</strong></summary>
 
-For the related products section, I am using the [Gridsome Recommender Plugin](https://github.com/mklueh/gridsome-plugin-recommender) by [Marian Klühspies](https://github.com/mklueh). Go ahead and read over that plugin's documentation. You will find the options within the `gridsome.config.js` file. I recommend setting the `field` to either `productType` to get the best results within the plugin's options. If you need more or less relations (recommendations), you can edit the `maxRelations` option.
+For the related products section, I am using the [Gridsome Recommender Plugin](https://github.com/mklueh/gridsome-plugin-recommender) by [Marian Klühspies](https://github.com/mklueh). Go ahead and read over that plugin's documentation. You will find the options within the `gridsome.config.js` file. I recommend setting the `field` to `productType` to get the best results within the plugin's options. If you need more or less relations, you can edit the `maxRelations` option.
 </details>
 
 <details>
 <summary><strong>Why do all the collection links point to the same collection?</strong></summary>
 
-I only have one example collection in the demo site, so clicking the links within the shop menu will bring you to the same collection every time. In order to change this, just edit the link data within the `shop-menu.vue` component.
+I only have one example collection in the demo site, so clicking the links within the shop menu will bring you to the same collection every time. In order to change this, just edit the link data within your sanity studio or within the `app-header.vue` component.
 </details>
 
 ## 🤨 Need Help?
