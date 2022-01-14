@@ -66,7 +66,7 @@ else {
 
 ## 📫 Klaviyo
 
-Create a Klaviyo account and select the option to connect to your Shopify storefront. Once this is done, navigate to `List & Segments → Newsletter → Settings` and place the List ID code in the `Newsletter Settings` of your footer settings within the Sanity studio.
+Create a Klaviyo account and select the option to connect to your Shopify storefront. Once this is done, navigate to `List & Segments → Newsletter → Settings` and place the List ID code in the `Newsletter Settings` (located in `Footer Settings`) within the Sanity studio.
 
 ## ⚡️ Installation
 
