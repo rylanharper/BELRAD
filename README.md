@@ -4,7 +4,7 @@
 
 ## ✨ Features
 
-- Dynamic content powered by [Sanity.io](https://www.sanity.io/)
+- Dynamic content powered by [Sanity.io](https://www.Sanity.io/)
 - Synced products + collections via [Shopify](https://www.shopify.com/)
 - A simple newsletter component using [Klaviyo](https://www.klaviyo.com/)
 - Full account functionality + password reset
@@ -20,7 +20,7 @@ cd /studio
 
 npm install # or yarn
 
-sanity init
+Sanity init
 
 # Select project to use: Create new project
 # Your project name: Storefront (Or whatever you want)
@@ -29,7 +29,7 @@ sanity init
 
 2. Deploy your GraphQL schema:
 ```
-sanity graphql-deploy
+Sanity graphql-deploy
 ```
 
 3. Now you need to populate all the fields within the studio and create at least one page document type. I set up custom page scripts within the `web/scripts/pages` folder. You can add as many documents/pages as you want, but make sure to follow a similar structure as the current `page.js` document type and then add them to `gridsome.server.js`.
@@ -54,19 +54,19 @@ else {
 <a href="https://your-site-domain.com/account/reset?id={{url_parts[5]}}&token={{url_parts[6]}}" class="button__text">Reset your password</a>
 ```
 
-4. There are a couple gotchas that need to happen in order for this project to work properly with Shopify:
+4. There are a couple of "gotchas" that need to be implemented in order for this project to work properly with Shopify:
 
 - Enable product metafields by going to `Settings → Metafields → Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. 
 
 - Each product that has a variety of colors (more than one) must have the same name and a `productType` that matches that name of that product. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc.
 
-- Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` is easily display the corresponding color
+- Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` is easily display the corresponding color.
 
-- Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields - title, descriptions, images, prices, tags, etc.
+- Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields → title, descriptions, images, prices, tags, etc.
 
 ## 📫 Klaviyo
 
-Create a Klaviyo account and select the option to connect to your Shopify store. Once this is done, navigate to `List & Segments → Newsletter → Settings` within your admin Dashboard and place the List ID code in the `Newsletter Settings` within the footer settings of your Sanity studio.
+Create a Klaviyo account and select the option to connect to your Shopify storefront. Once this is done, navigate to `List & Segments → Newsletter → Settings` and place the List ID code in the `Newsletter Settings` of your footer settings within the Sanity studio.
 
 ## ⚡️ Installation
 
@@ -100,7 +100,7 @@ For the related products section, I am using the [Gridsome Recommender Plugin](h
 <details>
 <summary><strong>Why do all the collection links point to the same collection?</strong></summary>
 
-I only have one example collection in the demo site, so clicking the links within the shop menu will bring you to the same collection every time. In order to change this, just edit the link data within your sanity studio or within the `app-header.vue` component.
+I only have one example collection in the demo site, so clicking the links within the shop menu will bring you to the same collection every time. In order to change this, just edit the link data within your Sanity studio or within the `app-header.vue` component.
 </details>
 
 ## 🤨 Need Help?
