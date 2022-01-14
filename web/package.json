@@ -14,6 +14,7 @@
     "gridsome": "^0.7.23",
     "gridsome-plugin-flexsearch": "^2.0.2",
     "gridsome-plugin-recommender": "^1.1.5",
+    "gridsome-plugin-svg": "^0.0.14",
     "gridsome-source-sanity": "^1.1.0",
     "gridsome-source-shopify": "^0.2.8",
     "gsap": "^3.8.0",

@@ -1,6 +1,6 @@
 .responsive-image {
   @apply block relative w-full;
-  @apply overflow-hidden bg-white;
+  @apply overflow-hidden bg-light-400;
 
   img {
     @apply absolute inset-0 w-full h-full;

@@ -26,7 +26,7 @@
 
         <div id="logo">
           <g-link to="/">
-            <img src="@/assets/svg/belrad.svg" alt="BELRAD">
+            <logo />
           </g-link>
         </div>
 
@@ -65,7 +65,7 @@
 
         <div id="logo">
           <g-link to="/">
-            <img src="@/assets/svg/belrad.svg" alt="BELRAD">
+            <logo />
           </g-link>
         </div>
 
@@ -88,10 +88,16 @@
 <script>
 import appBanner from './app-banner.vue'
 
+// Logo
+import Logo from "@/assets/svg/belrad.svg"
+
 export default {
   name: 'AppHeader',
 
-  components: { appBanner },
+  components: { 
+    appBanner,
+    Logo 
+  },
 
   computed: {
     isAuthenticated() {

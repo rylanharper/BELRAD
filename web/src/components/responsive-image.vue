@@ -1,13 +1,14 @@
 <template>
   <figure
-      class="responsive-image"
-      :style="{ paddingTop: `${(maxHeight / maxWidth) * 100}%` }">
-      <img
-        data-sizes="auto"
-        :data-srcset="imageSrcset"
-        :alt="alt"
-        class="lazyload"
-      />
+    class="responsive-image"
+    :style="{ paddingTop: `${(maxHeight / maxWidth) * 100}%` }"
+  >
+    <img
+      data-sizes="auto"
+      :data-srcset="imageSrcset"
+      :alt="alt"
+      class="lazyload"
+    />
   </figure>
 </template>
 
@@ -36,7 +37,7 @@ export default {
 
   computed: {
     imageSrcset() {
-      const sizes = [320, 640, 1280, 2560, 3200]
+      const sizes = [320, 640, 1280, 1600, 2560, 3200]
       const srcset = []
 
       sizes.forEach((width) => {

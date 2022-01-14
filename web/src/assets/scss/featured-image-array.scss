@@ -23,10 +23,10 @@
       }
 
       .info {
-        @apply flex flex-col absolute px-5 bottom-6;
+        @apply flex flex-col absolute px-5 bottom-10;
         @apply text-white;
         // Media Queries
-        @apply md:px-8 md:bottom-20;
+        @apply md:px-10 md:bottom-20;
 
         h2 {
           @apply block;

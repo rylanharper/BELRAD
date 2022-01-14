@@ -64,7 +64,7 @@
       <div class="brand-copyright">{{ footer.copyright }}</div>
       <div class="brand-logo">
         <g-link to="/">
-          <img src="@/assets/svg/belrad.svg" alt="BELRAD">
+          <logo />
         </g-link>
       </div>
     </section>
@@ -74,11 +74,15 @@
 <script>
 import KlaviyoSubscribe from '@/components/klaviyo-subscribe.vue'
 
+// Logo
+import Logo from "@/assets/svg/belrad.svg"
+
 export default {
   name: 'AppFooter',
 
   components: { 
-    KlaviyoSubscribe 
+    KlaviyoSubscribe,
+    Logo 
   },
 
   data() {

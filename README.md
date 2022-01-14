@@ -1,15 +1,15 @@
 # BELRAD
 
-> Headless ecommerce with Vue, Sanity, and Shopify!
+> Headless ecommerce powered by Vue, Sanity, and Shopify ⚡️
 
 ## ✨ Features
 
 - Dynamic content powered by [Sanity.io](https://www.Sanity.io/)
 - Synced products + collections via [Shopify](https://www.shopify.com/)
 - A simple newsletter component using [Klaviyo](https://www.klaviyo.com/)
+- Buttery-smooth animations with [GSAP](https://greensock.com/gsap/)
 - Full account functionality + password reset
 - Persisted account and cart storage
-- Buttery-smooth animations and page transitions using gsap
 - A simple Vue template structure for quick prototyping
 
 ## 🏈 Sanity Setup
