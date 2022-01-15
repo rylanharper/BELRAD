@@ -2,9 +2,24 @@
   <Layout :key="$route.fullPath">
     <section class="collection">
       <div class="collection__nav">
-        <h1><g-link to="/">Shop</g-link> / {{ collection.title }}</h1>
-        <span>{{ collection.products.length }} Items</span>
+        <h1>{{ collection.title }} ({{ collection.products.length }} Items)</h1>
+        <button @click="showFilterMenu = !showFilterMenu">Filter +</button>
       </div>
+
+      <!-- Filter options can go here? -->
+      <transition
+        appear
+        mode="out-in"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @leave="leave"
+        :css="false"
+      >
+        <div v-show="showFilterMenu" class="filter-menu">
+          <div>Example Filter Menu!</div>
+        </div>
+      </transition>
+
       <div class="product-grid">
         <div
           v-for="product in collection.products"
@@ -24,10 +39,19 @@ import ProductCard from '@/components/product-card.vue'
 // Mixins
 import CollectionMetaMixin from '@/mixins/collection-meta.js'
 
+// Gsap
+import { gsap, Expo } from 'gsap'
+
 export default {
   name: 'Collection',
 
   mixins: [CollectionMetaMixin],
+
+  data() {
+    return {
+      showFilterMenu: false
+    }
+  },
 
   components: {
     ProductCard
@@ -36,6 +60,33 @@ export default {
   computed: {
     collection() {
       return this.$page.shopifyCollection
+    }
+  },
+
+  methods: {
+    beforeEnter(el) {
+      gsap.set(el, {
+        height: 0,
+        opacity: 0
+      })
+    },
+    enter(el, done) {
+      gsap.to(el, {
+        duration: 0.5,
+        ease: Expo.easeInOut,
+        height: 'auto',
+        opacity: 1,
+        onComplete: done
+      })
+    },
+    leave(el, done) {
+      gsap.to(el, {
+        duration: 0.5,
+        ease: Expo.easeInOut,
+        height: 0,
+        opacity: 0,
+        onComplete: done
+      })
     }
   }
 }

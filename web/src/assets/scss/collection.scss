@@ -6,7 +6,7 @@
 
   &__nav {
     @apply flex justify-between mb-4 px-3;
-    @apply text-sm text-gray-600;
+    @apply text-sm;
     // Media Queries
     @apply md:px-7;
   }
