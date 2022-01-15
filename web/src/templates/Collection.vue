@@ -61,7 +61,7 @@ export default {
   data() {
     return {
       filters: {},
-      showFilterMenu: false
+      showFilterMenu: true
     }
   },
 
@@ -77,18 +77,33 @@ export default {
       return this.$page.shopifyCollection.products
     },
     listOfFilters () {
-      // could dynamically generate this based on list of product options
-      return [{ name: 'Size', options: ['S', 'M', 'L'] }]
+      const allFilters = this.allProducts
+        .flatMap((product) => product.options)
+        .reduce((map, { name, values }) => {
+          const option = map.get(name);
+          if (!option) map.set(name, new Set(values));
+          else values.forEach((value) => option.add(value));
+          return map;
+        }, new Map());
+
+      return Array.from(allFilters).map(([name, options]) => ({
+        name,
+        options: Array.from(options),
+      }));
     },
     filteredProducts () {
-      const filters = Object.entries(this.filters) // returns an array of filters: [[key, value]] = [['Color', 'Red']]
+      const filters = Object.entries(this.filters)
+      const filterValues = filters.flatMap(([name, values]) => values);
+
+      if (!filters.length || !filterValues.length) return this.allProducts;
+
       return this.allProducts.filter(product => {
-        const hasMatchingOption = filters.some(([filterName, filterValue]) => {
+        const hasMatchingOption = filters.some(([filterName, filterValues]) => {
           const matchingOption = product.options.find(option => option.name === filterName)
-          return matchingOption && matchingOption.values.includes(filterValue)
+          return matchingOption && matchingOption.values.some(value => filterValues.includes(value))
         })
-  
-        return hasMatchingOption 
+
+        return hasMatchingOption
       })
     }
   },
@@ -118,7 +133,17 @@ export default {
         onComplete: done
       })
     }
-  }
+  },
+
+  watch: {
+    listOfFilters: {
+      immediate: true,
+      handler(listOfFilters) {
+        const filters = listOfFilters.map((filter) => [filter.name, []]);
+        this.filters = Object.fromEntries(filters);
+      },
+    },
+  },
 }
 </script>
 
