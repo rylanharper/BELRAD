@@ -28,6 +28,7 @@
               <span>{{ option }}</span>
             </label>
           </div>
+          <p>Current Filters: {{ currentFilters.length }}</p>
         </div>
       </transition>
 
@@ -61,7 +62,7 @@ export default {
   data() {
     return {
       filters: {},
-      showFilterMenu: true
+      showFilterMenu: false
     }
   },
 
@@ -91,13 +92,14 @@ export default {
         options: Array.from(options),
       }));
     },
-    filteredProducts () {
+    currentFilters () {
       const filters = Object.entries(this.filters)
-      const filterValues = filters.flatMap(([name, values]) => values);
+      return filters.flatMap(([name, values]) => values)
+    },
+    filteredProducts () {
+      if (!this.currentFilters.length) return this.allProducts;
 
-
-      if (!filters.length || !filterValues.length) return this.allProducts;
-
+      const filters = Object.entries(this.filters)
       return this.allProducts.filter(product => {
         const hasMatchingOption = filters.some(([filterName, filterValues]) => {
           const matchingOption = product.options.find(option => option.name === filterName)
