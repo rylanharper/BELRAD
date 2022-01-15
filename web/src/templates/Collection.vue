@@ -137,6 +137,8 @@ export default {
   },
 
   watch: {
+    // Sets the initial data.filters property, as Vue requires an array to use multiple checkboxes
+    // I.e. { Color: [], Size: [] }
     listOfFilters: {
       immediate: true,
       handler(listOfFilters) {
