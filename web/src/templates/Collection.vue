@@ -16,13 +16,24 @@
         :css="false"
       >
         <div v-show="showFilterMenu" class="filter-menu">
-          <div>Example Filter Menu!</div>
+          <div v-for="filter in listOfFilters" :key="filter.id">
+            <span class="ml-4">{{ filter.name }}</span>
+            <label v-for="(option, o) in filter.options" :key="o">
+              <input
+                v-model="filters[filter.name]"
+                :value="option"
+                type="radio"
+                class="ml-4"
+              />
+              <span>{{ option }}</span>
+            </label>
+          </div>
         </div>
       </transition>
 
       <div class="product-grid">
         <div
-          v-for="product in collection.products"
+          v-for="product in filteredProducts"
           :key="product.id"
           class="product-grid__product group"
         >
@@ -49,6 +60,7 @@ export default {
 
   data() {
     return {
+      filters: {},
       showFilterMenu: false
     }
   },
@@ -60,6 +72,24 @@ export default {
   computed: {
     collection() {
       return this.$page.shopifyCollection
+    },
+    allProducts () {
+      return this.$page.shopifyCollection.products
+    },
+    listOfFilters () {
+      // could dynamically generate this based on list of product options
+      return [{ name: 'Size', options: ['S', 'M', 'L'] }]
+    },
+    filteredProducts () {
+      const filters = Object.entries(this.filters) // returns an array of filters: [[key, value]] = [['Color', 'Red']]
+      return this.allProducts.filter(product => {
+        const hasMatchingOption = filters.some(([filterName, filterValue]) => {
+          const matchingOption = product.options.find(option => option.name === filterName)
+          return matchingOption && matchingOption.values.includes(filterValue)
+        })
+  
+        return hasMatchingOption 
+      })
     }
   },
 
@@ -168,6 +198,11 @@ query Collection ($id: ID!) {
         id
         altText
         originalSrc
+      }
+      options {
+        id
+        name
+        values
       }
       related {
         id
