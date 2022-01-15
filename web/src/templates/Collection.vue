@@ -22,7 +22,7 @@
               <input
                 v-model="filters[filter.name]"
                 :value="option"
-                type="radio"
+                type="checkbox"
                 class="ml-4"
               />
               <span>{{ option }}</span>
@@ -94,6 +94,7 @@ export default {
     filteredProducts () {
       const filters = Object.entries(this.filters)
       const filterValues = filters.flatMap(([name, values]) => values);
+
 
       if (!filters.length || !filterValues.length) return this.allProducts;
 
