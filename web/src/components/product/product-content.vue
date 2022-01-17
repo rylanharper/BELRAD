@@ -28,27 +28,29 @@
       </div>
       <!-- Product options -->
       <div v-for="option in productOptions" :key="option.id" class="product-options">
-        <div class="product-options__name">
-          <span>{{ option.name }}:</span>
-          <div
-            :class="{ 'oos-warning': !currentVariant.availableForSale }"
-            class="product-options__status"
-          >
-            <span>
-              {{ currentVariant.availableForSale ? 'In Stock' : 'Out of Stock' }}
-            </span>
+        <div v-if="option.name === 'Size'">
+          <div class="product-options__name">
+            <span>{{ option.name }}:</span>
+            <div
+              :class="{ 'oos-warning': !currentVariant.availableForSale }"
+              class="product-options__status"
+            >
+              <span>
+                {{ currentVariant.availableForSale ? 'In Stock' : 'Out of Stock' }}
+              </span>
+            </div>
           </div>
-        </div>
-        <div class="product-options__variants">
-          <label v-for="value in option.values" :key="value">
-            <input
-              v-model="selectedOptions[option.name]"
-              :value="value"
-              type="radio"
-              :class="{ 'oos-option': hasNoAvailableProducts(option.name, value) }"
-            />
-            <span>{{ value }}</span>
-          </label>
+          <div class="product-options__variants">
+            <label v-for="value in option.values" :key="value">
+              <input
+                v-model="selectedOptions[option.name]"
+                :value="value"
+                type="radio"
+                :class="{ 'oos-option': hasNoAvailableProducts(option.name, value) }"
+              />
+              <span>{{ value }}</span>
+            </label>
+          </div>
         </div>
       </div>
       <!-- Product actions -->

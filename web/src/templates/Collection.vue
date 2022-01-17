@@ -6,7 +6,6 @@
         <button @click="showFilterMenu = !showFilterMenu">Filter +</button>
       </div>
 
-      <!-- Filter options can go here? -->
       <transition
         appear
         mode="out-in"
@@ -15,20 +14,19 @@
         @leave="leave"
         :css="false"
       >
-        <div v-show="showFilterMenu" class="filter-menu">
-          <div v-for="filter in listOfFilters" :key="filter.id">
-            <span class="ml-4">{{ filter.name }}</span>
+        <div v-show="showFilterMenu" class="collection__filter-menu">
+          <!-- <p class="filter-count">Filters: {{ currentFilters.length }}</p> -->
+          <div v-for="filter in listOfFilters" :key="filter.id" class="filter">
+            <span class="filter-name">{{ filter.name }}</span>
             <label v-for="(option, o) in filter.options" :key="o">
               <input
                 v-model="filters[filter.name]"
                 :value="option"
                 type="checkbox"
-                class="ml-4"
               />
               <span>{{ option }}</span>
             </label>
           </div>
-          <p>Current Filters: {{ currentFilters.length }}</p>
         </div>
       </transition>
 
@@ -74,30 +72,34 @@ export default {
     collection() {
       return this.$page.shopifyCollection
     },
-    allProducts () {
+    
+    allProducts() {
       return this.$page.shopifyCollection.products
     },
-    listOfFilters () {
+
+    listOfFilters() {
       const allFilters = this.allProducts
-        .flatMap((product) => product.options)
+        .flatMap(product => product.options)
         .reduce((map, { name, values }) => {
-          const option = map.get(name);
-          if (!option) map.set(name, new Set(values));
-          else values.forEach((value) => option.add(value));
-          return map;
-        }, new Map());
+          const option = map.get(name)
+          if (!option) map.set(name, new Set(values))
+          else values.forEach(value => option.add(value))
+          return map
+        }, new Map())
 
       return Array.from(allFilters).map(([name, options]) => ({
         name,
-        options: Array.from(options),
-      }));
+        options: Array.from(options)
+      }))
     },
-    currentFilters () {
+
+    currentFilters() {
       const filters = Object.entries(this.filters)
       return filters.flatMap(([name, values]) => values)
     },
-    filteredProducts () {
-      if (!this.currentFilters.length) return this.allProducts;
+
+    filteredProducts() {
+      if (!this.currentFilters.length) return this.allProducts
 
       const filters = Object.entries(this.filters)
       return this.allProducts.filter(product => {
@@ -144,11 +146,11 @@ export default {
     listOfFilters: {
       immediate: true,
       handler(listOfFilters) {
-        const filters = listOfFilters.map((filter) => [filter.name, []]);
-        this.filters = Object.fromEntries(filters);
-      },
-    },
-  },
+        const filters = listOfFilters.map(filter => [filter.name, []])
+        this.filters = Object.fromEntries(filters)
+      }
+    }
+  }
 }
 </script>
 

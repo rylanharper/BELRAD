@@ -6,13 +6,49 @@
 
   &__nav {
     @apply flex justify-between mb-4 px-3;
-    @apply text-sm;
     // Media Queries
     @apply md:px-7;
   }
 
+  &__filter-menu {
+    @apply flex flex-col px-3 overflow-hidden h-0;
+    // Media Queries
+    @apply md:px-7;
+
+    .filter-count {
+      @apply mb-4;
+    }
+
+    .filter {
+      @apply flex flex-col flex-wrap whitespace-nowrap mb-4;
+      // Media Queries
+      @apply md:flex-row;
+
+      .filter-name {
+        @apply ml-0 mb-2;
+        // Media Queries
+        @apply md:mr-8 md:mb-0;
+      }
+
+      label {
+        @apply flex items-center ml-0 mb-1;
+        // Media Queries
+        @apply md:mr-5 md:mb-0;
+
+        input[type=checkbox] {
+          @apply appearance-none h-4 w-4 mr-1.5;
+          @apply bg-white border border-gray-400 rounded-full;
+        }
+
+        input[type=checkbox]:checked {
+          @apply bg-dark-800 border border-dark-800 rounded-full
+        }
+      }
+    }
+  }
+
   .product-grid {
-    @apply grid grid-cols-2 gap-2;
+    @apply grid grid-cols-2 gap-2 relative;
     // Media Queries
     @apply md:grid-cols-3 lg:grid-cols-5 md:gap-3;
 
