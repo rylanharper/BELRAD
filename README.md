@@ -58,11 +58,13 @@ else {
 
 - Enable product metafields by going to `Settings → Metafields → Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. 
 
-- Each product that has a variety of colors (more than one) must have the same name and a `productType` that matches that name of that product. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc.
+- Each product that has a variety of colors (more than one) must have the same name and a `productType` that matches the name of that product. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc.
 
 - Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` is easily display the corresponding color.
 
-- Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields → title, descriptions, images, prices, tags, etc.
+- [Travis Reynolds](https://github.com/thetre97) was kind enough to help me out with the filter functionality on each collection page. This is pretty cool as it looks for the various product options (variants) displayed on that collection and allows a user to select which option they want to see. If there are no options, the products will still display on that collection, but no filter options will be shown. Thanks for the help!
+
+- Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields: title, descriptions, images, prices, tags, etc.
 
 ## 📫 Klaviyo
 
