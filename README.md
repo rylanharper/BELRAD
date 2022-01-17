@@ -62,8 +62,6 @@ else {
 
 - Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` is easily display the corresponding color.
 
-- [Travis Reynolds](https://github.com/thetre97) was kind enough to help me out with the filter functionality on each collection page. This is pretty cool as it looks for the various product options (variants) displayed on that collection and allows a user to select which option they want to see. If there are no options, the products will still display on that collection, but no filter options will be shown. Thanks for the help!
-
 - Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields: title, descriptions, images, prices, tags, etc.
 
 ## 📫 Klaviyo
@@ -97,6 +95,12 @@ Templates using Tailwind can be overwhelming when starting off.. I find that usi
 <summary><strong>How do the color swatches/related products work?</strong></summary>
 
 For the color swatches/related products, I am using the [Gridsome Recommender Plugin](https://github.com/mklueh/gridsome-plugin-recommender) by [Marian Klühspies](https://github.com/mklueh). Go ahead and read over that plugin's documentation. You will find the options within the `gridsome.config.js` file. I recommend setting the `field` to `productType` to get the best results within the plugin's options. If you need more or less relations, you can edit the `maxRelations` option.
+</details>
+
+<details>
+<summary><strong>How does the product filter work on each collection page?</strong></summary>
+
+[Travis Reynolds](https://github.com/thetre97) was kind enough to help me out with the filter functionality on each collection page. This is pretty cool as it looks within the collection's product options and displays an array of values for a user to select. If there are no options, the products will still display on that collection, but no filter options will be shown (although you may need to edit the collection nav styles). Thanks for the help!
 </details>
 
 <details>
