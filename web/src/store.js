@@ -73,6 +73,7 @@ export default function State(Vue, { isClient }) {
     },
 
     getters: {
+      cart: ({ cart }) => cart,
       isAuthenticated: ({ token }) => !!token.accessToken,
       accessToken: ({ token }) => token.accessToken,
       cartTotal: ({ cart }) => {

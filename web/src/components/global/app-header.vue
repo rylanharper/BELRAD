@@ -103,6 +103,7 @@ export default {
     isAuthenticated() {
       return this.$store.getters.isAuthenticated
     },
+
     cart() {
       return this.$store.getters.cartTotalItems
     }
@@ -112,6 +113,7 @@ export default {
     toggleShopMenu() {
       this.$store.commit('TOGGLE_SHOP_MENU')
     },
+
     toggleCartModal() {
       this.$store.commit('TOGGLE_CART_MODAL')
     }

@@ -15,7 +15,7 @@
         :css="false"
       >
         <div v-show="showFilterMenu" class="collection__filter-menu">
-          <!-- <p class="filter-count">Filters: {{ currentFilters.length }}</p> -->
+          <!-- <span class="filter-count">Filters: {{ currentFilters.length }}</span> -->
           <div v-for="filter in listOfFilters" :key="filter.id" class="filter">
             <span class="filter-name">{{ filter.name }}</span>
             <label v-for="(option, o) in filter.options" :key="o">
@@ -72,7 +72,7 @@ export default {
     collection() {
       return this.$page.shopifyCollection
     },
-    
+
     allProducts() {
       return this.$page.shopifyCollection.products
     },
@@ -120,6 +120,7 @@ export default {
         opacity: 0
       })
     },
+
     enter(el, done) {
       gsap.to(el, {
         duration: 0.5,
@@ -129,6 +130,7 @@ export default {
         onComplete: done
       })
     },
+
     leave(el, done) {
       gsap.to(el, {
         duration: 0.5,

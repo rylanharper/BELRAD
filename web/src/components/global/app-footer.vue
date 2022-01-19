@@ -5,10 +5,7 @@
       <!-- Desktop footer -->
       <div class="footer-desktop">
         <div class="footer-desktop__column">
-          <klaviyo-subscribe
-            v-if="!emailSent"
-            @handleSuccess="handleSuccess"
-          />
+          <klaviyo-subscribe v-if="!emailSent" @handleSuccess="handleSuccess" />
           <span v-if="emailSent" class="newsletter-success">{{ footer.newsletter.success }}</span>
         </div>
         <div class="footer-desktop__column">
@@ -34,11 +31,7 @@
       <!-- Desktop mobile -->
       <div class="footer-mobile">
         <div class="footer-mobile__column">
-          <klaviyo-subscribe
-            v-if="!emailSent"
-            klaviyo-id="StGPx7"
-            @handleSuccess="handleSuccess"
-          />
+          <klaviyo-subscribe v-if="!emailSent" @handleSuccess="handleSuccess" />
           <span v-if="emailSent" class="newsletter-success">{{ footer.newsletter.success }}</span>
         </div>
         <div class="footer-mobile__column">
@@ -75,14 +68,14 @@
 import KlaviyoSubscribe from '@/components/klaviyo-subscribe.vue'
 
 // Logo
-import Logo from "@/assets/svg/belrad.svg"
+import Logo from '@/assets/svg/belrad.svg'
 
 export default {
   name: 'AppFooter',
 
-  components: { 
+  components: {
     KlaviyoSubscribe,
-    Logo 
+    Logo
   },
 
   data() {
@@ -95,9 +88,11 @@ export default {
     footer() {
       return this.$static.footerSettings.edges[0].node
     },
+
     firstMenu() {
       return this.$static.footerSettings.edges[0].node.blockMenu1
     },
+
     secondMenu() {
       return this.$static.footerSettings.edges[0].node.blockMenu2
     }

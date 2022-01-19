@@ -157,9 +157,11 @@ export default {
     menu() {
       return this.$static.headerSettings.edges[0].node
     },
+
     isAuthenticated() {
       return this.$store.getters.isAuthenticated
     },
+
     shopMenuOpen() {
       return this.$store.state.shopMenu
     }
@@ -169,6 +171,7 @@ export default {
     closeShopMenu() {
       this.$store.commit('CLOSE_SHOP_MENU')
     },
+
     toggleShopMenu() {
       this.$store.commit('TOGGLE_SHOP_MENU')
     },
@@ -178,6 +181,7 @@ export default {
         y: '-100%'
       })
     },
+
     enter(el, done) {
       gsap.to(el, {
         duration: 0.75,
@@ -186,6 +190,7 @@ export default {
         onComplete: done
       })
     },
+
     leave(el, done) {
       gsap.to(el, {
         duration: 0.75,
@@ -194,26 +199,30 @@ export default {
         onComplete: done
       })
     },
+
     menuBeforeEnter(el) {
       gsap.set(el, {
         opacity: 0
       })
     },
+
     menuEnter(el, done) {
       gsap.to(el, {
         duration: 0.5,
-        delay: 0.75,
+        delay: 0.5,
         ease: Expo.easeInOut,
         opacity: 1,
         onComplete: done
       })
     },
+
     acBeforeEnter(el) {
       gsap.set(el, {
         height: 0,
         opacity: 0
       })
     },
+
     acEnter(el, done) {
       gsap.to(el, {
         duration: 0.5,
@@ -223,6 +232,7 @@ export default {
         onComplete: done
       })
     },
+
     acLeave(el, done) {
       gsap.to(el, {
         duration: 0.5,

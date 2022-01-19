@@ -6,7 +6,7 @@
   &__gallery {
     @apply grid grid-cols-1;
     // Media Queries
-    @apply md:m-auto md:grid-cols-2;
+    @apply lg:grid-cols-2;
   }
 
   &__image {

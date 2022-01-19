@@ -27,10 +27,10 @@
         </div>
       </div>
       <!-- Product options -->
-      <div v-for="option in productOptions" :key="option.id" class="product-options">
-        <div v-if="option.name === 'Size'">
+      <div class="product-options">
+        <div v-if="productOptions[0].name === 'Size'">
           <div class="product-options__name">
-            <span>{{ option.name }}:</span>
+            <span>{{ productOptions[0].name }}:</span>
             <div
               :class="{ 'oos-warning': !currentVariant.availableForSale }"
               class="product-options__status"
@@ -41,12 +41,12 @@
             </div>
           </div>
           <div class="product-options__variants">
-            <label v-for="value in option.values" :key="value">
+            <label v-for="value in productOptions[0].values" :key="value">
               <input
-                v-model="selectedOptions[option.name]"
+                v-model="selectedOptions[productOptions[0].name]"
                 :value="value"
                 type="radio"
-                :class="{ 'oos-option': hasNoAvailableProducts(option.name, value) }"
+                :class="{ 'oos-option': hasNoAvailableProducts(productOptions[0].name, value) }"
               />
               <span>{{ value }}</span>
             </label>

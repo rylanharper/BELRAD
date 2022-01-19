@@ -34,6 +34,7 @@ export default {
     product() {
       return this.$page.shopifyProduct
     },
+
     productImages() {
       return this.$page.shopifyProduct.images
     }

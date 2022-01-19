@@ -83,9 +83,11 @@ export default {
     cart() {
       return this.$store.state.cart
     },
+
     itemsTotal() {
       return this.$store.getters.cartTotalItems
     },
+
     cartTotal() {
       return this.$store.getters.cartTotal
     }

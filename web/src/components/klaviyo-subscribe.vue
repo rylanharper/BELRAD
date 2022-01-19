@@ -39,6 +39,7 @@ export default {
     newsletter() {
       return this.$static.footerSettings.edges[0].node.newsletter
     },
+
     klaviyoListID() {
       return this.$static.footerSettings.edges[0].node.newsletter.klaviyoListID
     }
