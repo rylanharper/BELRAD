@@ -133,7 +133,7 @@ export default {
             })
             .then(res => {
               const { customerAccessToken } = res.customerAccessTokenCreate
-              this.$store.dispatch('login', customerAccessToken), this.$router.push('/account')
+              this.$store.dispatch('login', customerAccessToken), this.$router.push('/account/orders')
             })
         }
       } catch (error) {

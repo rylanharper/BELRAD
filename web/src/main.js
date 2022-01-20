@@ -16,7 +16,7 @@ import './assets/scss/app.scss'
 // Lazysizes
 import 'lazysizes'
 
-export default function(Vue, { appOptions, isClient, head }) {
+export default function(Vue, { appOptions, isClient, head, router }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
@@ -35,4 +35,13 @@ export default function(Vue, { appOptions, isClient, head }) {
   // Add vuex store
   const store = State(Vue, { isClient })
   appOptions.store = store
+
+  // Authentication
+  if (isClient) {
+    router.beforeEach((to, from, next) => {
+      const isAuth = store.getters.isAuthenticated
+      if (to.path.includes('/account/orders') && !isAuth) next('/account/login')
+      else next()
+    })
+  }
 }

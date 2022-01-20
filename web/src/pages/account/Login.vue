@@ -103,7 +103,7 @@ export default {
         }
 
         await this.$store.dispatch('login', customerAccessToken)
-        this.$router.push('/account')
+        this.$router.push('/account/orders')
       } catch (error) {
         this.isLoading = false
         this.errorMessage = true

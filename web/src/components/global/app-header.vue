@@ -34,7 +34,7 @@
           <g-link to="/search">
             Search
           </g-link>
-          <g-link :to="isAuthenticated ? '/account' : '/account/login'">
+          <g-link :to="isAuthenticated ? '/account/orders' : '/account/login'">
             Account
           </g-link>
           <button
