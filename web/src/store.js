@@ -1,5 +1,5 @@
 import Vuex from 'vuex'
-import VuexPersistence from 'vuex-persist'
+import createPersistedState from 'vuex-persistedstate'
 
 export default function State(Vue, { isClient }) {
   Vue.use(Vuex)
@@ -68,7 +68,6 @@ export default function State(Vue, { isClient }) {
       },
       logout: ({ commit }) => {
         commit('SET_TOKEN', {})
-        commit('UPDATE_CART', [])
       }
     },
 
@@ -88,19 +87,26 @@ export default function State(Vue, { isClient }) {
   })
 
   if (isClient) {
-    new VuexPersistence({
-      key: 'token',
-      storage: window.localStorage,
-      modules: ['token'],
-      filter: mutation => mutation.type === 'SET_TOKEN'
-    }).plugin(store)
+    createPersistedState({
+      key: 'shopify_storefront',
+      paths: ['cart', 'token']
+    })(store)
   }
 
-  store.subscribe((mutation, state) => {
-    if (mutation.type === 'UPDATE_CART') {
-      localStorage.setItem('cart', JSON.stringify(state.cart))
-    }
-  })
+  // if (isClient) {
+  //   new VuexPersistence({
+  //     key: 'token',
+  //     storage: window.localStorage,
+  //     modules: ['token'],
+  //     filter: mutation => mutation.type === 'SET_TOKEN'
+  //   }).plugin(store)
+  // }
+
+  // store.subscribe((mutation, state) => {
+  //   if (mutation.type === 'UPDATE_CART') {
+  //     window.localStorage.setItem('cart', JSON.stringify(state.cart))
+  //   }
+  // })
 
   return store
 }

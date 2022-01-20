@@ -25,15 +25,6 @@ export default {
     AppFooter,
     ShopMenu,
     CartModal
-  },
-
-
-  mounted() {
-    const cart = JSON.parse(localStorage.getItem('cart'))
-
-    if (cart) {
-      this.$store.commit('UPDATE_CART', cart)
-    }
   }
 }
 </script>

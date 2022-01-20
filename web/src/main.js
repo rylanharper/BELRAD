@@ -40,7 +40,7 @@ export default function(Vue, { appOptions, isClient, head, router }) {
   if (isClient) {
     router.beforeEach((to, from, next) => {
       const isAuth = store.getters.isAuthenticated
-      if (to.path.includes('/account/orders') && !isAuth) next('/account/login')
+      if (to.path.includes('/account/orders') && !isAuth) next('/')
       else next()
     })
   }
