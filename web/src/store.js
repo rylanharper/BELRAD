@@ -93,20 +93,5 @@ export default function State(Vue, { isClient }) {
     })(store)
   }
 
-  // if (isClient) {
-  //   new VuexPersistence({
-  //     key: 'token',
-  //     storage: window.localStorage,
-  //     modules: ['token'],
-  //     filter: mutation => mutation.type === 'SET_TOKEN'
-  //   }).plugin(store)
-  // }
-
-  // store.subscribe((mutation, state) => {
-  //   if (mutation.type === 'UPDATE_CART') {
-  //     window.localStorage.setItem('cart', JSON.stringify(state.cart))
-  //   }
-  // })
-
   return store
 }
