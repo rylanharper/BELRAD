@@ -11,8 +11,21 @@
       <section class="cart" v-if="cartModalOpen">
         <!-- Cart header -->
         <div class="cart__header">
-          <h2>Cart ({{ itemsTotal }} Items)</h2>
-          <button @click="closeCartModal" class="shop-menu__close">Close</button>
+          <h2>Cart Items: {{ itemsTotal }}</h2>
+          <button @click="closeCartModal" class="shop-menu__close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-width="1.5"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
         <!-- Cart content -->
         <div class="cart__content">
@@ -60,7 +73,9 @@
         <!-- Cart checkout -->
         <div class="cart__checkout">
           <form @submit.prevent="checkout" v-if="cart.length">
-            <button type="submit" class="button--filled">Checkout | {{ cartTotal | currency }}</button>
+            <button type="submit" class="button--filled">
+              Checkout | {{ cartTotal | currency }}
+            </button>
           </form>
           <button v-else @click="closeCartModal" class="button--empty">Continue Shopping</button>
           <p v-if="cart.length">Taxes &amp; shipping will be calculated at checkout</p>

@@ -23,13 +23,15 @@
       }
 
       .info {
-        @apply flex flex-col absolute px-5 bottom-10;
+        @apply flex flex-col absolute px-5 bottom-12;
         @apply text-white;
         // Media Queries
-        @apply md:px-10 md:bottom-20;
+        @apply md:px-10 md:bottom-18;
 
         h2 {
-          @apply block;
+          @apply block text-lg;
+          // Media Queries
+          @apply md:text-2xl;
         }
 
         span {

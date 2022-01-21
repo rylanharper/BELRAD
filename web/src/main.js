@@ -35,13 +35,4 @@ export default function(Vue, { appOptions, isClient, head, router }) {
   // Add vuex store
   const store = State(Vue, { isClient })
   appOptions.store = store
-
-  // Authentication
-  if (isClient) {
-    router.beforeEach((to, from, next) => {
-      const isAuth = store.getters.isAuthenticated
-      if (to.path.includes('/account/orders') && !isAuth) next('/')
-      else next()
-    })
-  }
 }

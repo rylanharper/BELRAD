@@ -11,6 +11,7 @@
 
   h3 {
     @apply block mx-6 whitespace-nowrap;
+    @apply text-white;
     // Media Queries
     @apply md:mx-24;
   }

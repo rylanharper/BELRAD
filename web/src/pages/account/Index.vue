@@ -2,15 +2,18 @@
   <Layout>
     <section class="account">
       <div class="account__wrapper">
-        <div class="account__content">
+        <div v-if="isAuthenticated" class="account__content--auth">
           <h2>My Account</h2>
           <p>Order History</p>
           <div v-if="customer">
             <account-orders :orders="orders" />
             <account-details :customer="customer" />
           </div>
+          <button @click="logout">Logout</button>
         </div>
-        <button @click="logout">Logout</button>
+        <div v-else class="account__content--error">
+          Not Auth!!
+        </div>
       </div>
     </section>
   </Layout>
@@ -44,6 +47,10 @@ export default {
   },
 
   computed: {
+    isAuthenticated() {
+      return this.$store.getters.isAuthenticated
+    },
+
     orders() {
       return this.customer.orders.edges.map(({ node }) => node)
     }

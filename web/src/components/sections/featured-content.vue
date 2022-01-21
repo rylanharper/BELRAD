@@ -3,7 +3,7 @@
     <responsive-image
       :url="image.asset.url"
       :alt="image.alt"
-      class="pt-[78vh] md:pt-[94vh]"
+      class="pt-[80vh] md:pt-[94vh]"
     />
     <!-- Content Info -->
     <div v-if="image.enabled === true" class="image-link">

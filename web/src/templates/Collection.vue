@@ -2,7 +2,7 @@
   <Layout :key="$route.fullPath">
     <section class="collection">
       <div class="collection__nav">
-        <h1>{{ collection.title }} ({{ collection.products.length }} Items)</h1>
+        <h1>{{ collection.title }} — {{ collection.products.length }} Items</h1>
         <button @click="showFilterMenu = !showFilterMenu">Filter +</button>
       </div>
 
