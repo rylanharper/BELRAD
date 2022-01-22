@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="account">
-      <div class="account__wrapper">
+      <div class="account__wrapper pt-[10vh] md:pt-[12vh]">
         <div v-if="isAuthenticated" class="account__content--auth">
           <h2>My Account</h2>
           <p>Order History</p>
@@ -12,7 +12,10 @@
           <button @click="logout">Logout</button>
         </div>
         <div v-else class="account__content--error">
-          Not Auth!!
+          <p>
+            To view your order account information, please
+            <span class="underline"><g-link to="/account/login">sign in</g-link></span>.
+          </p>
         </div>
       </div>
     </section>
@@ -31,7 +34,19 @@ export default {
   name: 'Account',
 
   metaInfo: {
-    title: 'Your Account'
+    title: 'Account',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Account - BELRAD'
+      },
+      {
+        key: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Account - BELRAD'
+      }
+    ]
   },
 
   components: {
@@ -42,7 +57,7 @@ export default {
   data() {
     return {
       customer: null,
-      index: 0,
+      index: 0
     }
   },
 
@@ -71,6 +86,16 @@ export default {
   }
 }
 </script>
+
+<page-query>
+query {
+  # SEO
+  metadata {
+    siteName
+    siteUrl
+  }
+}
+</page-query>
 
 <style lang="scss" scoped>
 // Using BEM + Tailwind @apply

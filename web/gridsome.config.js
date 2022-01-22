@@ -3,7 +3,7 @@ const { api: sanityApi } = require('../studio/sanity.json')
 
 module.exports = {
   siteName: 'BELRAD',
-  siteUrl: 'https://belrad.netlify.app/',
+  siteUrl: 'https://belrad.netlify.app',
   siteDescription: 'Headless ecommerce powered by Vue, Sanity, and Shopify',
   titleTemplate: "%s — BELRAD",
 

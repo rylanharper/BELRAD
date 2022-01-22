@@ -72,7 +72,19 @@ export default {
   name: 'Login',
 
   metaInfo: {
-    title: 'Login'
+    title: 'Login',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Login - BELRAD'
+      },
+      {
+        key: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Login - BELRAD'
+      }
+    ]
   },
 
   data() {
@@ -114,6 +126,16 @@ export default {
   }
 }
 </script>
+
+<page-query>
+query {
+  # SEO
+  metadata {
+    siteName
+    siteUrl
+  }
+}
+</page-query>
 
 <style lang="scss" scoped>
 // Using BEM + Tailwind @apply

@@ -4,14 +4,14 @@
 
   &__link {
     @apply flex relative items-center inset-0;
+    @apply text-white;
     @apply transition duration-300 ease-in-out;
     // Media Queries
-    @apply md:hover:text-gray-400;
+    @apply md:hover:text-gray-300;
   }
 
   h3 {
     @apply block mx-6 whitespace-nowrap;
-    @apply text-white;
     // Media Queries
     @apply md:mx-24;
   }

@@ -24,6 +24,18 @@ export default {
   metaInfo() {
     return {
       title: this.$page.page.title,
+      meta: [
+        {
+          key: 'og:title',
+          property: 'og:title',
+          content: `${this.$page.page.title} - BELRAD`
+        },
+        {
+          key: 'twitter:title',
+          property: 'twitter:title',
+          content: `${this.$page.page.title} - BELRAD`
+        }
+      ]
     }
   },
 
@@ -35,7 +47,10 @@ export default {
 
 <page-query>
 query Page ($id: ID!) {
+  # SEO
   metadata {
+    siteName
+    siteUrl
     sanityOptions {
       projectId
       dataset

@@ -11,7 +11,19 @@ export default {
   name: 'Index',
 
   metaInfo: {
-    titleTemplate: 'BELRAD'
+    titleTemplate: 'BELRAD',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'BELRAD'
+      },
+      {
+        key: 'twitter:title',
+        property: 'twitter:title',
+        content: 'BELRAD'
+      }
+    ]
   },
 
   components: {
@@ -28,6 +40,11 @@ export default {
 
 <page-query>
 query {
+  # SEO
+  metadata {
+    siteName
+    siteUrl
+  }
   # Sanity
   landingPage: allSanityLandingPage {
     edges {

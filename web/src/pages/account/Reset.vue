@@ -71,7 +71,19 @@ export default {
   name: 'Reset',
 
   metaInfo: {
-    title: 'Reset Password'
+    title: 'Reset Password',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Reset - BELRAD'
+      },
+      {
+        key: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Reset - BELRAD'
+      }
+    ]
   },
 
   data() {
@@ -126,6 +138,16 @@ export default {
   }
 }
 </script>
+
+<page-query>
+query {
+  # SEO
+  metadata {
+    siteName
+    siteUrl
+  }
+}
+</page-query>
 
 <style lang="scss" scoped>
 // Using BEM + Tailwind @apply

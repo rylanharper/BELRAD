@@ -20,8 +20,22 @@ import ProductContent from '@/components/product/product-content.vue'
 export default {
   name: 'Product',
 
-  metaInfo: {
-    title: 'Product'
+  metaInfo() {
+    return {
+      title: this.$page.shopifyProduct.title,
+      meta: [
+        {
+          key: 'og:title',
+          property: 'og:title',
+          content: `${this.$page.shopifyProduct.title} - BELRAD`
+        },
+        {
+          key: 'twitter:title',
+          property: 'twitter:title',
+          content: `${this.$page.shopifyProduct.title} - BELRAD`
+        }
+      ]
+    }
   },
 
   components: {
@@ -44,6 +58,7 @@ export default {
 
 <page-query>
 query Product ($id: ID!) {
+  # SEO
   metadata {
     siteName
     siteUrl

@@ -97,7 +97,19 @@ export default {
   name: 'Register',
 
   metaInfo: {
-    title: 'Register'
+    title: 'Register',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Register - BELRAD'
+      },
+      {
+        key: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Register - BELRAD'
+      }
+    ]
   },
 
   data() {
@@ -146,6 +158,16 @@ export default {
   }
 }
 </script>
+
+<page-query>
+query {
+  # SEO
+  metadata {
+    siteName
+    siteUrl
+  }
+}
+</page-query>
 
 <style lang="scss" scoped>
 // Using BEM + Tailwind @apply

@@ -38,7 +38,19 @@ export default {
   name: 'Search',
 
   metaInfo: {
-    title: 'Search'
+    title: 'Search',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Search - BELRAD'
+      },
+      {
+        key: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Search - BELRAD'
+      }
+    ]
   },
 
   components: {
@@ -47,7 +59,7 @@ export default {
 
   data() {
     return {
-      searchTerm: '',
+      searchTerm: ''
     }
   },
 
@@ -66,6 +78,16 @@ export default {
   }
 }
 </script>
+
+<page-query>
+query {
+  # SEO
+  metadata {
+    siteName
+    siteUrl
+  }
+}
+</page-query>
 
 <style lang="scss" scoped>
 // Using BEM + Tailwind @apply

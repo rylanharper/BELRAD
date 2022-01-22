@@ -73,9 +73,6 @@
 </template>
 
 <script>
-// Mixins
-import ProductMetaMixin from '@/mixins/product-meta.js'
-
 export default {
   name: 'ProductContent',
 
@@ -85,8 +82,6 @@ export default {
       required: true
     }
   },
-
-  mixins: [ProductMetaMixin],
 
   data() {
     return {

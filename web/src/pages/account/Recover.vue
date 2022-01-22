@@ -79,7 +79,19 @@ export default {
   name: 'Recover',
 
   metaInfo: {
-    title: 'Recover Password'
+    title: 'Recover Password',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Recover Password - BELRAD'
+      },
+      {
+        key: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Recover Password - BELRAD'
+      }
+    ]
   },
 
   data() {
@@ -116,6 +128,16 @@ export default {
   }
 }
 </script>
+
+<page-query>
+query {
+  # SEO
+  metadata {
+    siteName
+    siteUrl
+  }
+}
+</page-query>
 
 <style lang="scss" scoped>
 // Using BEM + Tailwind @apply

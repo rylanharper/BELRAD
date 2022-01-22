@@ -11,7 +11,7 @@
       <section class="cart" v-if="cartModalOpen">
         <!-- Cart header -->
         <div class="cart__header">
-          <h2>Cart Items: {{ itemsTotal }}</h2>
+          <h2>Cart: {{ itemsTotal }}</h2>
           <button @click="closeCartModal" class="shop-menu__close">
             <svg
               xmlns="http://www.w3.org/2000/svg"

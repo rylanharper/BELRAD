@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="promo.enabled === true"
-    :style="{ background: this.$static.promoSettings.edges[0].node.color.hex }"
+    :style="{ background: this.promo.color.hex }"
     class="hero-banner"
   >
     <g-link :to="promo.link" class="hero-banner__link group">

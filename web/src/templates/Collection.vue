@@ -19,11 +19,7 @@
           <div v-for="filter in listOfFilters" :key="filter.id" class="filter">
             <span class="filter-name">{{ filter.name }}</span>
             <label v-for="(option, o) in filter.options" :key="o">
-              <input
-                v-model="filters[filter.name]"
-                :value="option"
-                type="checkbox"
-              />
+              <input v-model="filters[filter.name]" :value="option" type="checkbox" />
               <span>{{ option }}</span>
             </label>
           </div>
@@ -46,16 +42,29 @@
 <script>
 import ProductCard from '@/components/product-card.vue'
 
-// Mixins
-import CollectionMetaMixin from '@/mixins/collection-meta.js'
-
 // Gsap
 import { gsap, Expo } from 'gsap'
 
 export default {
   name: 'Collection',
 
-  mixins: [CollectionMetaMixin],
+  metaInfo() {
+    return {
+      title: this.$page.shopifyCollection.title,
+      meta: [
+        {
+          key: 'og:title',
+          property: 'og:title',
+          content: `${this.$page.shopifyCollection.title} - BELRAD`
+        },
+        {
+          key: 'twitter:title',
+          property: 'twitter:title',
+          content: `${this.$page.shopifyCollection.title} - BELRAD`
+        }
+      ]
+    }
+  },
 
   data() {
     return {
@@ -158,6 +167,7 @@ export default {
 
 <page-query>
 query Collection ($id: ID!) {
+  # SEO
   metadata {
     siteName
     siteUrl
@@ -169,13 +179,13 @@ query Collection ($id: ID!) {
     handle
     description
     descriptionHtml
-    # image {
-    #   id
-    #   altText
-    #   originalSrc
-    #   placeholder: transformedSrc(crop: CENTER)
-    #   thumbnail: transformedSrc(crop: CENTER)
-    # }
+    image {
+      id
+      altText
+      originalSrc
+      placeholder: transformedSrc(crop: CENTER)
+      thumbnail: transformedSrc(crop: CENTER)
+    }
     products (limit: 25, sortBy: "updatedAt", order: DESC) {
       id
       path
