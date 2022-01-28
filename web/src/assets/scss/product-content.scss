@@ -1,8 +1,8 @@
 .product-content {
   &__wrapper {
-    @apply flex flex-col relative top-6 px-3;
+    @apply flex flex-col relative px-3;
     // Media Queries
-    @apply md:sticky md:mx-auto md:px-0 md:top-32 md:mb-24 md:w-11/12 lg:top-44 lg:mb-44 lg:w-10/12 2xl:w-6/12 2xl:top-56;
+    @apply md:sticky md:mx-auto md:px-0 md:mb-24 md:w-11/12 lg:mb-44 lg:w-10/12 xl:w-8/12 2xl:w-6/12;
   }
 
   .product-details {
@@ -117,6 +117,8 @@
   }
 
   .product-description {
-    @apply text-sm;
+    button {
+      @apply mb-4;
+    }
   }
 }

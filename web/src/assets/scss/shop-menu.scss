@@ -1,13 +1,13 @@
 .shop-menu {
-  @apply fixed inset-0 w-full h-full pt-32 z-30;
+  @apply fixed inset-0 w-full h-full z-30;
   @apply bg-white;
   // Media queries
-  @apply md:px-10 md:py-0 md:h-min md:border-b md:border-light-600;
+  @apply md:h-min md:border-b md:border-light-600;
 
   .menu-desktop {
     @apply hidden;
     // Media Queries
-    @apply md:flex md:justify-between md:inset-0 md:pt-32 md:pb-12;
+    @apply md:flex md:justify-between md:inset-0 md:pt-32 md:pb-12 md:px-10;
 
     &__links {
       @apply flex;
@@ -27,7 +27,9 @@
     }
 
     &__upsell {
-      @apply relative w-1/5;
+      @apply relative w-2/5;
+      // Media Queries
+      @apply xl:w-1/5;
 
       .image-link {
         a {
@@ -56,30 +58,25 @@
   }
 
   .menu-mobile {
-    @apply flex flex-col h-full;
+    @apply flex flex-col pt-32 overflow-y-scroll h-full;
     // Media Queries
     @apply md:hidden;
 
     &__links {
-      @apply flex flex-col h-full overflow-y-scroll pl-5;
+      @apply flex flex-col flex-1 px-5;
 
       li,
       span {
-        @apply pb-3
+        @apply mb-3;
       }
 
       .page-links {
         @apply flex flex-col pt-8;
 
         a {
-          @apply pb-3
+          @apply mb-3;
         }
       }
-    }
-
-    &__close {
-      @apply mt-auto p-2.5 mx-5 mb-5;
-      @apply uppercase text-center bg-gray-100 rounded-sm;
     }
   }
 

@@ -11,7 +11,7 @@
           </div>
           <button @click="logout">Logout</button>
         </div>
-        <div v-else class="account__content--error">
+        <div v-else class="account__content--null">
           <p>
             To view your order account information, please
             <span class="underline"><g-link to="/account/login">sign in</g-link></span>.

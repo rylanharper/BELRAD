@@ -86,7 +86,7 @@
               @leave="acLeave"
               :css="false"
             >
-              <ul v-show="showBlock2" v-if="menu.blockMenu2.length" class="h-0 ml-4">
+              <ul v-show="showBlock2" v-if="menu.blockMenu2.length" class="ml-4 overflow-hidden relative">
                 <li v-for="link in menu.blockMenu2" :key="link.id">
                   <g-link :to="link.url">
                     {{ link.label }}
@@ -103,7 +103,7 @@
               @leave="acLeave"
               :css="false"
             >
-              <ul v-show="showBlock3" v-if="menu.blockMenu3.length" class="h-0 ml-4">
+              <ul v-show="showBlock3" v-if="menu.blockMenu3.length" class="ml-4 overflow-hidden relative">
                 <li v-for="link in menu.blockMenu3" :key="link.id">
                   <g-link :to="link.url">
                     {{ link.label }}
@@ -126,7 +126,6 @@
               </g-link>
             </div>
           </div>
-          <button @click="closeShopMenu" class="menu-mobile__close">Close Menu</button>
         </div>
       </transition-group>
     </div>

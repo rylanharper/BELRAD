@@ -168,3 +168,50 @@ export const customerResetMutation = gql`
     }
   }
 `
+
+export const customerAddressCreate = gql`
+  mutation customerAddressCreate($customerAccessToken: String!, $address: MailingAddressInput!) {
+    customerAddressCreate(customerAccessToken: $customerAccessToken, address: $address) {
+      customerAddress {
+        id
+      }
+      customerUserErrors {
+        code
+        field
+        message
+      }
+    }
+  }
+`
+
+export const customerAddressDelete = gql`
+  mutation customerAddressDelete($id: ID!, $customerAccessToken: String!) {
+    customerAddressDelete(id: $id, customerAccessToken: $customerAccessToken) {
+      customerUserErrors {
+        code
+        field
+        message
+      }
+      deletedCustomerAddressId
+    }
+  }
+`
+
+export const customerAddressUpdate = gql`
+  mutation customerAddressUpdate(
+    $customerAccessToken: String!
+    $id: ID!
+    $address: MailingAddressInput!
+  ) {
+    customerAddressUpdate(customerAccessToken: $customerAccessToken, id: $id, address: $address) {
+      customerAddress {
+        id
+      }
+      customerUserErrors {
+        code
+        field
+        message
+      }
+    }
+  }
+`

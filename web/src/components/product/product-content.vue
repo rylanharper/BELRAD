@@ -1,6 +1,6 @@
 <template>
   <div class="product-content">
-    <div class="product-content__wrapper">
+    <div class="product-content__wrapper top-[2.5vh] md:top-[20vh]">
       <!-- Product details -->
       <div class="product-details">
         <h1 class="product-details__title">{{ product.title }}</h1>
@@ -60,19 +60,58 @@
           :class="{ 'oos-button': !currentVariant.availableForSale }"
           @click="addToCart"
         >
-          <span v-if="currentVariant.availableForSale">{{
-            isLoading === true ? 'Adding...' : 'Add to Cart'
-          }}</span>
+          <span v-if="currentVariant.availableForSale">
+            {{ isLoading === true ? 'Adding...' : 'Add to Cart' }}
+          </span>
           <span v-if="!currentVariant.availableForSale">Sold Out</span>
         </button>
       </div>
       <!-- Product description -->
-      <div class="product-description" v-html="product.descriptionHtml" />
+      <div class="product-description">
+        <div v-if="productDescription[0]" v-html="productDescription[0]" class="mb-10"></div>
+        <div v-if="productDescription[1]" class="product-description__content">
+          <button @click="showDetails = !showDetails">
+            {{ showDetails === true ? 'Details -' : 'Details +' }}
+          </button>
+          <transition
+            appear
+            mode="out-in"
+            @before-enter="acBeforeEnter"
+            @enter="acEnter"
+            @leave="acLeave"
+            :css="false"
+          >
+            <div v-show="showDetails" class="overflow-hidden relative">
+              <div v-html="productDescription[1]" />
+            </div>
+          </transition>
+        </div>
+        <div v-if="productDescription[1]" class="product-description__content">
+          <button @click="showCare = !showCare">
+            {{ showCare === true ? 'Care -' : 'Care +' }}
+          </button>
+          <transition
+            appear
+            mode="out-in"
+            @before-enter="acBeforeEnter"
+            @enter="acEnter"
+            @leave="acLeave"
+            :css="false"
+          >
+            <div v-show="showCare" class="overflow-hidden relative">
+              <div v-html="productDescription[2]" />
+            </div>
+          </transition>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+// Gsap
+import { gsap, Expo } from 'gsap'
+
 export default {
   name: 'ProductContent',
 
@@ -87,13 +126,19 @@ export default {
     return {
       isLoading: false,
       selectedOptions: {},
-      quantity: 1
+      quantity: 1,
+      showDetails: false,
+      showCare: false
     }
   },
 
   computed: {
     productOptions() {
       return this.product.options.filter(({ name }) => name !== 'Title')
+    },
+
+    productDescription() {
+      return this.product.descriptionHtml.split(/---/)
     },
 
     currentVariant() {
@@ -160,6 +205,33 @@ export default {
         _this.isLoading = false
         _this.$store.commit('TOGGLE_CART_MODAL')
       }, 1200)
+    },
+
+    acBeforeEnter(el) {
+      gsap.set(el, {
+        height: 0,
+        opacity: 0
+      })
+    },
+
+    acEnter(el, done) {
+      gsap.to(el, {
+        duration: 0.3,
+        ease: Expo.easeInOut,
+        height: '60px',
+        opacity: 1,
+        onComplete: done
+      })
+    },
+
+    acLeave(el, done) {
+      gsap.to(el, {
+        duration: 0.3,
+        ease: Expo.easeInOut,
+        height: 0,
+        opacity: 0,
+        onComplete: done
+      })
     }
   }
 }
