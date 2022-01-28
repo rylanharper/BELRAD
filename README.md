@@ -60,7 +60,9 @@ else {
 
 - Each product that has a variety of colors (more than one) must have the same name and a `productType` that matches the name of that product. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc.
 
-- Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` is easily display the corresponding color.
+- Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` to easily display the corresponding color.
+
+- In order to have multiple product descriptions, I have set up the following computed property `this.product.descriptionHtml.split(/---/)` within `product-content.vue`. Now you can simply write `---` within Shopify's description editor to split up your product's description into various parts such as details, shipping, care, etc.
 
 - Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields: title, descriptions, images, prices, tags, etc.
 
@@ -77,6 +79,8 @@ GRIDSOME_SHOPIFY_STOREFRONT_TOKEN='your-storefront-token'
 ```
 2. Install the dependencies:
 ```
+cd /web
+
 npm install # or yarn
 ```
 3. Start up the project:
