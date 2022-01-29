@@ -58,12 +58,12 @@
   }
 
   .menu-mobile {
-    @apply flex flex-col pt-32 overflow-y-scroll h-full;
+    @apply flex flex-col pt-40 overflow-y-scroll h-full;
     // Media Queries
     @apply md:hidden;
 
     &__links {
-      @apply flex flex-col flex-1 px-5;
+      @apply flex flex-col flex-1 px-5 mb-32;
 
       li,
       span {

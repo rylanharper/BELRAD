@@ -218,7 +218,7 @@ export default {
       gsap.to(el, {
         duration: 0.3,
         ease: Expo.easeInOut,
-        height: '60px',
+        height: '68px',
         opacity: 1,
         onComplete: done
       })

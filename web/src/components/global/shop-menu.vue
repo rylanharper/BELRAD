@@ -77,7 +77,9 @@
                 </g-link>
               </li>
             </ul>
-            <span @click="showBlock2 = !showBlock2">{{ menu.blockTitle2 }} +</span>
+            <span @click="showBlock2 = !showBlock2">
+              {{ menu.blockTitle2 }} {{ showBlock2 === true ? '-' : '+' }}
+            </span>
             <transition
               appear
               mode="out-in"
@@ -86,7 +88,11 @@
               @leave="acLeave"
               :css="false"
             >
-              <ul v-show="showBlock2" v-if="menu.blockMenu2.length" class="ml-4 overflow-hidden relative">
+              <ul
+                v-show="showBlock2"
+                v-if="menu.blockMenu2.length"
+                class="ml-4 overflow-hidden relative"
+              >
                 <li v-for="link in menu.blockMenu2" :key="link.id">
                   <g-link :to="link.url">
                     {{ link.label }}
@@ -94,7 +100,9 @@
                 </li>
               </ul>
             </transition>
-            <span @click="showBlock3 = !showBlock3">{{ menu.blockTitle3 }} +</span>
+            <span @click="showBlock3 = !showBlock3">
+              {{ menu.blockTitle3 }} {{ showBlock3 === true ? '-' : '+' }}
+            </span>
             <transition
               appear
               mode="out-in"
@@ -103,7 +111,11 @@
               @leave="acLeave"
               :css="false"
             >
-              <ul v-show="showBlock3" v-if="menu.blockMenu3.length" class="ml-4 overflow-hidden relative">
+              <ul
+                v-show="showBlock3"
+                v-if="menu.blockMenu3.length"
+                class="ml-4 overflow-hidden relative"
+              >
                 <li v-for="link in menu.blockMenu3" :key="link.id">
                   <g-link :to="link.url">
                     {{ link.label }}
