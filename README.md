@@ -62,7 +62,7 @@ else {
 
 - Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` to easily display the corresponding color.
 
-- In order to have multiple product descriptions, I have set up the following computed property `this.product.descriptionHtml.split(/---/)` within `product-content.vue`. Now you can simply write `---` within Shopify's description editor to split up your product's description into various parts such as details, shipping, care, etc.
+- In order to have multiple product descriptions, I have set up the following computed property `productDescription` within `product-content.vue`. This allows you simply write `---` within Shopify's description editor to split up your product's description into various parts such as details, shipping, care, etc.
 
 - Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields: title, descriptions, images, prices, tags, etc.
 
@@ -114,4 +114,4 @@ I only have one example collection in the demo site, so clicking the links withi
 </details>
 
 ## 🤨 Need Help?
-Reach out on [DISCORD](https://discord.gg/daeay6n)!
+Reach out on the Gridsome [Discord](https://discord.gg/daeay6n) or the `Discussions` tab
