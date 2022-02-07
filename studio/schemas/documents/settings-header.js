@@ -27,7 +27,7 @@ export default {
       name: 'navNote',
       type: 'note',
       options: {
-        message: `On desktop, dropdowns (blocks) will appear as a mega-nav. On mobile, dropdowns will appear as accordions. The cart toggle will always appear to the right of the header on all screen sizes.`,
+        message: 'On desktop, dropdowns (blocks) will appear as a mega-nav. On mobile, dropdowns will appear as accordions. The cart toggle will always appear to the right of the header on all screen sizes.',
         tone: 'default'
       }
     },
