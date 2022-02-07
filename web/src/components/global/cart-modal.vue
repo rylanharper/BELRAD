@@ -35,9 +35,7 @@
             <div v-for="item in cart" :key="item.variantId" class="cart-item">
               <g-link class="cart-image" :to="item.path">
                 <figure class="cart-image__thumbnail">
-                  <picture>
-                    <img :src="item.image.thumbnail" :alt="item.image.altText || item.title" />
-                  </picture>
+                  <img :src="item.image.thumbnail" :alt="item.image.altText || item.title" />
                 </figure>
               </g-link>
               <div class="cart-details">

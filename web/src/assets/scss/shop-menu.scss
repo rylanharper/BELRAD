@@ -27,9 +27,9 @@
     }
 
     &__upsell {
-      @apply relative w-2/5;
+      @apply relative w-3/10;
       // Media Queries
-      @apply xl:w-1/5;
+      @apply xl:w-2/10;
 
       .image-link {
         a {

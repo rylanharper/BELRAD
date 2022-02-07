@@ -16,7 +16,7 @@ import './assets/scss/app.scss'
 // Lazysizes
 import 'lazysizes'
 
-export default function(Vue, { appOptions, isClient, head, router }) {
+export default function(Vue, { appOptions, isClient, head }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 

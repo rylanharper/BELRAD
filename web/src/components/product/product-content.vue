@@ -82,11 +82,11 @@
             :css="false"
           >
             <div v-show="showDetails" class="overflow-hidden relative">
-              <div v-html="productDescription[1]" />
+              <div v-html="productDescription[1]" class="mb-6" />
             </div>
           </transition>
         </div>
-        <div v-if="productDescription[1]" class="product-description__content">
+        <div v-if="productDescription[2]" class="product-description__content">
           <button @click="showCare = !showCare">
             {{ showCare === true ? 'Care -' : 'Care +' }}
           </button>
@@ -99,7 +99,7 @@
             :css="false"
           >
             <div v-show="showCare" class="overflow-hidden relative">
-              <div v-html="productDescription[2]" />
+              <div v-html="productDescription[2]" class="mb-6" />
             </div>
           </transition>
         </div>
@@ -218,7 +218,7 @@ export default {
       gsap.to(el, {
         duration: 0.3,
         ease: Expo.easeInOut,
-        height: '68px',
+        height: 'auto',
         opacity: 1,
         onComplete: done
       })

@@ -25,7 +25,7 @@
 
         .cart-image {
           &__thumbnail {
-            @apply relative h-44;
+            @apply block relative h-48;
             @apply border border-gray-400 border-opacity-0;
             @apply transition duration-300 ease-in-out;
       
@@ -35,6 +35,7 @@
       
             img {
               @apply block h-full w-auto;
+              @apply object-cover object-center;
             }
           }
         }

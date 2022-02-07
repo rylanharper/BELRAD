@@ -2,15 +2,17 @@
   <Layout>
     <section class="account">
       <div class="account__wrapper pt-[10vh] md:pt-[12vh]">
+        <!-- If user is auth -->
         <div v-if="isAuthenticated" class="account__content--auth">
           <h2>My Account</h2>
           <p>Order History</p>
           <div v-if="customer">
             <account-orders :orders="orders" />
-            <account-details :customer="customer" />
+            <account-address :customer="customer" />
           </div>
           <button @click="logout">Logout</button>
         </div>
+        <!-- If user is not auth -->
         <div v-else class="account__content--null">
           <p>
             To view your order account information, please
@@ -28,7 +30,7 @@ import { customerDetails } from '@/graphql/queries'
 
 // Components
 import AccountOrders from '@/components/account/account-orders.vue'
-import AccountDetails from '@/components/account/account-details.vue'
+import AccountAddress from '@/components/account/account-address.vue'
 
 export default {
   name: 'Account',
@@ -51,7 +53,7 @@ export default {
 
   components: {
     AccountOrders,
-    AccountDetails
+    AccountAddress
   },
 
   data() {

@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'AccountDetails',
+  name: 'AccountAddress',
 
   props: {
     customer: {

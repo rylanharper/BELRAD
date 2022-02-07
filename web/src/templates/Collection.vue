@@ -3,7 +3,9 @@
     <section class="collection">
       <div class="collection__nav">
         <h1>{{ collection.title }} — {{ collection.products.length }} Items</h1>
-        <button @click="showFilterMenu = !showFilterMenu">Filter +</button>
+        <button @click="showFilterMenu = !showFilterMenu">
+          Filter {{ showFilterMenu === true ? '-' : '+' }}
+        </button>
       </div>
 
       <transition
