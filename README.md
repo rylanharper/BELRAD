@@ -32,7 +32,7 @@ Sanity init
 Sanity graphql-deploy
 ```
 
-3. Now you need to populate all the fields within the studio and create at least one page document type. I set up custom page scripts within the `web/scripts/pages` folder. You can add as many documents/pages as you want, but make sure to follow a similar structure as the current `page.js` document type and then add them to `gridsome.server.js`.
+3. Now you need to populate all the fields within the studio and create at least one page document type. If you want to create a new document type, just create a new template within your `gridsome.config.js` and make sure to add in the `path` and corresponding `component` (the `component` should be a template type).
 
 ## 🛒 Shopify Setup
 
