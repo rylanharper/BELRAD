@@ -220,7 +220,7 @@ export default {
     menuEnter(el, done) {
       gsap.to(el, {
         duration: 0.5,
-        delay: 0.5,
+        delay: 0.6,
         ease: Expo.easeInOut,
         opacity: 1,
         onComplete: done

@@ -1,22 +1,49 @@
 <template>
   <Layout>
     <section class="account">
-      <div class="account__wrapper pt-[10vh] md:pt-[12vh]">
+      <div class="account__wrapper pt-[10vh] md:pt-[14vh]">
         <!-- If user is auth -->
         <div v-if="isAuthenticated" class="account__content--auth">
           <h2>My Account</h2>
-          <p>Order History</p>
-          <div v-if="customer">
-            <account-orders :orders="orders" />
-            <account-address :customer="customer" />
+          <div class="content">
+            <div class="content__select">
+              <button
+                @click="index = 0"
+                :class="{
+                  'text-white bg-dark-800': index === 0
+                }"
+              >
+                Orders
+              </button>
+              <button
+                @click="index = 1"
+                :class="{
+                  'text-white bg-dark-800': index === 1
+                }"
+              >
+                Address
+              </button>
+              <button
+                @click="logout"
+                :class="{
+                  'text-white bg-dark-800': index === 2
+                }"
+              >
+                Logout
+              </button>
+            </div>
+            <div v-if="customer" class="content__data">
+              <account-orders v-if="index == 0" :orders="orders" />
+              <account-address v-else-if="index == 1" :customer="customer" />
+            </div>
           </div>
-          <button @click="logout">Logout</button>
         </div>
         <!-- If user is not auth -->
         <div v-else class="account__content--null">
           <p>
             To view your order account information, please
-            <span class="underline"><g-link to="/account/login">sign in</g-link></span>.
+            <span class="underline"><g-link to="/account/login">sign in</g-link></span
+            >.
           </p>
         </div>
       </div>

@@ -1,0 +1,12 @@
+.address {
+  p {
+    @apply text-center pb-2;
+  }
+
+  .account-address {
+    @apply pb-2 mb-2;
+    @apply text-xs text-gray-700 border-b border-black border-dashed;
+    // Media Queries
+    @apply sm:text-sm;
+  }
+}

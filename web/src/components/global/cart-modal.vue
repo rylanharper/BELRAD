@@ -34,7 +34,10 @@
             <!-- Cart item -->
             <div v-for="item in cart" :key="item.variantId" class="cart-item">
               <g-link class="cart-image" :to="item.path">
-                <figure class="cart-image__thumbnail">
+                <figure 
+                  :style="{ paddingTop: `${(maxHeight / maxWidth) * 100}%` }"
+                  class="cart-image__thumbnail"
+                >
                   <img :src="item.image.thumbnail" :alt="item.image.altText || item.title" />
                 </figure>
               </g-link>
@@ -96,6 +99,17 @@ import { gsap, Power3 } from 'gsap'
 
 export default {
   name: 'CartModal',
+
+  props: {
+    maxHeight: {
+      type: Number,
+      default: 900
+    },
+    maxWidth: {
+      type: Number,
+      default: 600
+    }
+  },
 
   data() {
     return {

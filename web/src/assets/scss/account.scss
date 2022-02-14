@@ -4,11 +4,34 @@
   &__wrapper {
     @apply w-full px-5;
     // Media Queries
-    @apply md:max-w-2xl md:mx-auto md:px-0;
+    @apply md:max-w-4xl md:mx-auto md:px-0;
   }
 
   &__content--auth {
+    h2 {
+      @apply text-2xl text-center mb-8;
+      // Media Queries
+      @apply md:text-3xl;
+    }
 
+    .content {
+      @apply flex flex-col mb-12;
+
+      &__select {
+        @apply flex w-full mb-20;
+        @apply bg-light-500 rounded-full;
+
+        button {
+          @apply flex-1 py-1.5;
+          @apply rounded-full;
+          
+        }
+      }
+
+      &__data {
+        @apply w-full;
+      }
+    }
   }
 
   &__content--null {

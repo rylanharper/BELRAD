@@ -1,14 +1,14 @@
 <template>
   <Layout :key="$route.fullPath">
     <section class="page">
-      <div class="page__wrapper">
+      <div class="page__wrapper pt-[10vh] md:pt-[14vh]">
         <h1>{{ $page.page.title }}</h1>
         <block-content
           class="description"
           :blocks="$page.page._rawDescription"
         />
         <div v-if="$page.page.enabled === true" class="contact">
-          Have Questions? <span><a href="mailto: nat@silenelyalli.com">Contact Us</a></span>
+          Have Questions? <span><a href="mailto:webmaster@example.com">Contact Us</a></span>
         </div>
       </div>
     </section>

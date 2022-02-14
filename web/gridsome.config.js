@@ -8,6 +8,11 @@ module.exports = {
   titleTemplate: "%s — BELRAD",
 
   templates: {
+    SanityPage: [{
+        path: '/pages/:slug__current',
+        component: './src/templates/Page.vue'
+      }
+    ],
     ShopifyProduct: [
       {
         path: '/products/:handle',

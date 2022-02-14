@@ -37,7 +37,7 @@ export default {
 
   computed: {
     imageSrcset() {
-      const sizes = [320, 640, 1280, 1600, 2560, 3200]
+      const sizes = [320, 640, 1280, 1600, 1920, 2560, 3200]
       const srcset = []
 
       sizes.forEach((width) => {

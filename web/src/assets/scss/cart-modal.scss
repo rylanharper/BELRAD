@@ -24,9 +24,13 @@
         @apply flex mb-4;
 
         .cart-image {
+          // @apply w-28;
+          // Media Queries
+          @apply w-32; 
+
           &__thumbnail {
-            @apply block relative h-48;
-            @apply border border-gray-400 border-opacity-0;
+            @apply block relative w-full;
+            @apply overflow-hidden bg-light-400 border border-gray-400 border-opacity-0;
             @apply transition duration-300 ease-in-out;
       
             &:hover {
@@ -34,7 +38,7 @@
             }
       
             img {
-              @apply block h-full w-auto;
+              @apply absolute inset-0 w-full h-full;
               @apply object-cover object-center;
             }
           }

@@ -1,8 +1,15 @@
 <template>
-  <div v-if="customer.defaultAddress" class="account-address">
-    <p v-for="(line, i) in customer.defaultAddress.formatted" :key="i">
-      {{ line }}
-    </p>
+  <div class="address">
+    <div v-if="!customer.defaultAddress">
+      <p>
+        You have no saved address...
+      </p>
+    </div>
+    <div v-if="customer.defaultAddress" class="account-address">
+      <p v-for="(line, i) in customer.defaultAddress.formatted" :key="i">
+        {{ line }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -13,7 +20,7 @@ export default {
   props: {
     customer: {
       type: Object,
-      default: () => ({})
+      required: true
     }
   }
 }
@@ -21,5 +28,5 @@ export default {
 
 <style lang="scss" scoped>
 // Using BEM + Tailwind @apply
-@import '@/assets/scss/account-details.scss';
+@import '@/assets/scss/account-address.scss';
 </style>
