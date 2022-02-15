@@ -5,20 +5,18 @@
     </p>
     <div v-else class="orders__grid">
       <ul>
-        <li>Order #</li>
+        <li>Order</li>
         <li>Total</li>
         <li>Status</li>
-        <li>Digital Receipt</li>
       </ul>
       <ul v-for="order in orders" :key="order.id">
-        <li>{{ order.name }}</li>
-        <li>{{ order.totalPrice | currency }}</li>
-        <li>{{ order.fulfillmentStatus }}</li>
         <li>
           <a :href="order.statusUrl" target="_blank" rel="noreferrer">
-            View Order &#8599;
+            View Order
           </a>
         </li>
+        <li>{{ formatCurrency(order.totalPrice) }}</li>
+        <li>{{ order.fulfillmentStatus }}</li>
       </ul>
     </div>
   </div>

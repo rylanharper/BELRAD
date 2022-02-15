@@ -106,12 +106,12 @@
     @apply flex mt-2 mb-8;
 
     button {
-      @apply flex justify-center items-center py-2.5 w-full;
+      @apply flex justify-center items-center py-2 w-full;
       @apply text-center bg-dark-800 text-white rounded-sm;
     }
 
     .oos-button {
-      @apply flex justify-center items-center py-2.5;
+      @apply flex justify-center items-center py-2;
       @apply text-center bg-gray-200 text-gray-600 cursor-not-allowed rounded-sm;
     }
   }

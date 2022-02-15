@@ -6,7 +6,7 @@
   &__grid {
     ul {
       @apply flex pb-1 mb-2;
-      @apply text-xs border-b border-black border-dashed;
+      @apply border-b border-gray-400 border-dashed;
 
       li {
         @apply flex-1;

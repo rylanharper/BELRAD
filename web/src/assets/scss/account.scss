@@ -15,14 +15,14 @@
     }
 
     .content {
-      @apply flex flex-col mb-12;
+      @apply flex flex-col mb-10;
 
       &__select {
         @apply flex w-full mb-20;
         @apply bg-light-500 rounded-full;
 
         button {
-          @apply flex-1 py-1.5;
+          @apply flex-1 py-2;
           @apply rounded-full;
           
         }
