@@ -32,7 +32,7 @@ export default {
 
 <static-query>
 query {
-  shopifyProducts: allShopifyProduct (limit: 4, sortBy: "updatedAt", order: DESC) {
+  shopifyProducts: allShopifyProduct (limit: 4, sortBy: "createdAt", order: DESC) {
     edges {
       node {
         id

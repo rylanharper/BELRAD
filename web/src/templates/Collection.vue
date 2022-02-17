@@ -188,7 +188,7 @@ query Collection ($id: ID!) {
       placeholder: transformedSrc(crop: CENTER)
       thumbnail: transformedSrc(crop: CENTER)
     }
-    products (limit: 25, sortBy: "updatedAt", order: DESC) {
+    products (limit: 25, sortBy: "createdAt", order: DESC) {
       id
       path
       title
