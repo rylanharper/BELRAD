@@ -46,8 +46,8 @@ export default {
     },
     enter(el, done) {
       gsap.to(el, {
-        duration: 0.4,
-        delay: 0.4,
+        duration: 0.3,
+        delay: 0.3,
         ease: Power2.easeOut,
         opacity: 1,
         onComplete: done
@@ -55,7 +55,7 @@ export default {
     },
     leave(el, done) {
       gsap.to(el, {
-        duration: 0.3,
+        duration: 0.2,
         ease: Power2.easeOut,
         opacity: 0,
         onComplete: done
