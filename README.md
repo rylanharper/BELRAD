@@ -38,17 +38,9 @@ Sanity graphql-deploy
 
 1. Create a private app within your Shopify storefront and make sure all permissions are selected. This starter needs these permissions in order to enable account functionality.
 
-2. In order to handle password reset correctly, you will need to first set up the following redirect `<script>` in your `theme.liquid` within Shopify:
-```js 
-var l = window.location;
-if (/^\/a\//.test(l.pathname));
-else {
-  var href = "your-site-domain.com";
-  l.pathname && (href += "/" + l.pathname), l.has && (href += l.hash), l.search && (href += l.search), href = href.replace("//", "/"), window.top.location.href = "https://" + href
-}
-```
+2. Next, navigate to your storefront theme code and replace your `theme.liquid` with the provided `theme.liquid` file located in `shopify/src/theme.liquid`. This serves to redirect the headless site when a user may unintentionally land on your `.myshopify` domain.
 
-3. Next, go to `Settings → Notifications → Customer account password reset` and replace the `<a>` tag with:
+3. In order to handle password reset correctly go to `Settings → Notifications → Customer account password reset` and replace the `<a>` tag with:
 ```bash
 {% assign url_parts = customer.reset_password_url  | split: '/' %}
 <a href="https://your-site-domain.com/account/reset?id={{url_parts[5]}}&token={{url_parts[6]}}" class="button__text">Reset your password</a>
