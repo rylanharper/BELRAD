@@ -27,7 +27,7 @@
         </div>
       </div>
       <!-- Product options -->
-      <div class="product-options">
+      <div v-if="productOptions[0]" class="product-options">
         <div v-if="productOptions[0].name === 'Size'">
           <div class="product-options__name">
             <span>{{ productOptions[0].name }}:</span>

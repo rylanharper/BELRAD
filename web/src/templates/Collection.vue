@@ -90,7 +90,7 @@ export default {
 
     listOfFilters() {
       const allFilters = this.allProducts
-        .flatMap(product => product.options)
+        .flatMap(product => product.options.filter(({ name }) => name !== 'Title'))
         .reduce((map, { name, values }) => {
           const option = map.get(name)
           if (!option) map.set(name, new Set(values))
@@ -154,8 +154,9 @@ export default {
   },
 
   watch: {
-    // Sets the initial data.filters property, as Vue requires an array to use multiple checkboxes
-    // I.e. { Color: [], Size: [] }
+    // Sets the initial data.filters property
+    // Vue requires an array to use multiple checkboxes
+    // Example - { Color: [], Size: [] }
     listOfFilters: {
       immediate: true,
       handler(listOfFilters) {
