@@ -39,11 +39,11 @@
     },
     {
       "implements": "part:@sanity/base/brand-logo",
-      "path": "./branding/logo.js"
+      "path": "./themes/logo.js"
     },
     {
       "implements": "part:@sanity/base/theme/variables/override-style",
-      "path": "./branding/styles.css"
+      "path": "./themes/theme.css"
     }
   ]
 }
