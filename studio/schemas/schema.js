@@ -4,6 +4,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Documents
 import landingPage from './documents/landing-page'
 import page from './documents/page'
+import article from './documents/article'
+import author from './documents/author'
 import headerSettings from './documents/settings-header'
 import footerSettings from './documents/settings-footer'
 import seoSettings from './documents/settings-seo'
@@ -17,6 +19,7 @@ import featuredProducts from './modules/featured-products'
 
 // Objects
 import blockText from './objects/block-text'
+import authorReference from './objects/author-reference'
 import images from './objects/images'
 import mainImage from './objects/main-image'
 import linkItem from './objects/link-item'
@@ -32,6 +35,8 @@ export default createSchema({
     // Documents
     landingPage,
     page,
+    article,
+    author,
     footerSettings,
     headerSettings,
     seoSettings,
@@ -45,6 +50,7 @@ export default createSchema({
 
     // Objects
     blockText,
+    authorReference,
     images,
     linkItem,
     mainImage,
