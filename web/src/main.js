@@ -1,5 +1,5 @@
 // Layouts
-const DefaultLayout = () => import('~/layouts/Default.vue')
+import DefaultLayout from '~/layouts/Default.vue'
 
 // GraphQL
 import GraphQL from './graphql/graphql'
