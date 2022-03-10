@@ -47,7 +47,7 @@ Sanity graphql-deploy
 ```
 ## ✅ Gotchas
 
-There are a couple of opinionated "gotchas" that need to be implemented in order for this project to work properly with Shopify (please note that you can disregard these if you want to change the structure of the project):
+There are a couple of opinionated "gotchas" that need to be implemented in order for this project to work properly with Shopify (please note that you can disregard these if you want to change the structure of your project):
 
 - Enable product metafields by going to `Settings → Metafields → Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. 
 
