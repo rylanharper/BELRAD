@@ -45,8 +45,9 @@ Sanity graphql-deploy
 {% assign url_parts = customer.reset_password_url  | split: '/' %}
 <a href="https://your-site-domain.com/account/reset?id={{url_parts[5]}}&token={{url_parts[6]}}" class="button__text">Reset your password</a>
 ```
+## ✅ Gotchas
 
-4. There are a couple of "gotchas" that need to be implemented in order for this project to work properly with Shopify:
+There are a couple of opinionated "gotchas" that need to be implemented in order for this project to work properly with Shopify (please note that you can disregard these if you want to change the structure of the project):
 
 - Enable product metafields by going to `Settings → Metafields → Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. 
 
