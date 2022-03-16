@@ -31,11 +31,11 @@
     },
     {
       "implements": "part:@sanity/desk-tool/structure",
-      "path": "./deskStructure"
+      "path": "./desk-structure.js"
     },
     {
       "implements": "part:@sanity/dashboard/config",
-      "path": "./dashboardConfig"
+      "path": "./dashboard-config.js"
     },
     {
       "implements": "part:@sanity/base/brand-logo",
