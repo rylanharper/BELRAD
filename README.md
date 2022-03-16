@@ -15,7 +15,7 @@
 ## 🏈 Sanity Setup
 
 1. First setup the Sanity studio:
-```
+```bash
 cd /studio
 
 npm install # or yarn
@@ -28,7 +28,7 @@ Sanity init
 ```
 
 2. Deploy your GraphQL schema:
-```
+```bash
 Sanity graphql-deploy
 ```
 
@@ -38,16 +38,19 @@ Sanity graphql-deploy
 
 1. Create a private app within your Shopify storefront and make sure all permissions are selected. This starter needs these permissions in order to enable account functionality.
 
-2. Next, navigate to your storefront theme code and replace your `theme.liquid` with the provided `theme.liquid` file located in `shopify/src/theme.liquid`. This serves to redirect the headless site when a user may unintentionally land on your `.myshopify` domain.
+2. Next, navigate to your storefront theme code and replace your theme.liquid with the provided theme.liquid file located in shopify/src/theme.liquid. This serves to redirect the headless site when a user may unintentionally land on your .myshopify domain.
 
 3. In order to handle password reset correctly go to `Settings → Notifications → Customer account password reset` and replace the `<a>` tag with:
-```bash
+```html
 {% assign url_parts = customer.reset_password_url  | split: '/' %}
 <a href="https://your-site-domain.com/account/reset?id={{url_parts[5]}}&token={{url_parts[6]}}" class="button__text">Reset your password</a>
 ```
+
+4. Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields - titles, descriptions, images, prices, tags, etc.
+
 ## ✅ Gotchas
 
-There are a couple of opinionated "gotchas" that need to be implemented in order for this project to work properly with Shopify (please note that you can disregard these if you want to change the structure of your project):
+There are a couple of opinionated "gotchas" that need to be implemented in order for this project to work properly with Shopify:
 
 - Enable product metafields by going to `Settings → Metafields → Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. 
 
@@ -57,8 +60,6 @@ There are a couple of opinionated "gotchas" that need to be implemented in order
 
 - In order to have multiple product descriptions, I have set up the following computed property `productDescription` within `product-content.vue`. This allows you simply write `---` within Shopify's description editor to split up your product's description into various parts such as details, shipping, care, etc.
 
-- Lastly, make sure to populate your storefront with products and collections and fill out all necessary fields: title, descriptions, images, prices, tags, etc.
-
 ## 📫 Klaviyo
 
 Create a Klaviyo account and select the option to connect to your Shopify storefront. Once this is done, navigate to `List & Segments → Newsletter → Settings` and place the List ID code in the `Newsletter Settings` (located in `Footer Settings`) within the Sanity studio.
@@ -66,18 +67,18 @@ Create a Klaviyo account and select the option to connect to your Shopify storef
 ## ⚡️ Installation
 
 1. Create a `.env` with your Storefront name and token. Note that the `.env` variables are prefixed with `GRIDSOME_` in order to make them available to apollo client (this is required): 
-```
+```bash
 GRIDSOME_SHOPIFY_STOREFRONT='your-shop-name'
 GRIDSOME_SHOPIFY_STOREFRONT_TOKEN='your-storefront-token'
 ```
 2. Install the dependencies:
-```
+```bash
 cd /web
 
 npm install # or yarn
 ```
 3. Start up the project:
-```
+```bash
 npm run dev
 ```
 
