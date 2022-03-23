@@ -24,9 +24,9 @@
         @apply flex mb-4;
 
         .cart-image {
-          // @apply w-28;
+          @apply w-32 flex-shrink-0;
           // Media Queries
-          @apply w-32; 
+          @apply md:w-36;
 
           &__thumbnail {
             @apply block relative w-full;

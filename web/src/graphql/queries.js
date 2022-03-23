@@ -19,14 +19,14 @@ export const checkoutCreateMutation = gql`
 export const customerLoginMutation = gql`
   mutation($input: CustomerAccessTokenCreateInput!) {
     customerAccessTokenCreate(input: $input) {
+      customerAccessToken {
+        accessToken
+        expiresAt
+      }
       customerUserErrors {
         code
         field
         message
-      }
-      customerAccessToken {
-        accessToken
-        expiresAt
       }
     }
   }
