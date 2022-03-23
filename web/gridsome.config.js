@@ -5,10 +5,34 @@ module.exports = {
   siteName: 'BELRAD',
   siteUrl: 'https://belrad.netlify.app',
   siteDescription: 'Headless ecommerce powered by Vue, Sanity, and Shopify',
-  titleTemplate: "%s — BELRAD",
+  titleTemplate: '%s — BELRAD',
+
+  chainWebpack: (config, { isProd, isClient }) => {
+    if (isProd && isClient) {
+      config.optimization.splitChunks({
+        chunks: 'initial',
+        maxInitialRequests: Infinity,
+        cacheGroups: {
+          vueVendor: {
+            test: /[\\/]node_modules[\\/](vue|vuex|vue-router)[\\/]/,
+            name: 'vue-vendors'
+          },
+          gridsome: {
+            test: /[\\/]node_modules[\\/](gridsome|vue-meta)[\\/]/,
+            name: 'gridsome-vendors'
+          },
+          polyfill: {
+            test: /[\\/]node_modules[\\/]core-js[\\/]/,
+            name: 'core-js'
+          }
+        }
+      })
+    }
+  },
 
   templates: {
-    SanityPage: [{
+    SanityPage: [
+      {
         path: '/pages/:slug__current',
         component: './src/templates/Page.vue'
       }
@@ -29,7 +53,7 @@ module.exports = {
 
   plugins: [
     {
-      use: 'gridsome-plugin-svg',
+      use: 'gridsome-plugin-svg'
     },
     {
       use: 'gridsome-plugin-windicss',
