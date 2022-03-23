@@ -7,29 +7,6 @@ module.exports = {
   siteDescription: 'Headless ecommerce powered by Vue, Sanity, and Shopify',
   titleTemplate: '%s — BELRAD',
 
-  chainWebpack: (config, { isProd, isClient }) => {
-    if (isProd && isClient) {
-      config.optimization.splitChunks({
-        chunks: 'initial',
-        maxInitialRequests: Infinity,
-        cacheGroups: {
-          vueVendor: {
-            test: /[\\/]node_modules[\\/](vue|vuex|vue-router)[\\/]/,
-            name: 'vue-vendors'
-          },
-          gridsome: {
-            test: /[\\/]node_modules[\\/](gridsome|vue-meta)[\\/]/,
-            name: 'gridsome-vendors'
-          },
-          polyfill: {
-            test: /[\\/]node_modules[\\/]core-js[\\/]/,
-            name: 'core-js'
-          }
-        }
-      })
-    }
-  },
-
   templates: {
     SanityPage: [
       {
@@ -130,5 +107,28 @@ module.exports = {
         }
       }
     }
-  ]
+  ],
+
+  chainWebpack: (config, { isProd, isClient }) => {
+    if (isProd && isClient) {
+      config.optimization.splitChunks({
+        chunks: 'initial',
+        maxInitialRequests: Infinity,
+        cacheGroups: {
+          vueVendor: {
+            test: /[\\/]node_modules[\\/](vue|vuex|vue-router)[\\/]/,
+            name: 'vue-vendors'
+          },
+          gridsome: {
+            test: /[\\/]node_modules[\\/](gridsome|vue-meta)[\\/]/,
+            name: 'gridsome-vendors'
+          },
+          polyfill: {
+            test: /[\\/]node_modules[\\/]core-js[\\/]/,
+            name: 'core-js'
+          }
+        }
+      })
+    }
+  }
 }
