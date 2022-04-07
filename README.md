@@ -38,7 +38,7 @@ Sanity graphql-deploy
 
 1. Create a private app within your Shopify storefront and make sure all permissions are selected. This starter needs these permissions in order to enable account functionality.
 
-2. Next, navigate to your storefront theme code and replace your theme.liquid with the provided theme.liquid file located in shopify/src/theme.liquid. This serves to redirect the headless site when a user may unintentionally land on your .myshopify domain.
+2. Next, navigate to your storefront theme code and replace your `theme.liquid` with the provided `theme.liquid` file located in `shopify/src/theme.liquid`. This serves to redirect the headless site when a user may unintentionally land on your .myshopify domain.
 
 3. In order to handle password reset correctly go to `Settings → Notifications → Customer account password reset` and replace the `<a>` tag with:
 ```html
@@ -106,6 +106,9 @@ For the color swatches/related products, I am using the [Gridsome Recommender Pl
 
 I only have one example collection in the demo site, so clicking the links within the shop menu will bring you to the same collection every time. In order to change this, just edit the link data within your Sanity studio or within the `app-header.vue` component.
 </details>
+
+## 🧨 Limitations
+This project runs on Gridsome which currently uses Vue 2. Please read over the [Gridsome Documention](https://gridsome.org/docs/) for further information. The current Vue specific packages are all using Vue 2 so please do not ugrade these to Vue 3. You can safely upgrade the other packages. 
 
 ## 🤨 Need Help?
 Reach out on the Gridsome [Discord](https://discord.gg/daeay6n) or the `Discussions` tab
