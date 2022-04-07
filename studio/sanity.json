@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "Storefront"
+    "name": "Belrad",
+    "basePath": "/studio"
   },
   "api": {
     "projectId": "w9mbud4y",
@@ -19,9 +20,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
