@@ -108,11 +108,9 @@ I only have one example collection in the demo site, so clicking the links withi
 </details>
 
 ## 🦖 Limitations
-There are a few limitations to be aware of:
-- This project runs on Gridsome which currently uses Vue 2. Please read over the [Gridsome Documention](https://gridsome.org/docs/) for further information. 
-- The current Vue specific packages are all using Vue 2 so please do not ugrade these to Vue 3. However, you can safely upgrade the other packages that do not use Vue at their core. 
+This project runs on Gridsome which currently uses Vue 2. Please read over the [Gridsome docs](https://gridsome.org/docs/) for further information. The current Vue specific packages are all using Vue 2 so please do not ugrade these to Vue 3. However, you can safely upgrade the other packages that do not use Vue at their core. 
 
-*Gridsome does not support Webpack 5 which means that `sass-loader` and `node-sass` need to remain at their current version.*
+*It is important to note that Gridsome does not support Webpack 5 which means that `sass-loader` and `node-sass` need to remain at their current version.*
 
 ## 🤨 Need Help?
 Reach out on the Gridsome [Discord](https://discord.gg/daeay6n) or the `Discussions` tab
