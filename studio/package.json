@@ -9,20 +9,20 @@
     "graphql-deploy": "sanity graphql deploy --playground"
   },
   "dependencies": {
-    "@sanity/base": "^2.26.0",
-    "@sanity/color-input": "^2.26.0",
-    "@sanity/core": "^2.26.0",
-    "@sanity/dashboard": "^2.26.0",
-    "@sanity/default-layout": "^2.26.0",
-    "@sanity/default-login": "^2.26.0",
-    "@sanity/desk-tool": "^2.26.0",
-    "@sanity/vision": "^2.26.0",
-    "phosphor-react": "^1.4.0",
+    "@sanity/base": "^2.29.5",
+    "@sanity/color-input": "^2.29.5",
+    "@sanity/core": "^2.29.5",
+    "@sanity/dashboard": "^2.29.5",
+    "@sanity/default-layout": "^2.29.5",
+    "@sanity/default-login": "^2.29.5",
+    "@sanity/desk-tool": "^2.29.5",
+    "@sanity/vision": "^2.29.5",
+    "phosphor-react": "^1.4.1",
     "prop-types": "^15.8.1",
-    "react": "^17.0",
-    "react-dom": "^17.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "sanity-plugin-dashboard-widget-netlify": "^1.2.1",
     "sanity-plugin-note-field": "^1.1.4",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.5"
   }
 }
