@@ -83,7 +83,7 @@ npm run dev
 ```
 
 ## 🚀 Deployment
-There are many ways to deploy your site. Just use whatever you feel comfortable with for the most part. If you are using Netlify or Vercel I would reccommend the following Sanity studio widgets:
+If you are using Netlify or Vercel I would reccommend the following studio plugins to make static deployments super simple:
 - [Netlify Deployment Widget](https://www.sanity.io/plugins/sanity-plugin-dashboard-widget-netlify)
 - [Vercel Deployment Widget](https://www.sanity.io/plugins/vercel-dashboard-widget)
 
@@ -91,7 +91,7 @@ There are many ways to deploy your site. Just use whatever you feel comfortable 
 <details>
 <summary><strong>Why are you using extracted component classes (BEM) with Windicss?</strong></summary>
 
-Projects using Tailwind/Windicss can be overwhelming when starting off.. I find that using the [`@apply`](https://windicss.org/features/directives.html#apply) is an excellent way to get all the benefits of writing in utility class shorthand, but without having to sift through all your javascript logic to adjust styles.
+Projects using Tailwind/Windicss can be overwhelming when starting off... I find that using the [`@apply`](https://windicss.org/features/directives.html#apply) is an excellent way to get all the benefits of writing in utility class shorthand, but without having to sift through all your javascript logic to adjust styles.
 </details>
 
 <details>
