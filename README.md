@@ -83,7 +83,9 @@ npm run dev
 ```
 
 ## 🚀 Deployment
-To deploy a Gridsome site you need a static web host. It is best practice to have your project hosted on a Git-service like GitHub and connect a deploy service that builds your site from a selected repository. If you are using Netlify or Vercel I would reccommend eithor one of the following studio plugins:
+To deploy a Gridsome site you need a static web host. It is best practice to have your project hosted on a Git-service like GitHub and connect a deploy service that builds your site from a selected repository.
+
+*If you are using Netlify or Vercel I would reccommend eithor one of the following studio plugins:*
 - [Netlify Deployment Widget](https://www.sanity.io/plugins/sanity-plugin-dashboard-widget-netlify)
 - [Vercel Deployment Widget](https://www.sanity.io/plugins/vercel-dashboard-widget)
 
