@@ -9,7 +9,7 @@ export default {
         {
           key: 'og:site_name',
           property: 'og:site_name',
-          content: this.$page.metadata.siteName
+          content: this.$static.siteSeo.edges[0].node.metaTitle
         },
         {
           key: 'og:type',
@@ -30,11 +30,6 @@ export default {
           key: 'og:url',
           property: 'og:url',
           content: this.$page.metadata.siteUrl + this.$route.fullPath
-        },
-        {
-          key: 'twitter:title',
-          property: 'twitter:title',
-          content: this.titleTemplate
         },
         {
           key: 'twitter:description',
