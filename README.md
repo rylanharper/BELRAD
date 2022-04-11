@@ -83,7 +83,7 @@ npm run dev
 ```
 
 ## 🚀 Deployment
-If you are using Netlify or Vercel I would reccommend the following studio plugins to make static deployments super simple:
+To deploy a Gridsome site you need a static web host. It is best practice to have your project hosted on a Git-service like GitHub and connect a deploy service that builds your site from a selected repository. If you are using Netlify or Vercel I would reccommend eithor one of the following studio plugins:
 - [Netlify Deployment Widget](https://www.sanity.io/plugins/sanity-plugin-dashboard-widget-netlify)
 - [Vercel Deployment Widget](https://www.sanity.io/plugins/vercel-dashboard-widget)
 
@@ -112,7 +112,7 @@ For the color swatches/related products, I am using the [Gridsome Recommender Pl
 I only have one example collection in the demo site, so clicking the links within the shop menu will bring you to the same collection every time. In order to change this, just edit the link data within your Sanity studio or within the `app-header.vue` component.
 </details>
 
-## 🌵 Limitations
+## 🔥 Limitations
 This project runs on Gridsome which currently uses Vue 2. The current Vue specific packages are all using Vue 2 so please do not ugrade these to Vue 3. However, you can safely upgrade the other packages that do not use Vue at their core. 
 
 *It is important to note that Gridsome does not support Webpack 5 which means that `sass-loader` and `node-sass` need to remain at their current versions.*
