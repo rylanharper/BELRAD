@@ -19,7 +19,7 @@
         @apply md:px-10 md:bottom-18;
 
         h2 {
-          @apply block text-lg;
+          @apply block text-lg mb-1.5;
           // Media Queries
           @apply md:text-2xl;
         }

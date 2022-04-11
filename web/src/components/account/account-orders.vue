@@ -5,17 +5,19 @@
     </p>
     <div v-else class="orders__grid">
       <ul>
-        <li>Order</li>
+        <li>Order #</li>
+        <li>Receipt</li>
         <li>Total</li>
         <li>Status</li>
       </ul>
       <ul v-for="order in orders" :key="order.id">
+        <li>{{ order.name }}</li>
         <li>
           <a :href="order.statusUrl" target="_blank" rel="noreferrer">
             View Order
           </a>
         </li>
-        <li>{{ formatCurrency(order.totalPrice) }}</li>
+        <li>{{ order.totalPrice.amount | currency }}</li>
         <li>{{ order.fulfillmentStatus }}</li>
       </ul>
     </div>
@@ -30,15 +32,6 @@ export default {
     orders: {
       type: Array,
       required: true
-    }
-  },
-
-  methods: {
-    formatCurrency({ currencyCode, amount }) {
-      return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: currencyCode
-      }).format(amount).replace('.00', '')
     }
   }
 }
