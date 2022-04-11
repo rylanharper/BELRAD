@@ -2,6 +2,12 @@ export default {
   title: 'Header Settings',
   name: 'headerSettings',
   type: 'document',
+  groups: [
+    {
+      name: 'media',
+      title: 'Media',
+    },
+  ],
   fieldsets: [
     {
       title: 'Block One',
@@ -74,7 +80,8 @@ export default {
       title: 'Upsell Image',
       name: 'image',
       type: 'mainImage',
-      description: 'An image pointing to a product or collection'
+      description: 'An image pointing to a product or collection',
+      group: 'media'
     }
   ],
   preview: {
