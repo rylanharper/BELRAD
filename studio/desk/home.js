@@ -10,6 +10,7 @@ export const home = S.listItem()
   .icon(House)
   .child(
     S.document()
-    .schemaType('landingPage')
     .title('Home Page')
+    .schemaType('homePage')
+    .documentId('homePage')
   )

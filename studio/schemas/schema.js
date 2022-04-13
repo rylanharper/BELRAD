@@ -2,7 +2,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Documents
-import landingPage from './documents/landing-page'
+import homePage from './documents/home-page'
 import page from './documents/page'
 import article from './documents/article'
 import author from './documents/author'
@@ -32,7 +32,7 @@ export default createSchema({
 
   types: schemaTypes.concat([
     // Documents
-    landingPage,
+    homePage,
     page,
     article,
     author,

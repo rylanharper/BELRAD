@@ -9,7 +9,7 @@ import { settings } from './desk/settings'
 // Doc types
 const hiddenDocTypes = (listItem) =>
   ![
-    'landingPage',
+    'homePage',
     'page',
     'article',
     'author',

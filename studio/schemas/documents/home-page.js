@@ -1,10 +1,10 @@
 export default {
   title: 'Home',
-  name: 'landingPage',
+  name: 'homePage',
   type: 'document',
   fields: [
     {
-      name: 'landingPageNote',
+      name: 'homePageNote',
       type: 'note',
       options: {
         headline: 'Page Builder',
