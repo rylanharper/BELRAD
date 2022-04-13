@@ -10,7 +10,7 @@ export default {
       title: 'Images',
       name: 'images',
       type: 'array',
-      of: [{ type: 'images' }]
+      of: [{ type: 'imageItem' }]
     }
   ],
   preview: {

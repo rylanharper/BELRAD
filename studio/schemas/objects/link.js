@@ -15,7 +15,7 @@ export default {
       title: 'URL',
       name: 'url',
       type: 'string',
-      description: 'Enter an external URL'
+      description: 'Enter a URL path → Example: "/collections/new-arrivals"'
     }
   ]
 }

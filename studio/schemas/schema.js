@@ -20,9 +20,8 @@ import featuredProducts from './modules/featured-products'
 // Objects
 import blockText from './objects/block-text'
 import authorReference from './objects/author-reference'
-import images from './objects/images'
-import mainImage from './objects/main-image'
-import linkItem from './objects/link-item'
+import imageitem from './objects/image'
+import linkItem from './objects/link'
 import newsletter from './objects/newsletter'
 
 /*  ------------------------------------------ */
@@ -51,9 +50,8 @@ export default createSchema({
     // Objects
     blockText,
     authorReference,
-    images,
+    imageitem,
     linkItem,
-    mainImage,
     newsletter
   ])
 })

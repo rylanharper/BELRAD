@@ -29,7 +29,7 @@ export default {
       title: 'Promo Bar Link',
       name: 'link',
       type: 'string',
-      description: 'Enter an external URL'
+      description: 'Enter a URL path → Example: "/collections/new-arrivals"'
     }
   ],
   preview: {

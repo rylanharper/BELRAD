@@ -8,9 +8,8 @@ import {
 export const home = S.listItem()
   .title('Home')
   .icon(House)
-  .schemaType('landingPage')
   .child(
     S.document()
     .schemaType('landingPage')
-    .title('Landing Page')
+    .title('Home Page')
   )

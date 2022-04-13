@@ -1,8 +1,8 @@
 import { ImageSquare } from 'phosphor-react'
 
 export default {
-  title: 'Images',
-  name: 'images',
+  title: 'Image Item',
+  name: 'imageItem',
   type: 'image',
   icon: ImageSquare,
   options: {
