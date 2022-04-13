@@ -32,7 +32,7 @@ export default {
 
   computed: {
     content() {
-      return this.$page.landingPage.edges[0].node.sections
+      return this.$page.homePage.edges[0].node.sections
     }
   }
 }
@@ -46,7 +46,7 @@ query {
     siteUrl
   }
   # Sanity
-  landingPage: allSanityLandingPage {
+  homePage: allSanityHomePage {
     edges {
       node {
         sections {
