@@ -4,7 +4,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import {
   Sliders,
   NavigationArrow,
-  List,
+  Anchor,
   Globe,
   FlagBanner,
   Cookie
@@ -27,7 +27,7 @@ export const settings = S.listItem()
           ),
         S.listItem()
           .title('Footer')
-          .icon(List)
+          .icon(Anchor)
           .child(
             S.editor()
               .schemaType('footerSettings')
