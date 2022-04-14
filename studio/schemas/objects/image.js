@@ -1,10 +1,10 @@
-import { ImageSquare } from 'phosphor-react'
+import { FileImage } from 'phosphor-react'
 
 export default {
   title: 'Image Item',
   name: 'imageItem',
   type: 'image',
-  icon: ImageSquare,
+  icon: FileImage,
   options: {
     hotspot: false
   },
