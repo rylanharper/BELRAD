@@ -113,7 +113,6 @@ For the color swatches/related products, I am using the [Gridsome Recommender Pl
 
 I only have one example collection in the demo site, so clicking the links within the shop menu will bring you to the same collection every time. In order to change this, just edit the link data within your Sanity studio or within the `app-header.vue` component.
 </details>
-<br>
 
 ## 🔥 Limitations
 This project runs on Gridsome which currently uses Vue 2. The current Vue specific packages are all using Vue 2 so please do not ugrade these to Vue 3. However, you can safely upgrade the other packages that do not use Vue at their core. 
