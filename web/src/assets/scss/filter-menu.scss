@@ -1,0 +1,54 @@
+.filter-container {
+  @apply pt-8 pr-5 pb-5;
+}
+
+.filter-menu {
+  @apply flex w-full justify-between mb-12;
+
+  &__column {
+    @apply mr-14;
+    // Media Queries
+    @apply md:mr-32;
+  }
+
+  &__column:last-child {
+    @apply mr-8;
+  }
+
+  .filter-title {
+    @apply pb-8;
+    @apply text-sm text-dark-200;
+  }
+
+  .filter-option {
+    @apply mb-3 cursor-pointer;
+
+    .--showing {
+      @apply visible pointer-events-auto;
+    }
+    
+    .--selected {
+      @apply font-medium;
+    }
+    
+    .--color-selected {
+      @apply border border-black rounded-full;
+    }
+  }
+}
+
+.filter-actions {
+  button:first-child {
+    @apply py-1.5 px-6 mr-6;
+    @apply text-black border border-black rounded-full;
+    @apply md:transition md:duration-300 md:ease;
+
+    &:hover {
+      @apply md:text-blue-600 md:border-blue-600;
+    }
+  }
+
+  button:last-child {
+    @apply text-sm underline;
+  }
+}

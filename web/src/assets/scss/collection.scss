@@ -1,56 +1,26 @@
 .collection {
-  @apply flex-col px-2 mb-20 uppercase;
-  padding-top: 4vh;
+  @apply flex-col px-5 mb-20 uppercase;
+  padding-top: 3vh;
   // Media Queries
-  @apply md:px-3 md:mb-32;
+  @apply md:px-8 md:mb-32;
 
   &__nav {
-    @apply flex justify-between mb-4 px-3;
-    // Media Queries
-    @apply md:px-7;
+    @apply mb-3;
+    @apply text-sm;
   }
 
-  &__filter-menu {
-    @apply flex flex-col px-3 overflow-hidden h-0;
-    // Media Queries
-    @apply md:px-7;
-
-    .filter-count {
-      @apply mb-4;
-    }
-
-    .filter {
-      @apply flex flex-col flex-wrap whitespace-nowrap mb-5;
+  &__title {
+    h1 {
+      @apply text-2xl mb-14;
       // Media Queries
-      @apply md:flex-row;
-
-      .filter-name {
-        @apply ml-0 mb-2;
-        // Media Queries
-        @apply md:mr-8 md:mb-0;
-      }
-
-      label {
-        @apply flex items-center ml-0 mb-1;
-        // Media Queries
-        @apply md:mr-5 md:mb-0;
-
-        input[type=checkbox] {
-          @apply appearance-none h-4 w-4 mr-1.5;
-          @apply bg-white border border-gray-400 rounded-full;
-        }
-
-        input[type=checkbox]:checked {
-          @apply bg-dark-800 border border-dark-800 rounded-full
-        }
-      }
+      @apply md:text-3xl;
     }
   }
 
   .product-grid {
-    @apply grid grid-cols-2 gap-2 relative;
+    @apply grid grid-cols-2 gap-5 relative;
     // Media Queries
-    @apply md:grid-cols-3 lg:grid-cols-5 md:gap-3;
+    @apply md:grid-cols-3 lg:grid-cols-5 md:gap-6;
 
     &__product {
       @apply block relative;
@@ -58,11 +28,11 @@
   }
 
   // Link hover
-  a {
-    @apply md:transition md:duration-300 md:ease;
+  // a {
+  //   @apply md:transition md:duration-300 md:ease;
 
-    &:hover {
-      @apply md:text-gray-400;
-    }
-  }
+  //   &:hover {
+  //     @apply md:text-gray-400;
+  //   }
+  // }
 }

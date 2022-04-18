@@ -1,5 +1,7 @@
 .product-card {
-  @apply relative z-0 mb-3;
+  @apply relative;
+  // Media Queries
+  @apply md:mb-3;
 
   .card-tags {
     @apply flex justify-center absolute right-0 z-10 p-2.5;
@@ -7,23 +9,23 @@
 
     &--sold-out {
       @apply px-2 py-1;
-      @apply text-sm bg-amber-200 rounded-sm;
+      @apply text-sm text-gray-500 border border-gray-400 rounded-sm;
     }
 
     &--sale-item {
       @apply px-2 py-1;
-      @apply text-sm bg-blue-200 rounded-sm;
+      @apply text-sm text-blue-500 border border-blue-400 rounded-sm;
     }
   }
 
   .card-details {
-    @apply flex flex-col w-full mb-2;
+    @apply flex flex-col w-full mb-3;
     @apply transition duration-300 ease-in-out;
+    // Media Queries
+    @apply md:mb-4 md:flex-row md:justify-between;
 
-    &__title,
-    &__price {
-      @apply block relative;
-      @apply text-center;
+    &__title {
+      @apply text-sm text-gray-500;
     }
 
     &__price-max {
@@ -32,17 +34,15 @@
   }
 
   .swatch-grid {
-    @apply hidden;
-    @apply transition duration-300 ease-in-out;
-    // Media Queries
-    @apply md:flex md:justify-center md:opacity-0;
-    @apply md:group-hover:opacity-100;
+    @apply flex;
 
     span {
-      @apply flex mx-2;
+      @apply flex mr-2;
       @apply rounded-full;
       height: 10px;
       width: 10px;
+      // Media Queries
+      @apply md:mr-3;
     }
   }
 }

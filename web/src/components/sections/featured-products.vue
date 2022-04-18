@@ -39,6 +39,7 @@ query {
         path
         title
         handle
+        tags
         productType
         descriptionHtml
         availableForSale
@@ -91,11 +92,17 @@ query {
           altText
           originalSrc
         }
+        options {
+          id
+          name
+          values
+        }
         related {
           id
           path
           title
           handle
+          tags
           productType
           metafields {
             edges {
@@ -113,6 +120,6 @@ query {
 </static-query>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/featured-products.scss';
 </style>

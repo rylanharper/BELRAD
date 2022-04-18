@@ -140,6 +140,6 @@ query {
 </page-query>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/recover.scss';
 </style>

@@ -88,7 +88,7 @@ module.exports = {
         typeName: 'ShopifyProduct',
         field: 'productType',
         minScore: 0.1,
-        maxRelations: 4
+        maxRelations: 10
       }
     },
     {

@@ -1,12 +1,16 @@
 .product-content {
   &__wrapper {
-    @apply flex flex-col relative px-3;
+    @apply flex flex-col relative px-5;
     // Media Queries
     @apply md:sticky md:mx-auto md:px-0 md:mb-24 md:w-11/12 lg:mb-44 lg:w-10/12 xl:w-8/12 2xl:w-6/12;
   }
 
   .product-details {
     @apply flex flex-col mb-6;
+
+    &__title {
+      @apply mb-1.5;
+    }
 
     &__title,
     &__price,

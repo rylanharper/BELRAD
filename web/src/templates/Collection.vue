@@ -2,6 +2,26 @@
   <Layout :key="$route.fullPath">
     <section class="collection">
       <div class="collection__nav">
+        <g-link to="/">Shop</g-link> / {{ collection.title }}
+      </div>
+      <div class="collection__title">
+        <h1>{{ collection.title }}</h1>
+      </div>
+      <filter-and-sort :products="allProducts" :showing-sort="showingSort" :showing-filter="showingFilter">
+        <template v-slot="filterData">
+          <!-- <div>Items:{{ filterData.filteredProducts.length }}</div> -->
+          <div class="product-grid">
+            <div
+              v-for="product in filterData.filteredProducts"
+              :key="product.id"
+              class="product-grid__product group"
+            >
+              <product-card :product="product" />
+            </div>
+          </div>
+        </template>
+      </filter-and-sort>
+      <!-- <div class="collection__nav">
         <h1>{{ collection.title }} — {{ collection.products.length }} Items</h1>
         <button @click="showFilterMenu = !showFilterMenu">
           Filter {{ showFilterMenu === true ? '-' : '+' }}
@@ -17,7 +37,6 @@
         :css="false"
       >
         <div v-show="showFilterMenu" class="collection__filter-menu">
-          <!-- <span class="filter-count">Filters: {{ currentFilters.length }}</span> -->
           <div v-for="filter in listOfFilters" :key="filter.id" class="filter">
             <span class="filter-name">{{ filter.name }}</span>
             <label v-for="(option, o) in filter.options" :key="o">
@@ -36,16 +55,14 @@
         >
           <product-card :product="product" />
         </div>
-      </div>
+      </div> -->
     </section>
   </Layout>
 </template>
 
 <script>
+import FilterAndSort from '@/components/filter/filter-and-sort.vue'
 import ProductCard from '@/components/product-card.vue'
-
-// Gsap
-import { gsap, Expo } from 'gsap'
 
 export default {
   name: 'Collection',
@@ -70,13 +87,14 @@ export default {
 
   data() {
     return {
-      filters: {},
-      showFilterMenu: false
+      showingFilter: true,
+      showingSort: true
     }
   },
 
   components: {
-    ProductCard
+    ProductCard,
+    FilterAndSort
   },
 
   computed: {
@@ -86,83 +104,6 @@ export default {
 
     allProducts() {
       return this.$page.shopifyCollection.products
-    },
-
-    listOfFilters() {
-      const allFilters = this.allProducts
-        .flatMap(product => product.options.filter(({ name }) => name !== 'Title'))
-        .reduce((map, { name, values }) => {
-          const option = map.get(name)
-          if (!option) map.set(name, new Set(values))
-          else values.forEach(value => option.add(value))
-          return map
-        }, new Map())
-
-      return Array.from(allFilters).map(([name, options]) => ({
-        name,
-        options: Array.from(options)
-      }))
-    },
-
-    currentFilters() {
-      const filters = Object.entries(this.filters)
-      return filters.flatMap(([name, values]) => values)
-    },
-
-    filteredProducts() {
-      if (!this.currentFilters.length) return this.allProducts
-
-      const filters = Object.entries(this.filters)
-      return this.allProducts.filter(product => {
-        const hasMatchingOption = filters.some(([filterName, filterValues]) => {
-          const matchingOption = product.options.find(option => option.name === filterName)
-          return matchingOption && matchingOption.values.some(value => filterValues.includes(value))
-        })
-
-        return hasMatchingOption
-      })
-    }
-  },
-
-  methods: {
-    beforeEnter(el) {
-      gsap.set(el, {
-        height: 0,
-        opacity: 0
-      })
-    },
-
-    enter(el, done) {
-      gsap.to(el, {
-        duration: 0.5,
-        ease: Expo.easeInOut,
-        height: 'auto',
-        opacity: 1,
-        onComplete: done
-      })
-    },
-
-    leave(el, done) {
-      gsap.to(el, {
-        duration: 0.5,
-        ease: Expo.easeInOut,
-        height: 0,
-        opacity: 0,
-        onComplete: done
-      })
-    }
-  },
-
-  watch: {
-    // Sets the initial data.filters property
-    // Vue requires an array to use multiple checkboxes
-    // Example - { Color: [], Size: [] }
-    listOfFilters: {
-      immediate: true,
-      handler(listOfFilters) {
-        const filters = listOfFilters.map(filter => [filter.name, []])
-        this.filters = Object.fromEntries(filters)
-      }
     }
   }
 }
@@ -194,6 +135,7 @@ query Collection ($id: ID!) {
       path
       title
       handle
+      tags
       productType
       descriptionHtml
       availableForSale
@@ -256,6 +198,7 @@ query Collection ($id: ID!) {
         path
         title
         handle
+        tags
         productType
         metafields {
           edges {
@@ -272,6 +215,6 @@ query Collection ($id: ID!) {
 </page-query>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/collection.scss';
 </style>

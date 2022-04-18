@@ -50,6 +50,6 @@ query {
 </static-query>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/app-banner.scss';
 </style>

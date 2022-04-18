@@ -9,7 +9,7 @@
         <responsive-image
           :url="image.asset.url"
           :alt="image.alt"
-          class="pt-[78vh] md:pt-[94vh]"
+          class="pt-[78vh] md:pt-[95vh]"
         />
         <!-- Image link info -->
         <div v-if="image.enabled === true" class="image-link">
@@ -51,6 +51,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/featured-image-array.scss';
 </style>

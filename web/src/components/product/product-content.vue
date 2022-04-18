@@ -3,7 +3,8 @@
     <div class="product-content__wrapper top-[2.5vh] md:top-[20vh]">
       <!-- Product details -->
       <div class="product-details">
-        <h1 class="product-details__title">{{ product.title }}</h1>
+        <h2 class="product-details__brand mb-4">{{ product.tags[0] }}</h2>
+        <h3 class="product-details__title">{{ product.title }}</h3>
         <div v-if="currentVariant" class="product-details__price">
           {{ currentVariant.price.amount | currency }}
           <span v-if="isSaleItem" class="product-details__price--max">
@@ -13,7 +14,7 @@
       </div>
       <!-- Swatch Grid -->
       <div class="swatch-grid">
-        <div class="swatch-grid__title">Color: {{ product.tags[0] }}</div>
+        <div class="swatch-grid__title">Color: {{ productOptions[1].values[0] }}</div>
         <div class="swatch-grid__swatches">
           <span
             :style="{ background: product.metafields.edges[0].node.value }"
@@ -27,30 +28,28 @@
         </div>
       </div>
       <!-- Product options -->
-      <div v-if="productOptions[0]" class="product-options">
-        <div v-if="productOptions[0].name === 'Size'">
-          <div class="product-options__name">
-            <span>{{ productOptions[0].name }}:</span>
-            <div
-              :class="{ 'oos-warning': !currentVariant.availableForSale }"
-              class="product-options__status"
-            >
-              <span>
-                {{ currentVariant.availableForSale ? 'In Stock' : 'Out of Stock' }}
-              </span>
-            </div>
+      <div v-if="productOptions[0] && productOptions[0].name === 'Size'" class="product-options">
+        <div class="product-options__name">
+          <span>{{ productOptions[0].name }}:</span>
+          <div
+            :class="{ 'oos-warning': !currentVariant.availableForSale }"
+            class="product-options__status"
+          >
+            <span>
+              {{ currentVariant.availableForSale ? 'In Stock' : 'Out of Stock' }}
+            </span>
           </div>
-          <div class="product-options__variants">
-            <label v-for="value in productOptions[0].values" :key="value">
-              <input
-                v-model="selectedOptions[productOptions[0].name]"
-                :value="value"
-                type="radio"
-                :class="{ 'oos-option': hasNoAvailableProducts(productOptions[0].name, value) }"
-              />
-              <span>{{ value }}</span>
-            </label>
-          </div>
+        </div>
+        <div class="product-options__variants">
+          <label v-for="value in productOptions[0].values" :key="value">
+            <input
+              v-model="selectedOptions[productOptions[0].name]"
+              :value="value"
+              type="radio"
+              :class="{ 'oos-option': hasNoAvailableProducts(productOptions[0].name, value) }"
+            />
+            <span>{{ value }}</span>
+          </label>
         </div>
       </div>
       <!-- Product actions -->
@@ -238,6 +237,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/product-content.scss';
 </style>

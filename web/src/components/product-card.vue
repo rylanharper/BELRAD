@@ -8,14 +8,17 @@
     <!-- Card -->
     <g-link :to="`/products/${product.handle}`" class="card-link">
       <responsive-image
-        class="mb-2"
+        class="mb-4"
         :url="product.images[0].originalSrc"
         :alt="product.images[0].altText || product.title"
-        :max-height="900"
+        :max-height="800"
         :max-width="600"
       />
       <div class="card-details">
-        <h3 class="card-details__title">{{ product.title }}</h3>
+        <div>
+          <h2 class="card-details__brand">{{ product.tags[0] }}</h2>
+          <h3 class="card-details__title">{{ product.title }} ({{ productOptions[1].values[0] }})</h3>
+        </div>
         <div class="card-details__price">
           {{ product.priceRange.minVariantPrice.amount | currency }}
           <span v-if="isSaleItem" class="card-details__price-max">
@@ -25,13 +28,9 @@
       </div>
       <!-- Swatch Grid -->
       <div class="swatch-grid">
-        <span :style="{background: product.metafields.edges[0].node.value }" />
-        <div
-          v-for="product in product.related"
-          :key="product.id"
-          class="inline-flex"
-        >
-          <span :style="{background: product.metafields.edges[0].node.value }" />
+        <span :style="{ background: product.metafields.edges[0].node.value }" />
+        <div v-for="product in product.related" :key="product.id" class="inline-flex">
+          <span :style="{ background: product.metafields.edges[0].node.value }" />
         </div>
       </div>
     </g-link>
@@ -56,11 +55,15 @@ export default {
   },
 
   computed: {
+    productOptions() {
+      return this.product.options.filter(({ name }) => name !== 'Title')
+    },
+
     isSaleItem() {
       if (!this.product.variants) return
       const variantOnSale = this.product.variants.some(variant => {
         if (!variant.compareAtPrice.amount) return
-        return (variant.compareAtPrice.amount) > (variant.price.amount)
+        return variant.compareAtPrice.amount > variant.price.amount
       })
 
       return variantOnSale
@@ -70,6 +73,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/product-card.scss';
 </style>

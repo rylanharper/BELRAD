@@ -1,5 +1,5 @@
 .featured-content {
-  @apply block relative mb-4;
+  @apply block relative mb-5;
   // Media Queries
   @apply md:mb-8;
 
@@ -13,10 +13,10 @@
       }
 
       .info {
-        @apply flex flex-col absolute px-5 bottom-12;
+        @apply flex flex-col absolute px-5 bottom-16;
         @apply text-white;
         // Media Queries
-        @apply md:px-10 md:bottom-18;
+        @apply md:px-8 md:bottom-18;
 
         h2 {
           @apply block text-lg mb-1.5;
@@ -25,7 +25,7 @@
         }
 
         span {
-          @apply block;
+          @apply text-sm;
         }
       }
     }

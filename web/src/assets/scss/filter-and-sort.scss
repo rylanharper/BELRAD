@@ -1,0 +1,44 @@
+.filter-and-sort {
+  &__details {
+    @apply flex justify-between mb-4;
+  }
+}
+
+
+
+
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.menu {
+  position: absolute;
+  z-index: 15;
+  background-color: white;
+}
+
+.-hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.-showing {
+  visibility: visible;
+  pointer-events: all;
+}
+
+.filtered-and-sorted-options {
+  @apply flex flex-row items-center py-1.5 px-4 border border-dashed border-gray-400 max-w-min rounded-full whitespace-nowrap;
+}
+
+.filtered-and-sorted-options::after {
+  content: '\2715';
+  padding-left: 10px;
+  color: #a0a0a0;
+}

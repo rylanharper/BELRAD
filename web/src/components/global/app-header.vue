@@ -1,7 +1,5 @@
 <template>
   <header class="header">
-    <!-- Banner -->
-    <app-banner />
     <!-- Navigation -->
     <nav role="navigation" class="header__nav">
       <!-- Desktop nav -->
@@ -82,6 +80,8 @@
         </div>
       </div>
     </nav>
+    <!-- Banner -->
+    <app-banner />
   </header>
 </template>
 
@@ -122,6 +122,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/app-header.scss';
 </style>

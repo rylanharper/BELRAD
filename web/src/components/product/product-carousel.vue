@@ -5,7 +5,7 @@
         <responsive-image
           :url="image.originalSrc"
           :alt="image.altText"
-          :max-height="900"
+          :max-height="800"
           :max-width="600"
         />
       </div>
@@ -72,6 +72,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/product-carousel.scss';
 </style>

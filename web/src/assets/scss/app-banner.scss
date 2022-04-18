@@ -1,13 +1,12 @@
 .hero-banner {
   @apply relative top-0 left-0 right-0 z-50 overflow-hidden py-1.5;
-  @apply text-sm;
+  @apply text-sm border-t border-b border-black border-dashed;
 
   &__link {
     @apply flex relative items-center inset-0;
-    @apply text-white;
     @apply transition duration-300 ease-in-out;
     // Media Queries
-    @apply md:hover:text-gray-300;
+    @apply md:hover:text-gray-500;
   }
 
   h3 {

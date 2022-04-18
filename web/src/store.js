@@ -88,7 +88,7 @@ export default function State(Vue, { isClient }) {
 
   if (isClient) {
     createPersistedState({
-      key: 'shopify_storefront',
+      key: 'belrad_storefront',
       paths: ['cart', 'token']
     })(store)
   }

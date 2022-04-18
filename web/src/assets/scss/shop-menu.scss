@@ -22,7 +22,7 @@
       }
 
       li {
-        @apply pb-3
+        @apply mb-3;
       }
     }
 
@@ -41,15 +41,15 @@
           }
     
           .info {
-            @apply flex flex-col absolute px-6 bottom-6;
+            @apply flex flex-col absolute px-6 bottom-10;
             @apply text-white;
     
             h2 {
-              @apply block;
+              @apply block mb-1.5;
             }
     
             span {
-              @apply block;
+              @apply text-sm;
             }
           }
         }

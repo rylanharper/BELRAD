@@ -65,6 +65,6 @@ query Page ($id: ID!) {
 </page-query>
 
 <style lang="scss" scoped>
-// Using BEM + Tailwind @apply
+// Using Windicss + @apply Directive
 @import '@/assets/scss/site-page.scss';
 </style>

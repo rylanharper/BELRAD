@@ -1,12 +1,12 @@
 .featured-products {
-  @apply flex-col px-2 mb-2 uppercase;
+  @apply flex-col px-5 mb-5 uppercase;
   // Media Queries
-  @apply md:px-3;
+  @apply md:px-8 md:mb-5;
 
   .product-grid {
-    @apply grid grid-cols-2 gap-2;
+    @apply grid grid-cols-2 gap-5;
     // Media Queries
-    @apply lg:grid-cols-4 md:gap-3;
+    @apply lg:grid-cols-4 md:gap-6;
   
     &__product {
       @apply block relative;
