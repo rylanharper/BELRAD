@@ -56,7 +56,7 @@ There are a couple of opinionated "gotchas" that need to be implemented in order
 
 - Each product that has a variety of colors (more than one) must have the same name and a `productType` that matches the name of that product. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc.
 
-- Make sure the first product tag within Shopify is always the product's color. I currently use `{{ product.tags[0] }}` to easily display the corresponding color.
+- Make sure the first product tag within Shopify is always the product's category or brand. I currently use `{{ product.tags[0] }}` to easily display the corresponding category/brand (though this is completely optional).
 
 - In order to have multiple product descriptions, I have set up the following computed property `productDescription` within `product-content.vue`. This allows you simply write `---` within Shopify's description editor to split up your product's description into various parts such as details, shipping, care, etc.
 
@@ -88,31 +88,6 @@ To deploy a Gridsome site you need a static web host. It is best practice to hav
 *If you are using Netlify or Vercel I would reccommend eithor one of the following studio plugins:*
 - [Netlify Deployment Widget](https://www.sanity.io/plugins/sanity-plugin-dashboard-widget-netlify)
 - [Vercel Deployment Widget](https://www.sanity.io/plugins/vercel-dashboard-widget)
-
-## 👀 Some Extra Tips
-<details>
-<summary><strong>Why are you using extracted component classes (BEM) with Windicss?</strong></summary>
-
-Projects using Tailwind/Windicss can be overwhelming when starting off... I find that using the [`@apply`](https://windicss.org/features/directives.html#apply) is an excellent way to get all the benefits of writing in utility class shorthand, but without having to sift through all your javascript logic to adjust styles.
-</details>
-
-<details>
-<summary><strong>How do the color swatches/related products work?</strong></summary>
-
-For the color swatches/related products, I am using the [Gridsome Recommender Plugin](https://github.com/mklueh/gridsome-plugin-recommender) by [Marian Klühspies](https://github.com/mklueh). Go ahead and read over that plugin's documentation. You will find the options within the `gridsome.config.js` file. I recommend setting the `field` to `productType` to get the best results within the plugin's options. If you need more or less relations, you can edit the `maxRelations` option.
-</details>
-
-<details>
-<summary><strong>How does the product filter work on each collection page?</strong></summary>
-
-[Travis Reynolds](https://github.com/thetre97) was kind enough to help me out with the filter functionality on each collection page. This is pretty cool as it looks within the collection's product options and displays an array of values for a user to select. If there are no options, the products will still display on that collection, but no filter options will be shown (although you may need to edit the collection nav styles). Thanks for the help!
-</details>
-
-<details>
-<summary><strong>Why do all the collection links point to the same collection?</strong></summary>
-
-I only have one example collection in the demo site, so clicking the links within the shop menu will bring you to the same collection every time. In order to change this, just edit the link data within your Sanity studio or within the `app-header.vue` component.
-</details>
 
 ## 🔥 Limitations
 This project runs on Gridsome which currently uses Vue 2. The current Vue specific packages are all using Vue 2 so please do not ugrade these to Vue 3. However, you can safely upgrade the other packages that do not use Vue at their core. 
