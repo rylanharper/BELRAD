@@ -1,5 +1,6 @@
 .sort-menu {
-  @apply flex flex-col pt-8 pl-5 pr-5 pb-2;
+  @apply flex flex-col pt-8 pl-5 pr-5 pb-4;
+  @apply border-b border-black;
 
   button {
     @apply mb-3;

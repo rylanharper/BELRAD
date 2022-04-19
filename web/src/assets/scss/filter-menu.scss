@@ -1,5 +1,6 @@
 .filter-container {
-  @apply pt-8 pr-5 pb-5;
+  @apply py-8 pr-5;
+  @apply border-b border-black;
 }
 
 .filter-menu {
@@ -12,7 +13,7 @@
   }
 
   &__column:last-child {
-    @apply mr-8;
+    @apply mr-2;
   }
 
   .filter-title {

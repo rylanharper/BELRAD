@@ -103,7 +103,7 @@ export default {
   props: {
     maxHeight: {
       type: Number,
-      default: 900
+      default: 800
     },
     maxWidth: {
       type: Number,

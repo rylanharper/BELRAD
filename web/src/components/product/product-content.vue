@@ -20,10 +20,12 @@
             :style="{ background: product.metafields.edges[0].node.value }"
             class="color-primary"
           />
-          <div v-for="product in product.related" :key="product.id" class="related-colors">
-            <g-link :to="`/products/${product.handle}`">
-              <span :style="{ background: product.metafields.edges[0].node.value }" />
-            </g-link>
+          <div v-if="product.related.length">
+            <div v-for="product in product.related" :key="product.id" class="related-colors">
+              <g-link :to="`/products/${product.handle}`">
+                <span :style="{ background: product.metafields.edges[0].node.value }" />
+              </g-link>
+            </div>
           </div>
         </div>
       </div>

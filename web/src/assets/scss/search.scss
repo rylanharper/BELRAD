@@ -14,14 +14,14 @@
   }
 
   &__results {
-    @apply flex-col px-2 mb-24 uppercase;
+    @apply flex-col px-5 mb-20 uppercase;
     // Media Queries
-    @apply md:px-3 md:mb-44;
+    @apply md:px-8 md:mb-32;
 
     .results {
-      @apply grid grid-cols-2 gap-2;
+      @apply grid grid-cols-2 gap-5 relative;
       // Media Queries
-      @apply md:grid-cols-3 lg:grid-cols-5 md:gap-3;
+      @apply md:grid-cols-3 lg:grid-cols-5 md:gap-6;
 
       &__product {
         @apply block relative;

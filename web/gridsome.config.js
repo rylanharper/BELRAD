@@ -68,11 +68,14 @@ module.exports = {
               'id',
               'handle',
               'title',
-              'images',
+              'tags',
+              'productType',
               'variants',
               'availableForSale',
               'priceRange',
               'compareAtPriceRange',
+              'options',
+              'images',
               'metafields',
               'related'
             ]
