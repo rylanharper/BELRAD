@@ -16,16 +16,9 @@ import './assets/scss/app.scss'
 // Lazysizes
 import 'lazysizes'
 
-export default function(Vue, { appOptions, isClient, head }) {
+export default function(Vue, { appOptions, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-
-  // Typekit
-  head.link.push({
-    rel: 'stylesheet',
-    href: 'https://use.typekit.net/cmw8wuf.css',
-    defer: true
-  })
 
   // Import global plugins
   Vue.use(GraphQL)

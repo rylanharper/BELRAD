@@ -51,10 +51,6 @@ query Page ($id: ID!) {
   metadata {
     siteName
     siteUrl
-    sanityOptions {
-      projectId
-      dataset
-    }
   }
   page: sanityPage (id: $id) {
     title
