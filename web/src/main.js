@@ -23,7 +23,8 @@ export default function(Vue, { appOptions, isClient, head }) {
   // Typekit
   head.link.push({
     rel: 'stylesheet',
-    href: 'https://use.typekit.net/cmw8wuf.css'
+    href: 'https://use.typekit.net/cmw8wuf.css',
+    defer: true
   })
 
   // Import global plugins
