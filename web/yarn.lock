@@ -9,10 +9,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@antfu/utils@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@antfu/utils/-/utils-0.5.0.tgz#b3169429997cb87850e543cb74660f9e2fed7efd"
-  integrity sha512-MrAQ/MrPSxbh1bBrmwJjORfJymw4IqSHFBXqvxaga3ZdDM+/zokYF8DjyJpSjY2QmpmgQrajDUBJOWrYeARfzA==
+"@antfu/utils@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@antfu/utils/-/utils-0.5.1.tgz#7eb6764878adb715daff20019e5a15fd63d93342"
+  integrity sha512-8Afo0+xvYe1K8Wm4xHTymfTkpzy36aaqDvhXIayUwl+mecMG9Xzl3XjXa6swG6Bk8FBeQ646RyvmsYt6+2Be9g==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.16.7", "@babel/code-frame@^7.5.5":
   version "7.16.7"
@@ -1548,26 +1548,26 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@windicss/config@1.8.3":
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.8.3.tgz#4f6eb0441be00ff7f284bb278a6d0c8f34f791ed"
-  integrity sha512-1fvfZhRD7WfV/Xh6uIAYKIdbQWrwEgSdkFlHiLPzMDS44KjwNZILDzLAz9Y2W5H2K4MLGgGMnzGS89ECyjc0Ww==
+"@windicss/config@1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.8.4.tgz#090c7f48cb86b6cba1bd97742a2f012852026d3c"
+  integrity sha512-i4fFGFfZoRess6WMkauykHC3PFd9xKYVx7lSuLfMK7sgo6x3+l4dY42GbsWMHyLqH1sTMfyt1LgfXSIKYJozSA==
   dependencies:
-    debug "^4.3.3"
+    debug "^4.3.4"
     jiti "^1.13.0"
     windicss "^3.5.1"
 
-"@windicss/plugin-utils@^1.8.2":
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.8.3.tgz#cec2bdc7703357de348e4512d61c7bd7802b049a"
-  integrity sha512-emlMeDt73uNV1ZofLTDogcxqL9aZ5uIRYkjeHlrWiaDozFbX6Jc+a6eRo9Ieaar3JUryl6AnecTPHAiFDl4IXg==
+"@windicss/plugin-utils@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.8.4.tgz#fba74b6eb29276e24b9d09931bc22808fd7230d7"
+  integrity sha512-DqJVwAfzlgd8nYSNlmhXOey32pI8UwH7QiOWdFS/AR2O/q9oLDGHDn97Its/kZdfoyhi8ylwZNP2Pk0H7cihhQ==
   dependencies:
-    "@antfu/utils" "^0.5.0"
-    "@windicss/config" "1.8.3"
-    debug "^4.3.3"
+    "@antfu/utils" "^0.5.1"
+    "@windicss/config" "1.8.4"
+    debug "^4.3.4"
     fast-glob "^3.2.11"
-    magic-string "^0.25.7"
-    micromatch "^4.0.4"
+    magic-string "^0.26.1"
+    micromatch "^4.0.5"
     windicss "^3.5.1"
 
 "@xtuc/ieee754@^1.2.0":
@@ -3274,7 +3274,7 @@ debug@^3.1.1, debug@^3.2.7:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.3:
+debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.3, debug@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
@@ -4830,13 +4830,13 @@ gridsome-plugin-svg@^0.0.14:
   dependencies:
     vue-svg-loader "^0.16.0"
 
-gridsome-plugin-windicss@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/gridsome-plugin-windicss/-/gridsome-plugin-windicss-1.0.5.tgz#ff7e9cbbe4a8830eb856c652c4b59c8f162d25df"
-  integrity sha512-QxQPp+9REXj0tE16F0tsiNwxaqhy5wdsUN5TWT+Sz5j3QIZ2sgzU44ErNF+wSYAjEymY9QGnL+rEEHuD18bgtw==
+gridsome-plugin-windicss@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-windicss/-/gridsome-plugin-windicss-1.0.6.tgz#d95f7a76d797926e20d1d7dbcc4ceb154c2c59b3"
+  integrity sha512-IpfluQZ6uJaa3+YKw4hkqFnkYOvSDx+Gvfrqq1z+upYD/RLld2eBh4Y88nR+O0YCxNPCorDr5n5ZU+cKzal81A==
   dependencies:
     defu "^5.0.0"
-    windicss-webpack-plugin "^1.6.2"
+    windicss-webpack-plugin "^1.6.9"
 
 gridsome-source-sanity@^1.1.0:
   version "1.2.0"
@@ -6335,10 +6335,10 @@ lru-cache@^7.4.0:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.7.3.tgz#98cd19eef89ce6a4a3c4502c17c833888677c252"
   integrity sha512-WY9wjJNQt9+PZilnLbuFKM+SwDull9+6IAguOrarOMoOHTcJ9GnXSO11+Gw6c7xtDkBkthR57OZMtZKYr+1CEw==
 
-magic-string@^0.25.7:
-  version "0.25.9"
-  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.9.tgz#de7f9faf91ef8a1c91d02c2e5314c8277dbcdd1c"
-  integrity sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==
+magic-string@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.26.1.tgz#ba9b651354fa9512474199acecf9c6dbe93f97fd"
+  integrity sha512-ndThHmvgtieXe8J/VGPjG+Apu7v7ItcD5mhEIvOscWjPF/ccOiLxHaSuCAS2G+3x4GKsAbT8u7zdyamupui8Tg==
   dependencies:
     sourcemap-codec "^1.4.8"
 
@@ -6518,7 +6518,7 @@ micromatch@^3.1.10, micromatch@^3.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.2"
 
-micromatch@^4.0.4:
+micromatch@^4.0.4, micromatch@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.5.tgz#bc8999a7cbbf77cdc89f132f6e467051b49090c6"
   integrity sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==
@@ -10292,12 +10292,12 @@ widest-line@^3.1.0:
   dependencies:
     string-width "^4.0.0"
 
-windicss-webpack-plugin@^1.6.2:
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/windicss-webpack-plugin/-/windicss-webpack-plugin-1.6.7.tgz#274c6ccc0c66e0a55d03a4679dea54b7f08997db"
-  integrity sha512-wMC0+/buGBMqbS6d2jCUGh51J2qSAwIBrwOCmd44GqXTIJs+uNzptYlwijj+V7ykgGn6nmR0fyxH72Ramw2LZA==
+windicss-webpack-plugin@^1.6.9:
+  version "1.6.10"
+  resolved "https://registry.yarnpkg.com/windicss-webpack-plugin/-/windicss-webpack-plugin-1.6.10.tgz#a012796f95430b7a1902dfc34db24430b30fe329"
+  integrity sha512-X/0GbXVoAhML4C8WgKWB/jTJ7ForLFjpwvZ5xAtpQPrVgZdfFH31WVafX+8K+gRBvYpJToHO1TB+oLu6gRFJQA==
   dependencies:
-    "@windicss/plugin-utils" "^1.8.2"
+    "@windicss/plugin-utils" "^1.8.4"
     debug "^4.3.3"
     loader-utils "^2.0.0"
     lodash "^4.17.21"
