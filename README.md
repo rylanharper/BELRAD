@@ -54,7 +54,7 @@ There are a couple of opinionated "gotchas" that need to be implemented in order
 
 - Enable product metafields by going to `Settings → Metafields → Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. 
 
-- Each product that has a variety of colors (more than one) must have the same name and a `productType` that matches the name of that product. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc.
+- Each product that has a variety of colors (more than one) must have the same unique `productType` as its corresponding products. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc. I have found that placing a matching code as a product type makes this really simple. [Checkout this code generator](https://www.voucherify.io/generator)!
 
 - Make sure the first product tag within Shopify is always the product's category or brand. I currently use `{{ product.tags[0] }}` to easily display the corresponding category/brand (though this is completely optional).
 
