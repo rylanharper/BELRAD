@@ -1,10 +1,10 @@
-import { ArrowSquareOut } from 'phosphor-react'
+import { Link } from 'phosphor-react'
 
 export default {
   title: 'Link Item',
   name: 'linkItem',
   type: 'object',
-  icon: ArrowSquareOut,
+  icon: Link,
   fields: [
     {
       title: 'Label',
@@ -15,7 +15,17 @@ export default {
       title: 'URL',
       name: 'url',
       type: 'string',
-      description: 'Enter a URL path → Example: "/collections/new-arrivals"'
+      description: 'Enter a URL path → Example: "/collections/new-arrivals/"'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      label: 'label'
+    },
+    prepare({ label }) {
+      return {
+        title: label ?? url
+      }
+    }
+  }
 }

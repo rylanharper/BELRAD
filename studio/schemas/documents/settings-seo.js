@@ -29,6 +29,16 @@ export default {
         Rule.max(150).warning('Longer descriptions may be truncated by search engines')
     },
     {
+      title: 'Default Meta Keywords',
+      name: 'metakeywords',
+      type: 'array',
+      description: 'Keywords used for search engines and browsers',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags'
+      }
+    },
+    {
       title: 'Default Share Graphic',
       name: 'shareGraphic',
       type: 'image',

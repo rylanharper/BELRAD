@@ -1,9 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 
 // Icons
-import {
-  House,
-} from 'phosphor-react'
+import { House } from 'phosphor-react'
 
 export const home = S.listItem()
   .title('Home')

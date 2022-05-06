@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://api.fontshare.com/css?f[]=switzer@350&display=swap');
 
 :root {
   /* sanity variables */
@@ -19,13 +19,16 @@
 
   --button-bg-active: rgba(0, 0, 0, 0.15);
   --button-text-active: #000000;
+
+  --font-family-sans-serif: 'Switzer';
+  --font-size-base: 20px;
 }
 
 /* theme UI overrides */
-
 [data-scheme='dark'] [data-ui='CollapseMenu'] [data-selected] > span {
   background: var(--brand-primary--inverted) !important;
 }
+
 [data-scheme='dark'] [data-ui='CollapseMenu'] [data-selected] [data-ui='Text'] {
   color: var(--brand-primary) !important;
 }
@@ -78,16 +81,7 @@
   color: var(--button-text-active) !important;
 }
 
-[data-ui='Tab']:focus:not(:focus-visible) {
-  box-shadow: inset 0 0 0 1px var(--button-bg-active) !important;
-}
-
-[data-ui='Tab'][data-selected] {
-  box-shadow: inset 0 0 0 1px var(--button-bg) !important;
-}
-
 /* more natural cursors for studio elements */
-
 button:not([disabled]),
 [data-ui='Button']:not([disabled]),
 [data-ui='Button']:not([disabled]) input[type='file'] {
@@ -96,64 +90,4 @@ button:not([disabled]),
 
 [data-pane-collapsed] * {
   cursor: e-resize !important;
-}
-
-/* custom portable text styles */
-
-[data-slate-editor] {
-  background: var(--pt-bg);
-  color: var(--pt-text);
-}
-
-.pt-editable * {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif !important;
-  color: var(--pt-text);
-}
-
-.btn {
-  display: inline-block;
-  position: relative;
-  padding: 0.5rem 1.25rem;
-  background: var(--button-bg) !important;
-  color: var(--button-text) !important;
-  border: 1px solid;
-  border-radius: 9999px;
-  box-shadow: 0 0 0 5px var(--pt-bg);
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 600;
-}
-
-.btn * {
-  font-weight: 600;
-}
-
-.btn.is-primary {
-  background: var(--button-text) !important;
-  color: var(--button-bg) !important;
-  border-color: var(--button-bg);
-}
-
-.btn.is-white {
-  background: white !important;
-  color: black !important;
-  border-color: white;
-  box-shadow: 0 0 0 5px var(--pt-bg), 0 0 10px 5px hsla(0, 0%, 0%, 25%);
-}
-
-.btn.is-large {
-  padding: 0.5rem 1.75rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 400;
-}
-
-.btn.is-large * {
-  font-weight: 400;
-}
-
-.btn.is-block {
-  box-sizing: border-box;
-  width: 100%;
-  text-align: center;
 }

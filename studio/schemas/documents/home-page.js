@@ -7,9 +7,8 @@ export default {
       name: 'homePageNote',
       type: 'note',
       options: {
-        headline: 'Page Builder',
         message:
-          'This page is split into redusable parts (modules) that can be created, edited, and organized in any order. To create a new module click "Add Item"',
+          'This page is split into redusable sections (modules) that can be created, edited, and organized in any order. To create a new module click ADD ITEM.',
         tone: 'default'
       }
     },

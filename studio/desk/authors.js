@@ -1,9 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
 
-// Icons
-import {
-  Users,
-} from 'phosphor-react'
+import { Users } from 'phosphor-react'
 
 export const authors = S.listItem()
   .title('Authors')

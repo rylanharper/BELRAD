@@ -17,7 +17,7 @@ export default {
     {
       title: 'Block',
       type: 'block',
-      styles: [{ title: 'Normal', value: 'normal' }],
+      styles: [{ title: 'Paragraph', value: 'normal' }],
       lists: [
         {
           title: 'Bullet',

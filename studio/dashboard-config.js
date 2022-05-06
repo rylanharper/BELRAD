@@ -5,7 +5,7 @@ export default {
       options: {
         title: 'Website Deployment',
         description:
-          'NOTE: Because this is a statically built website, it needs to be re-deployed to see changes made when documents are published.',
+          'NOTE: Because this is a statically built website, it needs to be re-deployed to see changes made.',
         sites: [
           {
             title: 'BELRAD',
