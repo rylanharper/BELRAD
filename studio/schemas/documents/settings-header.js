@@ -74,7 +74,8 @@ export default {
       title: 'Upsell Image',
       name: 'image',
       type: 'imageItem',
-      description: 'An upsell image pointing to a product or collection'
+      description: 'An upsell image pointing to a product or collection',
+      options: { collapsible: true }
     }
   ],
   preview: {

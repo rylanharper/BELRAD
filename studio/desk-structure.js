@@ -12,11 +12,13 @@ const hiddenDocTypes = (listItem) =>
     'page',
     'article',
     'author',
+    'editorial',
     'headerSettings',
     'footerSettings',
     'seoSettings',
     'promoSettings',
-    'cookieSettings'
+    'cookieSettings',
+    'media.tag' // for media plugin
   ].includes(listItem.getId())
 
 export default () =>

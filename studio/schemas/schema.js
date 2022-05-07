@@ -10,6 +10,7 @@ import promoSettings from './documents/settings-promo'
 import seoSettings from './documents/settings-seo'
 import article from './documents/template-article'
 import author from './documents/template-author'
+import editorial from './documents/template-editorial'
 import page from './documents/template-page'
 
 // Modules
@@ -40,6 +41,7 @@ export default createSchema({
     seoSettings,
     article,
     author,
+    editorial,
     page,
 
     // Modules

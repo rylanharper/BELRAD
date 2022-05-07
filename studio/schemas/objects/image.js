@@ -10,16 +10,16 @@ export default {
   },
   fields: [
     {
+      title: 'Alternative text',
       name: 'alt',
       type: 'string',
-      title: 'Alternative text',
       description: 'Important for SEO and accessiblity.',
       options: {
         isHighlighted: true
       }
     },
     {
-      title: 'Enable Text and Link?',
+      title: 'Enable text and link?',
       name: 'enabled',
       type: 'boolean'
     },
@@ -35,9 +35,18 @@ export default {
     }
   ],
   preview: {
-    prepare () {
+    select: {
+      asset: 'asset.url',
+      title: 'title',
+      dimensions: 'asset.metadata.dimensions',
+      filename: 'asset.originalFilename'
+    },
+    prepare(selection) {
+      const { asset, title, dimensions, filename } = selection
       return {
-        title: 'Content Image'
+        imageUrl: asset ? asset : '',
+        title: title ? title : filename,
+        subtitle: `${dimensions.width}px × ${dimensions.height}px`
       }
     }
   }

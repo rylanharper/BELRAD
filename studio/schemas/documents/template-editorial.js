@@ -1,6 +1,6 @@
 export default {
-  title: 'Article',
-  name: 'article',
+  title: 'Editorial',
+  name: 'editorial',
   type: 'document',
   fields: [
     {
@@ -21,19 +21,15 @@ export default {
       validation: rule => rule.required()
     },
     {
-      title: 'Authors',
-      name: 'authors',
-      type: 'array',
-      of: [
-        {
-          type: 'authorReference'
-        }
-      ]
-    },
-    {
       title: 'Description',
       name: 'description',
       type: 'blockText'
+    },
+    {
+      title: 'Images',
+      name: 'images',
+      type: 'array',
+      of: [{ type: 'imageItem' }]
     }
   ],
   preview: {
