@@ -1,5 +1,5 @@
 <template>
-  <main role="main" id="main">
+  <main role="main">
     <slot />
   </main>
 </template>
