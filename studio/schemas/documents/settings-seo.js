@@ -30,7 +30,7 @@ export default {
     },
     {
       title: 'Default Meta Keywords',
-      name: 'metakeywords',
+      name: 'metaKeywords',
       type: 'array',
       description: 'Keywords used for search engines and browsers',
       of: [{ type: 'string' }],
