@@ -1,5 +1,5 @@
 <template>
-  <main role="main">
+  <main role="main" id="main">
     <slot />
   </main>
 </template>
@@ -23,6 +23,7 @@ query {
       node {
         metaTitle
         metaDesc
+        metaKeywords
         shareGraphic {
           asset {
             id

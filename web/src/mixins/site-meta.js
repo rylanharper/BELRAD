@@ -7,6 +7,10 @@ export default {
           content: this.$static.siteSeo.edges[0].node.metaDesc
         },
         {
+          name: 'keywords',
+          content: this.$static.siteSeo.edges[0].node.metaKeywords.join(', ')
+        },
+        {
           key: 'og:site_name',
           property: 'og:site_name',
           content: this.$static.siteSeo.edges[0].node.metaTitle

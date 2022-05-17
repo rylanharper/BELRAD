@@ -1,4 +1,4 @@
-// Gloabl currency filter
+// Global currency filter
 export default function filters(Vue) {
   Vue.filter('currency', function(value) {
     const amount = new Intl.NumberFormat('en-US', {
