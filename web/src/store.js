@@ -1,10 +1,10 @@
-import Vuex from 'vuex'
+import vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 
 export default function State(Vue, { isClient }) {
-  Vue.use(Vuex)
+  Vue.use(vuex)
 
-  const store = new Vuex.Store({
+  const store = new vuex.Store({
     state: {
       cart: [],
       token: {},
