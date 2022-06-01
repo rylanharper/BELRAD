@@ -40,11 +40,12 @@ export default {
       asset: 'asset.url',
       title: 'caption',
       dimensions: 'asset.metadata.dimensions',
+      filename: 'asset.originalFilename'
     },
-    prepare({ asset, title, dimensions }) {
+    prepare({ asset, title, dimensions, filename }) {
       return {
         imageUrl: asset ? asset : '',
-        title: title,
+        title: title ? title : filename,
         subtitle: `${dimensions.width}px × ${dimensions.height}px`
       }
     }
