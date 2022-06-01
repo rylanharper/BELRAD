@@ -59,7 +59,7 @@ query {
                 url
               }
               enabled
-              text
+              caption
               link {
                 label
                 url
@@ -75,7 +75,7 @@ query {
                 url
               }
               enabled
-              text
+              caption
               link {
                 label
                 url

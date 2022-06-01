@@ -59,7 +59,7 @@
             <div v-if="menu.image.enabled === true" class="image-link">
               <g-link :to="menu.image.link.url">
                 <div class="info">
-                  <h2>{{ menu.image.text }}</h2>
+                  <h2>{{ menu.image.caption }}</h2>
                   <span>{{ menu.image.link.label }}</span>
                 </div>
               </g-link>
@@ -291,7 +291,7 @@ query {
             url
           }
           enabled
-          text
+          caption
           link {
             label
             url

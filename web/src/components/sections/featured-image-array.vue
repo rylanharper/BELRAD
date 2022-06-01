@@ -15,7 +15,7 @@
         <div v-if="image.enabled === true" class="image-link">
           <g-link :to="image.link.url">
             <div class="info">
-              <h2>{{ image.text }}</h2>
+              <h2>{{ image.caption }}</h2>
               <span>{{ image.link.label }}</span>
             </div>
           </g-link>
