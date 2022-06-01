@@ -18,7 +18,7 @@ const hiddenDocTypes = (listItem) =>
     'seoSettings',
     'promoSettings',
     'cookieSettings',
-    'media.tag' // for media plugin
+    'media.tag' // Media plugin
   ].includes(listItem.getId())
 
 export default () =>

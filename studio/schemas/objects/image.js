@@ -24,9 +24,10 @@ export default {
       type: 'boolean'
     },
     {
-      title: 'Title',
-      name: 'text',
-      type: 'string'
+      title: 'Caption',
+      name: 'caption',
+      type: 'string',
+      description: 'Image display text',
     },
     {
       title: 'Link Item',
@@ -37,15 +38,13 @@ export default {
   preview: {
     select: {
       asset: 'asset.url',
-      title: 'title',
+      title: 'caption',
       dimensions: 'asset.metadata.dimensions',
-      filename: 'asset.originalFilename'
     },
-    prepare(selection) {
-      const { asset, title, dimensions, filename } = selection
+    prepare({ asset, title, dimensions }) {
       return {
         imageUrl: asset ? asset : '',
-        title: title ? title : filename,
+        title: title,
         subtitle: `${dimensions.width}px × ${dimensions.height}px`
       }
     }

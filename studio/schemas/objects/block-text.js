@@ -9,7 +9,7 @@ import {
 } from 'phosphor-react'
 
 export default {
-  title: 'Bloack Text',
+  title: 'Block Text',
   name: 'blockText',
   type: 'array',
   icon: Article,
