@@ -11,8 +11,8 @@ export default {
       type: 'note',
       options: {
         message:
-          'This module displays the most recent products from the Shopify storefront. No configuration is required.',
-        tone: 'default'
+          'This module displays the most recent products added to Shopify. No configuration is required.',
+        tone: 'positive'
       }
     },
     {
