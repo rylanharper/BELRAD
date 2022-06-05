@@ -4,7 +4,7 @@
     :style="{ paddingTop: `${(maxHeight / maxWidth) * 100}%` }"
   >
     <img
-      sizes="auto"
+      data-sizes="auto"
       :data-srcset="imageSrcset"
       :alt="alt"
       class="lazyload"
