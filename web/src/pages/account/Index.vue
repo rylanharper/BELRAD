@@ -2,7 +2,6 @@
   <Layout>
     <section class="account">
       <div class="account__wrapper pt-[10vh] md:pt-[14vh]">
-        <!-- If user is auth -->
         <div v-if="isAuthenticated" class="account__content--auth">
           <h2>My Account</h2>
           <div class="content">
@@ -37,14 +36,6 @@
               <account-address v-else-if="index == 1" :customer="customer" />
             </div>
           </div>
-        </div>
-        <!-- If user is not auth -->
-        <div v-else class="account__content--null">
-          <p>
-            To view your order account information, please
-            <span class="underline"><g-link to="/account/login">sign in</g-link></span
-            >.
-          </p>
         </div>
       </div>
     </section>
