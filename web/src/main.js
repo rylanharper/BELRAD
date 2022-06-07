@@ -16,7 +16,7 @@ import './assets/scss/app.scss'
 // Lazysizes
 import 'lazysizes'
 
-export default function(Vue, { appOptions, isClient, head, router }) {
+export default function(Vue, { appOptions, isClient, head }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
@@ -24,23 +24,8 @@ export default function(Vue, { appOptions, isClient, head, router }) {
   head.link.push({
     rel: 'stylesheet',
     href: 'https://use.typekit.net/cmw8wuf.css',
-    defer: true,
+    defer: true
   })
-
-  // Authentication & route handling
-  if (isClient) {
-    router.beforeEach((to, from, next) => {
-      const isAuth = store.getters.isAuthenticated
-
-      if (to.path === '/account' && !isAuth) {
-        next('/account/login')
-      } else if (to.path === '/account' && isAuth) {
-        next('/account')
-      } else {
-        next();
-      }
-    })
-  }
 
   // Import global plugins
   Vue.use(GraphQL)
