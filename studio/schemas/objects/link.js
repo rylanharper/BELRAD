@@ -37,7 +37,7 @@ export default {
     },
     prepare({ label, url, newTab }) {
       return {
-        title: `${label}${newTab ? ' (External Link)' : ''}`,
+        title: `${label}${newTab ? ' (New Tab Link)' : ''}`,
         subtitle: url
       }
     }
