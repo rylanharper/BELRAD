@@ -38,12 +38,10 @@ export default function(Vue, { appOptions, isClient, head, router }) {
   appOptions.store = store
 
   // Authentication & route handling
-  if (isClient) {
-    router.beforeEach((to, from, next) => {
-      const isAuth = store.getters.isAuthenticated
-      if (to.path == '/account' && !isAuth) {
-        next('/account/login')
-      } else next()
-    })
-  }
+  router.beforeEach((to, from, next) => {
+    const isAuth = store.getters.isAuthenticated
+    if (to.path == '/account' && !isAuth) {
+      next('/account/login')
+    } else next()
+  })
 }
