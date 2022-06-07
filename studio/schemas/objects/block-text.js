@@ -4,7 +4,8 @@ import {
   ListNumbers,
   TextBolder,
   TextItalic,
-  Code,
+  TextUnderline,
+  TextStrikethrough,
   Link
 } from 'phosphor-react'
 
@@ -17,7 +18,12 @@ export default {
     {
       title: 'Block',
       type: 'block',
-      styles: [{ title: 'Paragraph', value: 'normal' }],
+      styles: [
+        { 
+          title: 'Paragraph',
+          value: 'normal' 
+        }
+      ],
       lists: [
         {
           title: 'Bullet',
@@ -51,10 +57,17 @@ export default {
             }
           },
           {
-            title: 'Code',
-            value: 'code',
+            title: 'Underline',
+            value: 'underline',
             blockEditor: {
-              icon: Code
+              icon: TextUnderline
+            }
+          },
+          {
+            title: 'Strike Through',
+            value: 'strike-through',
+            blockEditor: {
+              icon: TextStrikethrough
             }
           }
         ],
