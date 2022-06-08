@@ -103,8 +103,8 @@ export default {
 
   created() {
     if (process.isClient) {
-      var url = new URL(document.URL)
-      this.id = Buffer.from('gid://shopify/Customer/' + url.searchParams.get('id')).toString('base64')
+      let url = new URL(document.URL)
+      this.id = 'gid://shopify/Customer/' + url.searchParams.get('id')
       this.user.resetToken = url.searchParams.get('token')
     }
   },
