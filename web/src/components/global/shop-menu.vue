@@ -22,9 +22,7 @@
               <span>{{ menu.blockTitle1 }}</span>
               <ul v-if="menu.blockMenu1.length">
                 <li v-for="link in menu.blockMenu1" :key="link.id">
-                  <g-link :to="link.url">
-                    {{ link.label }}
-                  </g-link>
+                  <nav-link :url="link.url" :label="link.label" :newTab="link.newTab" />
                 </li>
               </ul>
             </div>
@@ -32,9 +30,7 @@
               <span>{{ menu.blockTitle2 }}</span>
               <ul v-if="menu.blockMenu2.length">
                 <li v-for="link in menu.blockMenu2" :key="link.id">
-                  <g-link :to="link.url">
-                    {{ link.label }}
-                  </g-link>
+                  <nav-link :url="link.url" :label="link.label" :newTab="link.newTab" />
                 </li>
               </ul>
             </div>
@@ -42,9 +38,7 @@
               <span>{{ menu.blockTitle3 }}</span>
               <ul v-if="menu.blockMenu3.length">
                 <li v-for="link in menu.blockMenu3" :key="link.id">
-                  <g-link :to="link.url">
-                    {{ link.label }}
-                  </g-link>
+                  <nav-link :url="link.url" :label="link.label" :newTab="link.newTab" />
                 </li>
               </ul>
             </div>
@@ -72,9 +66,7 @@
           <div class="menu-mobile__links">
             <ul v-if="menu.blockMenu1.length">
               <li v-for="link in menu.blockMenu1" :key="link.id">
-                <g-link :to="link.url">
-                  {{ link.label }}
-                </g-link>
+                <nav-link :url="link.url" :label="link.label" :newTab="link.newTab" />
               </li>
             </ul>
             <span @click="showBlock2 = !showBlock2">
@@ -94,9 +86,7 @@
                 class="ml-4 overflow-hidden relative"
               >
                 <li v-for="link in menu.blockMenu2" :key="link.id">
-                  <g-link :to="link.url">
-                    {{ link.label }}
-                  </g-link>
+                  <nav-link :url="link.url" :label="link.label" :newTab="link.newTab" />
                 </li>
               </ul>
             </transition>
@@ -117,9 +107,7 @@
                 class="ml-4 overflow-hidden relative"
               >
                 <li v-for="link in menu.blockMenu3" :key="link.id">
-                  <g-link :to="link.url">
-                    {{ link.label }}
-                  </g-link>
+                  <nav-link :url="link.url" :label="link.label" :newTab="link.newTab" />
                 </li>
               </ul>
             </transition>
@@ -145,6 +133,7 @@
 </template>
 
 <script>
+import NavLink from '@/components/nav-link.vue'
 import ResponsiveImage from '@/components/responsive-image.vue'
 
 // Gsap
@@ -154,6 +143,7 @@ export default {
   name: 'ShopMenu',
 
   components: {
+    NavLink,
     ResponsiveImage
   },
 

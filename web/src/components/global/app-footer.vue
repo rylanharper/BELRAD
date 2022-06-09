@@ -11,18 +11,14 @@
         <div class="footer-desktop__column">
           <ul v-if="secondMenu.length">
             <li v-for="link in secondMenu" :key="link.id">
-              <g-link :to="link.url">
-                {{ link.label }}
-              </g-link>
+              <nav-link :url="link.url" :label="link.label" :newTab="link.newTab" />
             </li>
           </ul>
         </div>
         <div class="footer-desktop__column">
           <ul v-if="firstMenu.length">
             <li v-for="link in firstMenu" :key="link.id">
-              <g-link :to="link.url">
-                {{ link.label }}
-              </g-link>
+              <nav-link :url="link.url" :label="link.label" :newTab="link.newTab" />
             </li>
           </ul>
         </div>
@@ -66,6 +62,7 @@
 
 <script>
 import KlaviyoSubscribe from '@/components/klaviyo-subscribe.vue'
+import NavLink from '@/components//nav-link.vue'
 
 // Logo
 import Logo from '@/assets/svg/belrad.svg'
@@ -75,6 +72,7 @@ export default {
 
   components: {
     KlaviyoSubscribe,
+    NavLink,
     Logo
   },
 
@@ -114,11 +112,13 @@ query {
       node {
         blockTitle1
         blockMenu1 {
+          newTab
           label
           url
         }
         blockTitle2
         blockMenu2 {
+          newTab
           label
           url
         }
