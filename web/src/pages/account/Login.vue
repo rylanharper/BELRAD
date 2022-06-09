@@ -101,6 +101,7 @@ export default {
   methods: {
     async login() {
       const user = this.user
+
       this.isLoading = true
 
       try {
@@ -117,6 +118,7 @@ export default {
         await this.$store.dispatch('login', customerAccessToken)
         this.$router.push('/account')
       } catch (error) {
+        
         this.isLoading = false
         this.errorMessage = true
 

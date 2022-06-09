@@ -106,6 +106,7 @@ export default {
   methods: {
     async recover() {
       const email = this.email
+
       this.isLoading = true
 
       try {
@@ -119,6 +120,7 @@ export default {
 
         this.successMessage = true
       } catch (error) {
+        
         this.isLoading = false
         this.errorMessage = true
 

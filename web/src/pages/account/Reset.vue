@@ -113,6 +113,7 @@ export default {
     async reset() {
       const user = this.user
       const id = this.id
+
       this.isLoading = true
 
       if (this.user.password === this.check.confirm) {
@@ -128,6 +129,7 @@ export default {
           await this.$store.dispatch('login', customerAccessToken)
           this.$router.push('/account')
         } catch (error) {
+          
           this.isLoading = false
           this.errorMessage = true
 

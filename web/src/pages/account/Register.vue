@@ -129,6 +129,7 @@ export default {
   methods: {
     async register() {
       const user = this.user
+      
       this.isLoading = true
 
       try {
@@ -149,6 +150,7 @@ export default {
             })
         }
       } catch (error) {
+
         this.isLoading = false
         this.errorMessage = true
 
