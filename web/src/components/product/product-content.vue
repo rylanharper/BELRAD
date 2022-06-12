@@ -13,7 +13,10 @@
         </div>
       </div>
       <!-- Swatch Grid -->
-      <div v-if="productOptions[1] && productOptions[1].name.toLowerCase() === 'color'" class="swatch-grid">
+      <div
+        v-if="productOptions[1] && productOptions[1].name.toLowerCase() === 'color'"
+        class="swatch-grid"
+      >
         <div class="swatch-grid__title">Color: {{ productOptions[1].values[0] }}</div>
         <div class="swatch-grid__swatches">
           <span
@@ -30,7 +33,10 @@
         </div>
       </div>
       <!-- Product options -->
-      <div v-if="productOptions[0] && productOptions[0].name.toLowerCase() === 'size'" class="product-options">
+      <div
+        v-if="productOptions[0] && productOptions[0].name.toLowerCase() === 'size'"
+        class="product-options"
+      >
         <div class="product-options__name">
           <span>{{ productOptions[0].name }}:</span>
           <div

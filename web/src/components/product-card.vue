@@ -6,14 +6,25 @@
       <span v-if="isSaleItem" class="card-tags--sale-item">On Sale</span>
     </div>
     <!-- Card -->
-    <g-link :to="`/products/${product.handle}`" class="card-link">
-      <responsive-image
-        class="mb-4"
-        :url="product.images[0].originalSrc"
-        :alt="product.images[0].altText || product.title"
-        :max-height="800"
-        :max-width="600"
-      />
+    <g-link :to="`/products/${product.handle}`" class="card-link relative">
+      <div class="card-images relative overflow-hidden mb-4">
+        <div class="base-image">
+          <responsive-image
+            :url="product.images[0].originalSrc"
+            :alt="product.images[0].altText || product.title"
+            :max-height="800"
+            :max-width="600"
+          />
+        </div>
+        <div class="hover-image absolute flex top-0 left-0 h-full w-full opacity-0 transition duration-300 ease delay-150 hover:opacity-100">
+          <responsive-image
+            :url="product.images[1].originalSrc"
+            :alt="product.images[1].altText || product.title"
+            :max-height="800"
+            :max-width="600"
+          />
+        </div>
+      </div>
       <div class="card-details">
         <div>
           <h2 class="card-details__brand">{{ product.tags[0] }}</h2>
