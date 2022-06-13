@@ -16,7 +16,7 @@
             :max-width="600"
           />
         </div>
-        <div class="hover-image absolute flex top-0 left-0 h-full w-full opacity-0 transition duration-300 ease delay-150 hover:opacity-100">
+        <div class="hover-image absolute flex top-0 left-0 h-full w-full opacity-0 transition duration-300 ease delay-200 md:hover:opacity-100">
           <responsive-image
             :url="product.images[1].originalSrc"
             :alt="product.images[1].altText || product.title"
