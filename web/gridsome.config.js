@@ -11,19 +11,19 @@ module.exports = {
     SanityPage: [
       {
         path: '/pages/:slug__current',
-        component: './src/templates/Page.vue'
+        component: './src/templates/page.vue'
       }
     ],
     ShopifyProduct: [
       {
         path: '/products/:handle',
-        component: './src/templates/Product.vue'
+        component: './src/templates/product.vue'
       }
     ],
     ShopifyCollection: [
       {
         path: '/collections/:handle',
-        component: './src/templates/Collection.vue'
+        component: './src/templates/collection.vue'
       }
     ]
   },
