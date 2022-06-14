@@ -1,4 +1,4 @@
-@import url('https://api.fontshare.com/css?f[]=switzer@350&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@600,400,500&display=swap');
 
 :root {
   /* sanity variables */
