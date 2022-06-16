@@ -1,7 +1,7 @@
 import { FileImage } from 'phosphor-react'
 
 export default {
-  title: 'Image Item',
+  title: 'Image / Photo Item',
   name: 'imageItem',
   type: 'image',
   icon: FileImage,
@@ -13,7 +13,8 @@ export default {
       title: 'Alternative text',
       name: 'alt',
       type: 'string',
-      description: 'Important for SEO and accessiblity.',
+      description: 'A short textual description of the image. Important for SEO and accessiblity.',
+      validation: Rule => Rule.required(),
       options: {
         isHighlighted: true
       }
