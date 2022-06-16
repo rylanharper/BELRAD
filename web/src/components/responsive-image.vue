@@ -42,7 +42,7 @@ export default {
 
       sizes.forEach((width) => {
         const url = this.url
-        const transform = `?w=${width}&auto=format`
+        const transform = `?w=${width}&auto=format&fit=max`
 
         srcset.push(
           `${url}${transform} ${width}w`
