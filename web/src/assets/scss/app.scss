@@ -1,15 +1,19 @@
 // Global app styles
-// Imported into `main.js`
 html {
   font-size: 12px;
-  @apply font-mono antialiased;
+  font-family: 'ballinger-mono', monospace;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   #app {
-    @apply flex flex-col;
+    display: flex;
+    flex-direction: column;
   }
 
   #main {
-    @apply flex-grow;
+    flex-grow: 1;
     min-height: 95vh;
   }
 }
@@ -20,7 +24,7 @@ html {
 
 ::selection {
   color: #181717;
-  background: #f9ff82;
+  background: #ffe46d;
 }
 
 // Typography
@@ -29,5 +33,5 @@ p,
 div,
 span,
 button {
-  @apply uppercase;
+  text-transform: uppercase;
 }
