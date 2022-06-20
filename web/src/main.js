@@ -2,16 +2,16 @@
 import DefaultLayout from '~/layouts/default.vue'
 
 // GraphQL
-import GraphQL from './graphql/graphql'
+import GraphQL from '~/graphql/graphql'
 
 // Vuex
-import State from './store'
+import State from '~/store'
 
 // Filters
-import Currency from './helpers/currency'
+import Currency from '~/helpers/currency'
 
 // Global Styles
-import './assets/scss/app.scss'
+import '~/assets/scss/app.scss'
 
 // Lazysizes
 import 'lazysizes'
