@@ -83,6 +83,7 @@ export default {
 
   async beforeCreate() {
     const userAuth = await this.$store.getters.isAuthenticated
+    
     if (!userAuth) {
       this.$router.push({ path: '/account/login' })
     }
