@@ -2,7 +2,7 @@
   @apply fixed inset-0 w-full h-full z-30;
   @apply bg-white;
   // Media queries
-  @apply md:h-min md:border-b md:border-light-600;
+  @apply md:h-min md:border-b md:border-black md:border-dashed;
 
   .menu-desktop {
     @apply hidden;

@@ -5,13 +5,12 @@
   @apply md:px-8 md:mb-32;
 
   &__nav {
-    @apply mb-3;
-    @apply text-sm;
+    @apply mb-8;
   }
 
   &__title {
     h1 {
-      @apply text-2xl mb-14;
+      @apply text-2xl text-center mb-8;
       // Media Queries
       @apply md:text-3xl;
     }

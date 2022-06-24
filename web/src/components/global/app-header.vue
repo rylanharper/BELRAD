@@ -80,14 +80,10 @@
         </div>
       </div>
     </nav>
-    <!-- Banner -->
-    <app-banner />
   </header>
 </template>
 
 <script>
-import appBanner from './app-banner.vue'
-
 // Logo
 import Logo from "@/assets/svg/belrad.svg"
 
@@ -95,8 +91,7 @@ export default {
   name: 'AppHeader',
 
   components: { 
-    appBanner,
-    Logo 
+    Logo
   },
 
   computed: {

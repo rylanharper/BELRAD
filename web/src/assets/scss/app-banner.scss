@@ -1,6 +1,6 @@
-.hero-banner {
+.app-banner {
   @apply relative top-0 left-0 right-0 z-50 overflow-hidden py-1.5;
-  @apply text-sm border-t border-b border-black border-dashed;
+  @apply text-sm border-b border-black border-dashed;
 
   &__link {
     @apply flex relative items-center inset-0;

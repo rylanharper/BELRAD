@@ -4,9 +4,9 @@
       <div class="collection__nav">
         <g-link to="/">Shop</g-link> / {{ collection.title }}
       </div>
-      <div class="collection__title">
+      <!-- <div class="collection__title">
         <h1>{{ collection.title }}</h1>
-      </div>
+      </div> -->
       <filter-and-sort :products="allProducts" :showing-sort="showingSort" :showing-filter="showingFilter">
         <template v-slot="filterData">
           <div class="product-grid">

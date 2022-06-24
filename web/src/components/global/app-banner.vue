@@ -2,9 +2,9 @@
   <div
     v-if="promo.enabled === true"
     :style="{ background: this.promo.color.hex }"
-    class="hero-banner"
+    class="app-banner"
   >
-    <g-link :to="promo.link" class="hero-banner__link group">
+    <g-link :to="promo.link" class="app-banner__link group">
       <marquee-text :repeat="10" :duration="15">
         <h3>{{ promo.text }}</h3>
       </marquee-text>

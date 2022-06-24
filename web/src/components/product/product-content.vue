@@ -211,7 +211,7 @@ export default {
       setTimeout(function() {
         _this.isLoading = false
         _this.$store.commit('TOGGLE_CART_MODAL')
-      }, 1200)
+      }, 800)
     },
 
     acBeforeEnter(el) {

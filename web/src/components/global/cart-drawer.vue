@@ -11,7 +11,7 @@
       <section class="cart" v-if="cartModalOpen">
         <!-- Cart header -->
         <div class="cart__header">
-          <h2>Cart: {{ itemsTotal }}</h2>
+          <h2>Items: {{ itemsTotal }}</h2>
           <button @click="closeCartModal" class="shop-menu__close">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -73,13 +73,17 @@
         </div>
         <!-- Cart checkout -->
         <div class="cart__checkout">
+          <div v-if="cart.length" class="subtotal">
+            <span>Subtotal:</span>
+            <span>{{ cartTotal | currency }}</span>
+          </div>
+          <p v-if="cart.length">Taxes &amp; shipping will be calculated at checkout</p>
           <form @submit.prevent="checkout" v-if="cart.length">
             <button type="submit" class="button--filled">
-              Checkout | {{ cartTotal | currency }}
+              Checkout
             </button>
           </form>
           <button v-else @click="closeCartModal" class="button--empty">Continue Shopping</button>
-          <p v-if="cart.length">Taxes &amp; shipping will be calculated at checkout</p>
         </div>
       </section>
     </transition>
@@ -98,7 +102,7 @@ import { checkoutCreateMutation } from '@/graphql/queries'
 import { gsap, Power3 } from 'gsap'
 
 export default {
-  name: 'CartModal',
+  name: 'CartDrawer',
 
   props: {
     maxHeight: {

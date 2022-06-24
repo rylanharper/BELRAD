@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <app-banner />
     <app-header />
     <shop-menu />
 
@@ -15,15 +16,16 @@
     </transition>
 
     <app-footer />
-    <cart-modal />
+    <cart-drawer />
   </div>
 </template>
 
 <script>
+import AppBanner from '@/components/global/app-banner.vue'
 import AppHeader from '@/components/global/app-header.vue'
-import AppFooter from '@/components/global/app-footer.vue'
 import ShopMenu from '@/components/global/shop-menu.vue'
-import CartModal from '@/components/global/cart-modal.vue'
+import AppFooter from '@/components/global/app-footer.vue'
+import CartDrawer from '@/components/global/cart-drawer.vue'
 
 // Gsap
 import { gsap, Power2 } from 'gsap'
@@ -32,10 +34,11 @@ export default {
   name: 'App',
 
   components: {
+    AppBanner,
     AppHeader,
-    AppFooter,
     ShopMenu,
-    CartModal
+    AppFooter,
+    CartDrawer
   },
 
   methods: {
