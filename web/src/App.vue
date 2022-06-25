@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <app-banner />
     <app-header />
     <shop-menu />
 
@@ -21,7 +20,6 @@
 </template>
 
 <script>
-import AppBanner from '@/components/global/app-banner.vue'
 import AppHeader from '@/components/global/app-header.vue'
 import ShopMenu from '@/components/global/shop-menu.vue'
 import AppFooter from '@/components/global/app-footer.vue'
@@ -34,7 +32,6 @@ export default {
   name: 'App',
 
   components: {
-    AppBanner,
     AppHeader,
     ShopMenu,
     AppFooter,

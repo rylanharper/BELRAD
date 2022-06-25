@@ -1,5 +1,5 @@
 .app-banner {
-  @apply relative top-0 left-0 right-0 z-50 overflow-hidden py-1.5;
+  @apply relative top-0 left-0 overflow-hidden py-1.5;
   @apply text-sm border-b border-black border-dashed;
 
   &__link {

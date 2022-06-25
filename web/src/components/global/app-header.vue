@@ -1,5 +1,6 @@
 <template>
   <header class="header">
+    <app-banner />
     <!-- Navigation -->
     <nav role="navigation" class="header__nav">
       <!-- Desktop nav -->
@@ -84,13 +85,16 @@
 </template>
 
 <script>
+import AppBanner from './app-banner.vue'
+
 // Logo
-import Logo from "@/assets/svg/belrad.svg"
+import Logo from '@/assets/svg/belrad.svg'
 
 export default {
   name: 'AppHeader',
 
-  components: { 
+  components: {
+    AppBanner,
     Logo
   },
 
