@@ -9,7 +9,7 @@
 - A simple newsletter component using [Klaviyo](https://www.klaviyo.com/)
 - Buttery-smooth animations with [GSAP](https://greensock.com/gsap/)
 - Full account functionality + password reset
-- Persisted account and cart storage
+- Persisted account + cart data
 - A simple Vue template structure for quick prototyping
 
 ## 🏈 Sanity Kickoff
