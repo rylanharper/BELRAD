@@ -50,13 +50,15 @@ Sanity graphql-deploy
 
 ## ✅ Gotchas
 
-There are a couple of opinionated "gotchas" that need to be implemented in order for this project to work properly with Shopify:
+There are a couple of opinionated "gotchas" that need to be implemented in order for this project to work properly with Shopify *(however these are completely optional)*:
 
-- Enable product metafields by going to `Settings → Metafields → Products` and creating a color metafield type. Once you create a product, scroll to the bottom to add in a metafield color swtach. 
+- Enable product metafields by going to `Settings → Metafields → Products` and `Settings → Metafields → Variants`. You will want to create a `color` metafield for products and variants. Once you create a product, scroll to the bottom to add in a metafield color-swtach. You will also have to include a metafield color swtach for each variant as well (this can be time consuming, but is necessary for product color-swatches to work properly). If you do not wish to have color-swatches then you must remove any references to product metafields within this project.
 
-- Each product that has a variety of colors (more than one) must have the same unique `productType` as its corresponding products. Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc. I have found that placing a matching code as a product type makes this really simple. [Checkout this code generator](https://www.voucherify.io/generator)!
+- Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc. In this demo I have my product url routes set to `product-brand-name-product-name-product-color`.
 
-- Make sure the first product tag within Shopify is always the product's category or brand. I currently use `{{ product.tags[0] }}` to easily display the corresponding category/brand (though this is completely optional).
+- In this demo, all products have a size and color variant. If I have a product with a standard size or one-size-fits all I add in the size value as `Universal`. If you wish to not have this then just edit the size type to whatever is best.
+
+- Make sure the first product tag within Shopify is always the product's category or brand. I currently use `{{ product.tags[0] }}` to easily display the corresponding category/brand (though this is completely optional and can be replaces with `productType`).
 
 - In order to have multiple product descriptions, I have set up the following computed property `productDescription` within `product-content.vue`. This allows you simply write `---` within Shopify's description editor to split up your product's description into various parts such as details, shipping, care, etc.
 
