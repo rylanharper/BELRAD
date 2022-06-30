@@ -11,10 +11,10 @@
 // Lazy load images
 .lazyload,
 .lazyloading {
-  @apply opacity-0;
+  @apply filter blur-sm;
 }
 
 .lazyloaded {
-  @apply opacity-100;
+  @apply filter-none;
   @apply transition duration-300 ease;
 }

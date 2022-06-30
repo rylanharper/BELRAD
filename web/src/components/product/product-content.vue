@@ -13,51 +13,46 @@
         </div>
       </div>
       <!-- Swatch Grid -->
-      <div
-        v-if="productOptions[1] && productOptions[1].name.toLowerCase() === 'color'"
-        class="swatch-grid"
-      >
-        <div class="swatch-grid__title">Color: {{ productOptions[1].values[0] }}</div>
-        <div class="swatch-grid__swatches">
-          <span
-            :style="{ background: product.metafields.edges[0].node.value }"
-            class="color-primary"
-          />
-          <div v-if="product.related.length">
-            <div v-for="product in product.related" :key="product.id" class="related-colors">
-              <g-link :to="`/products/${product.handle}`">
-                <span :style="{ background: product.metafields.edges[0].node.value }" />
-              </g-link>
-            </div>
+      <div v-if="productOptions[1] && productOptions[1].name.toLowerCase() === 'color' || 'colour'">
+        <div class="swatch-grid">
+          <div class="swatch-grid__title">Color: {{ productOptions[1].values[0] }}</div>
+          <div class="swatch-grid__swatches">
+            <g-link
+            v-for="(color, index) in colors.sort((a, b) => (a.name > b.name) ? 1 : -1)"
+            :key="index"
+            :to="`/products/${kebabCase(product.tags[0] + product.title + color.name)}`"
+            :style="{ background: color.hex }"
+            :ariaLabel="`Color Option ${color.name}`"
+            type="button"
+            />
           </div>
         </div>
       </div>
       <!-- Product options -->
-      <div
-        v-if="productOptions[0] && productOptions[0].name.toLowerCase() === 'size'"
-        class="product-options"
-      >
-        <div class="product-options__name">
-          <span>{{ productOptions[0].name }}:</span>
-          <div
-            :class="{ 'oos-warning': !currentVariant.availableForSale }"
-            class="product-options__status"
-          >
-            <span>
-              {{ currentVariant.availableForSale ? 'In Stock' : 'Out of Stock' }}
-            </span>
+      <div v-if="productOptions[0] && productOptions[0].name.toLowerCase() === 'size' && productOptions[0].values[0].toLowerCase() !== 'Universal'">
+        <div class="product-options">
+          <div class="product-options__name">
+            <span>{{ productOptions[0].name }}:</span>
+            <div
+              :class="{ 'oos-warning': !currentVariant.availableForSale }"
+              class="product-options__status"
+            >
+              <span>
+                {{ currentVariant.availableForSale ? 'In Stock' : 'Out of Stock' }}
+              </span>
+            </div>
           </div>
-        </div>
-        <div class="product-options__variants">
-          <label v-for="value in productOptions[0].values" :key="value">
-            <input
-              v-model="selectedOptions[productOptions[0].name]"
-              :value="value"
-              type="radio"
-              :class="{ 'oos-option': hasNoAvailableProducts(productOptions[0].name, value) }"
-            />
-            <span>{{ value }}</span>
-          </label>
+          <div class="product-options__variants">
+            <label v-for="value in productOptions[0].values" :key="value">
+              <input
+                v-model="selectedOptions[productOptions[0].name]"
+                :value="value"
+                type="radio"
+                :class="{ 'oos-option': hasNoAvailableProducts(productOptions[0].name, value) }"
+              />
+              <span>{{ value }}</span>
+            </label>
+          </div>
         </div>
       </div>
       <!-- Product actions -->
@@ -116,6 +111,9 @@
 </template>
 
 <script>
+// Mixins
+import { kebabCase } from '@/utils/text-transform'
+
 // Gsap
 import { gsap, Expo } from 'gsap'
 
@@ -163,6 +161,22 @@ export default {
       })
 
       return hasVariantOnSale
+    },
+
+    colors() {
+      return Object.values(
+        this.product.variants.reduce((colors, variant) => {
+          if (variant.metafields.edges[0].node.value && variant.selectedOptions && variant.selectedOptions.length > 1) {
+            const name = variant.selectedOptions[1].value
+            colors[name] = {
+              hex: variant.metafields.edges[0].node.value,
+              name,
+              variant
+            }
+          }
+          return colors
+        }, {})
+      )
     }
   },
 
@@ -239,7 +253,10 @@ export default {
         opacity: 0,
         onComplete: done
       })
-    }
+    },
+
+    // Mixin
+    kebabCase
   }
 }
 </script>

@@ -14,7 +14,7 @@
 
     &--sale-item {
       @apply px-2 py-1;
-      @apply text-sm text-blue-500 border border-blue-400 rounded-sm;
+      @apply text-sm text-orange-500 border border-orange-400 rounded-sm;
     }
   }
 
@@ -36,13 +36,18 @@
   .swatch-grid {
     @apply flex;
 
-    span {
+    a {
       @apply flex mr-2;
       @apply rounded-full;
       height: 10px;
       width: 10px;
       // Media Queries
       @apply md:mr-3;
+      @apply md:transition md:duration-500 md:ease-in-out;
+
+      &:hover {
+        @apply md:opacity-60;
+      }
     }
   }
 }

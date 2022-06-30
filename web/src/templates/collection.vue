@@ -115,6 +115,14 @@ query Collection ($id: ID!) {
         id
         title
         availableForSale
+        metafields {
+          edges {
+            node {
+              key
+              value
+            }
+          }
+        }
         compareAtPrice {
           amount
         }
@@ -157,22 +165,22 @@ query Collection ($id: ID!) {
         name
         values
       }
-      related {
-        id
-        path
-        title
-        handle
-        tags
-        productType
-        metafields {
-          edges {
-            node {
-              key
-              value
-            }
-          }
-        }
-      }
+      # related {
+      #   id
+      #   path
+      #   title
+      #   handle
+      #   tags
+      #   productType
+      #   metafields {
+      #     edges {
+      #       node {
+      #         key
+      #         value
+      #       }
+      #     }
+      #   }
+      # }
     }
   }
 }

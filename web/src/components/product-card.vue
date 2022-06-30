@@ -16,7 +16,7 @@
             :max-width="600"
           />
         </div>
-        <div class="hover-image absolute flex top-0 left-0 h-full w-full opacity-0 transition duration-300 ease delay-200 md:hover:opacity-100">
+        <div class="hover-image absolute flex top-0 left-0 h-full w-full opacity-0 transition duration-300 ease delay-150 md:hover:opacity-100">
           <responsive-image
             :url="product.images[1].originalSrc"
             :alt="product.images[1].altText || product.title"
@@ -38,18 +38,25 @@
         </div>
       </div>
       <!-- Swatch Grid -->
-      <div class="swatch-grid">
-        <span :style="{ background: product.metafields.edges[0].node.value }" />
-        <div v-for="product in product.related" :key="product.id" class="inline-flex">
-          <span :style="{ background: product.metafields.edges[0].node.value }" />
-        </div>
-      </div>
     </g-link>
+    <div class="swatch-grid">
+      <g-link
+        v-for="(color, index) in colors"
+        :key="index"
+        :to="`/products/${kebabCase(product.tags[0] + product.title + color.name)}`"
+        :style="{ background: color.hex }"
+        :ariaLabel="`Color Option ${color.name}`"
+        type="button"
+        />
+    </div>
   </div>
 </template>
 
 <script>
 import ResponsiveImage from '@/components/responsive-image.vue'
+
+// Mixins
+import { kebabCase } from '@/utils/text-transform'
 
 export default {
   name: 'ProductCard',
@@ -78,7 +85,28 @@ export default {
       })
 
       return variantOnSale
+    },
+
+    colors() {
+      return Object.values(
+        this.product.variants.reduce((colors, variant) => {
+          if (variant.metafields.edges[0].node.value && variant.selectedOptions && variant.selectedOptions.length > 1) {
+            const name = variant.selectedOptions[1].value
+            colors[name] = {
+              hex: variant.metafields.edges[0].node.value,
+              name,
+              variant
+            }
+          }
+          return colors
+        }, {})
+      )
     }
+  },
+
+  methods: {
+    // Mixin
+    kebabCase
   }
 }
 </script>

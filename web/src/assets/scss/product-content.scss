@@ -33,11 +33,7 @@
     &__swatches {
       @apply flex ml-2;
 
-      span:first-child {
-        @apply cursor-pointer;
-      }
-
-      span {
+      a {
         @apply flex mr-4 relative;
         @apply rounded-full;
         height: 20px;
@@ -45,11 +41,11 @@
         @apply md:transition md:duration-500 md:ease-in-out;
 
         &:hover {
-          @apply md:opacity-60;
+          @apply md:opacity-80;
         }
       }
 
-      .color-primary::before {
+      .active::before {
         @apply absolute top-1/2 left-1/2;
         @apply border border-black rounded-full;
         content: "";

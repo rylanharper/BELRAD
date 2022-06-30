@@ -3,7 +3,10 @@
     <app-header />
     <shop-menu />
 
-    <transition
+    <!-- Page view -->
+    <router-view />
+
+    <!-- <transition
       appear
       mode="out-in"
       @before-enter="beforeEnter"
@@ -12,7 +15,7 @@
       :css="false"
     >
       <router-view />
-    </transition>
+    </transition> -->
 
     <app-footer />
     <cart-drawer />
@@ -26,7 +29,7 @@ import AppFooter from '@/components/global/app-footer.vue'
 import CartDrawer from '@/components/global/cart-drawer.vue'
 
 // Gsap
-import { gsap, Power2 } from 'gsap'
+// import { gsap, Power2 } from 'gsap'
 
 export default {
   name: 'App',
@@ -38,29 +41,29 @@ export default {
     CartDrawer
   },
 
-  methods: {
-    beforeEnter(el) {
-      gsap.set(el, {
-        opacity: 0
-      })
-    },
-    enter(el, done) {
-      gsap.to(el, {
-        duration: 0.3,
-        delay: 0.15,
-        ease: Power2.easeOut,
-        opacity: 1,
-        onComplete: done
-      })
-    },
-    leave(el, done) {
-      gsap.to(el, {
-        duration: 0.2,
-        ease: Power2.easeOut,
-        opacity: 0,
-        onComplete: done
-      })
-    }
-  }
+  // methods: {
+  //   beforeEnter(el) {
+  //     gsap.set(el, {
+  //       opacity: 0
+  //     })
+  //   },
+  //   enter(el, done) {
+  //     gsap.to(el, {
+  //       duration: 0.3,
+  //       delay: 0.15,
+  //       ease: Power2.easeOut,
+  //       opacity: 1,
+  //       onComplete: done
+  //     })
+  //   },
+  //   leave(el, done) {
+  //     gsap.to(el, {
+  //       duration: 0.2,
+  //       ease: Power2.easeOut,
+  //       opacity: 0,
+  //       onComplete: done
+  //     })
+  //   }
+  // }
 }
 </script>

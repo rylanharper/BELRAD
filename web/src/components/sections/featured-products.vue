@@ -55,6 +55,14 @@ query {
           id
           title
           availableForSale
+          metafields {
+            edges {
+              node {
+                key
+                value
+              }
+            }
+          }
           compareAtPrice {
             amount
           }
@@ -96,22 +104,6 @@ query {
           id
           name
           values
-        }
-        related {
-          id
-          path
-          title
-          handle
-          tags
-          productType
-          metafields {
-            edges {
-              node {
-                key
-                value
-              }
-            }
-          }
         }
       }
     }

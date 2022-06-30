@@ -3,10 +3,10 @@
   @apply text-sm border-b border-black border-dashed;
 
   &__link {
-    @apply flex relative items-center inset-0;
-    @apply transition duration-300 ease-in-out;
+    @apply flex relative items-center inset-0 text-white;
+    @apply transition duration-300 ease-in;
     // Media Queries
-    @apply md:hover:text-gray-500;
+    @apply md:hover:text-gray-400;
   }
 
   h3 {

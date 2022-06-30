@@ -85,6 +85,14 @@ query Product ($id: ID!) {
       id
       title
       availableForSale
+      metafields {
+        edges {
+          node {
+            key
+            value
+          }
+        }
+      }
       compareAtPrice {
         amount
       }
@@ -133,21 +141,6 @@ query Product ($id: ID!) {
       id
       name
       values
-    }
-    related {
-      id
-      path
-      title
-      handle
-      productType
-      metafields {
-        edges {
-          node {
-            key
-            value
-          }
-        }
-      }
     }
   }
 }
