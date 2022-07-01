@@ -23,7 +23,6 @@
             :to="`/products/${kebabCase(product.tags[0] + product.title + color.name)}`"
             :style="{ background: color.hex }"
             :ariaLabel="`Color Option ${color.name}`"
-            type="button"
             />
           </div>
         </div>
