@@ -58,7 +58,7 @@ There are a couple of opinionated "gotchas" that need to be implemented in order
 
 - Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc. In this demo I have my product url routes set to `product-brand-name-product-name-product-color`. To change swatch url paths, go to `product-content.vue` and edit the `<g-link>` within the `swatch-grid__swatches`
 
-- All products in this demo have a size and color variant. If I have a product with a standard size or one-size-fits all I add in the size value as `Universal`. If you wish to not have this then just edit the size type to whatever is best within Shopify. However you will also have to change some select variant options and filter options within this project.
+- All products in this demo have a size and color variant. If I have a product with a standard size or one-size-fits all I add in the size value as `One Size`. If you wish to not have this then just edit the size type to whatever is best within Shopify. However you will also have to change some select variant options and filter options within this project.
 
 - Make sure the first product tag within Shopify is always the product's category or brand. I currently use `{{ product.tags[0] }}` to easily display the corresponding category/brand (though this is completely optional and can be replaced with `productType` which may suite your needs better).
 
