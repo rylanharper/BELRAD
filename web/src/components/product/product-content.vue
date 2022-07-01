@@ -29,7 +29,7 @@
         </div>
       </div>
       <!-- Product options -->
-      <div v-if="productOptions[0] && productOptions[0].name.toLowerCase() === 'size' && productOptions[0].values[0].toLowerCase() !== 'Universal'">
+      <div v-if="productOptions[0] && productOptions[0].name.toLowerCase() === 'size'">
         <div class="product-options">
           <div class="product-options__name">
             <span>{{ productOptions[0].name }}:</span>
