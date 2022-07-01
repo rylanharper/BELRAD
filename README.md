@@ -59,7 +59,7 @@ There are a couple of opinionated "gotchas" that need to be implemented in order
 
 - Enable product metafields by going to `Settings → Metafields → Products` and `Settings → Metafields → Variants`. You will want to create a `color` metafield type for both products and variants. Once you create a product, scroll to the bottom to add in a metafield color-swtach. You will also have to include a metafield color-swtach for each variant as well (this can be time consuming, but is necessary for product color-swatches to work properly).
 
-- Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc. In this demo I have my product url routes set to `product-brand-product-name-product-color`. To change swatch url paths, go to `product-content.vue` and edit the `<g-link>` within the `swatch-grid__swatches`.
+- Make sure you edit the URL handle (under the product's SEO section) to add in the color at the end of the url such as `your-product-name-light-blue`, etc. In this demo I have my product url routes set to `product-brand-product-name-product-color`. To change swatch url paths, go to `product-content.vue` and edit the `<g-link>` within `swatch-grid__swatches`.
 
 - All products in this demo have a size and color variant. If I have a product with a standard size or one-size-fits all I add in the size value as `One Size` or `O/S` within Shopify. If you wish to not have this then just edit the size type to whatever is best.
 
