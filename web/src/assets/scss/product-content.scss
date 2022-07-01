@@ -107,12 +107,12 @@
 
     button {
       @apply flex justify-center items-center py-2 w-full;
-      @apply text-center bg-dark-800 text-white rounded-sm;
+      @apply text-center border border-dashed border-white bg-dark-800 text-white rounded-sm;
     }
 
     .oos-button {
       @apply flex justify-center items-center py-2;
-      @apply text-center bg-gray-200 text-gray-600 cursor-not-allowed rounded-sm;
+      @apply text-center border border-dashed border-dark-800 bg-light-400 text-gray-800 cursor-not-allowed rounded-sm;
     }
   }
 

@@ -11,10 +11,10 @@
 // Lazy load images
 .lazyload,
 .lazyloading {
-  @apply filter blur-sm;
+  @apply filter blur-md;
 }
 
 .lazyloaded {
   @apply filter-none;
-  @apply transition duration-300 ease;
+  @apply transition duration-300 ease-in;
 }
